@@ -74,7 +74,7 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
           onClick={() => setStatus('idle')}
           className="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-emerald-800 bg-white border border-emerald-300 rounded-lg hover:bg-emerald-100 transition-colors"
         >
-          Kirim Pesan Lain / Send Another
+          {locale === 'id' ? 'Kirim Pesan Lain' : 'Send Another Message'}
         </button>
       </div>
     );
@@ -114,7 +114,7 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-covenant-500 focus:border-covenant-500 transition-all outline-none"
-            placeholder="e.g. Samuel & Maria"
+            placeholder={locale === 'id' ? 'misal: Samuel & Maria' : 'e.g. Samuel & Maria'}
           />
         </div>
 
@@ -128,7 +128,7 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-covenant-500 focus:border-covenant-500 transition-all outline-none"
-            placeholder="e.g. name@example.com"
+            placeholder="name@example.com"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-covenant-500 focus:border-covenant-500 transition-all outline-none"
-            placeholder="e.g. 0812 3456 7890"
+            placeholder={locale === 'id' ? '0812 3456 7890' : '+62 812 3456 7890'}
           />
         </div>
 
@@ -157,7 +157,7 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-covenant-500 focus:border-covenant-500 transition-all outline-none"
-            placeholder="e.g. Konsultasi Seminar / Pertanyaan"
+            placeholder={locale === 'id' ? 'misal: Konsultasi Seminar / Pertanyaan' : 'e.g. Seminar Inquiry / Question'}
           />
         </div>
       </div>
@@ -172,7 +172,11 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-covenant-500 focus:border-covenant-500 transition-all outline-none resize-y"
-          placeholder="Tuliskan pesan, permohonan doa, atau informasi kebutuhan pelayanan..."
+          placeholder={
+            locale === 'id'
+              ? 'Tuliskan pesan, permohonan doa, atau informasi kebutuhan pelayanan...'
+              : 'Write your message, prayer request, or ministry inquiry...'
+          }
         />
       </div>
 

@@ -3,24 +3,35 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { Locale, locales, localeNames } from '@/i18n/config';
 import { Globe } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   const switchLocale = (newLocale: Locale) => {
     setIsOpen(false);
     if (newLocale === currentLocale) return;
+
+    const search = typeof window !== 'undefined' ? window.location.search : '';
 
     // Replace the locale prefix in current pathname
     const segments = pathname.split('/');
     if (segments.length > 1 && locales.includes(segments[1] as Locale)) {
       segments[1] = newLocale;
-      router.push(segments.join('/'));
+      router.push(segments.join('/') + search);
     } else {
-      router.push(`/${newLocale}`);
+      router.push(`/${newLocale}${search}`);
     }
   };
 

@@ -106,9 +106,14 @@ export default function Footer({ locale, dict }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#couples-preview`} className="hover:text-covenant-400 transition-colors">
-                  Couples Formation Roadmap
-                </Link>
+                <a
+                  href="https://www.youtube.com/@borismanurung2626"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-covenant-400 transition-colors inline-flex items-center gap-1"
+                >
+                  <span>YouTube Channel (@borismanurung2626)</span>
+                </a>
               </li>
             </ul>
           </div>

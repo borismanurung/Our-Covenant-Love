@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
           create: translations.map((t: any) => ({
             locale: t.locale,
             title: t.title,
-            slug: t.slug.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+            slug: t.slug.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || `item-${Date.now()}`,
             excerpt: t.excerpt || null,
             body: t.body || '',
             lyrics: t.lyrics || null,

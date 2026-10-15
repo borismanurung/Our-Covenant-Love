@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -17,6 +17,12 @@ interface NavbarProps {
 export default function Navbar({ locale, dict }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = locale;
+    }
+  }, [locale]);
 
   const navLinks = [
     { href: `/${locale}`, label: dict.common.home },
@@ -81,8 +87,8 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             ))}
           </nav>
 
-          {/* Right Action Bar (Language Switcher, Admin Link) */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Right Action Bar (Language Switcher, Admin Link) - Desktop */}
+          <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher currentLocale={locale} />
             <Link
               href={`/${locale}/admin`}
@@ -93,8 +99,8 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Mobile & Tablet Action Bar (Language Switcher + Menu Button) */}
+          <div className="flex lg:hidden items-center gap-2">
             <LanguageSwitcher currentLocale={locale} />
             <button
               type="button"
@@ -108,9 +114,9 @@ export default function Navbar({ locale, dict }: NavbarProps) {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile & Tablet Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl space-y-1">
+        <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
