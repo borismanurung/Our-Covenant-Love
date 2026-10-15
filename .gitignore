@@ -37,3 +37,8 @@ prisma/*.db-journal
 .vscode/
 *.swp
 *.swo
+
+# Working media folders in root
+/Ultah Tassel - Mei 2026/
+/Yonas 8 Feb 2025/
+/Good Guy.mpeg

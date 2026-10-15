@@ -269,103 +269,132 @@ Watch this full message to rediscover God's eternal mandate for your home.`,
       type: 'SONG',
       status: 'PUBLISHED',
       isFeatured: true,
-      author: 'Our Covenant Love Worship',
-      audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', // Sample royalty-free audio stream
+      author: 'Boris Manurung',
+      audioUrl: '/audio/good-guy.mp3',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      chordSheet: `[Bait 1]
-C                 G/B
-Di hadapan altar-Mu yang kudus
-Am                Em
-Dua hati Kau satukan dalam kasih
-F            C/E
-Bukan karena kuat gagah kami
-Dm           G
-Namun anugerah-Mu yang memimpin
-
-[Reff]
-C                G/B
-Kasih kovenan-Mu tak pernah pudar
-Am               Em
-Menjaga janji yang telah terucap
-F             C/E
-Jadikan kami cerminan kemuliaan-Mu
-Dm           G          C
-Nyatakan karakter-Mu di dunia
-
-[Bait 2]
-C                 G/B
-Saat badai dan ujian menerpa
-Am                Em
-Tangan-Mu yang setia menopang
-F            C/E
-Kami memilih saling mengampuni
-Dm           G
-Sebagaimana Kau ampuni kami`,
-      coverImage: '/images/ocl-logo.jpg',
+      coverImage: '/images/good-guy-cover.jpg',
       categories: { connect: [{ id: catMusic.id }] },
       translations: {
         create: [
           {
             locale: 'id',
-            title: 'Kasih Kovenan-Mu (Your Covenant Love)',
-            slug: 'kasih-kovenan-mu',
-            excerpt: 'Lagu pujian orisinal yang ditulis dari refleksi mendalam mengenai kesetiaan Allah yang memegang janji kovenan pernikahan di tengah berbagai musim kehidupan.',
+            title: 'Good Guy (by Boris Manurung)',
+            slug: 'good-guy',
+            excerpt: 'Karya musik orisinal "Good Guy" yang digubah oleh Boris Manurung menceritakan tentang kasih pengorbanan Kristus bagi kita.',
             readingTimeMinutes: 3,
-            lyrics: `[Bait 1]
-Di hadapan altar-Mu yang kudus
-Dua hati Kau satukan dalam kasih
-Bukan karena kuat gagah kami
-Namun anugerah-Mu yang memimpin
+            lyrics: `[Verse 1]
+I heard a lot of people talking about the movies
+They said it's a shame that the good guy has to die
+And it would have been nice if only the bad guys had died
+But I'm telling you friend that this good guy has died for the bad guys
 
-[Reff]
-Kasih kovenan-Mu tak pernah pudar
-Menjaga janji yang telah terucap
-Jadikan kami cerminan kemuliaan-Mu
-Nyatakan karakter-Mu di dunia
+[Chorus 1]
+The movie started where there were many unbelievers
+And there were more and more bad guys
+Listening to what they're saying you wish they never exist
+Seeing what they're doing you are hoping they perish
+You know what you're talking, what you're thinking, what you're wishing, what you're hoping
+We are the bad guys
 
-[Bait 2]
-Saat badai dan ujian menerpa
-Tangan-Mu yang setia menopang
-Kami memilih saling mengampuni
-Sebagaimana Kau ampuni kami
+[Chorus]
+You and I were the one who made the mess
+You and I were the one who set the cross
+We are the reason why this good guy left his place
+You and I were the one who drove them nails
+We're the ones who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
 
-[Bridge]
-Tak terpisahkan, oleh manusia
-Apa yang telah Allah persatukan
-Selamanya, bagi kemuliaan-Mu`,
-            songStory: 'Lagu ini digubah dalam saat teduh perenungan perjalanan pernikahan kami. Kami menyadari bahwa cinta manusia bisa surut dan terbatas, tetapi ketika sebuah pernikahan diletakkan di atas fondasi Kovenan Allah, anugerah-Nya memampukan kita untuk terus memilih mengasihi, mengampuni, dan berjalan bersama dalam kesetiaan.',
-            body: 'Sebuah lagu pujian orisinal untuk memperkaya mezbah penyembahan di rumah dan ibadah keluarga.',
+[Chorus 2]
+The movie started where there were many unbelievers
+And there were more and more bad guys
+Listening to what they're saying you wish they never exist
+Seeing what they're doing you are hoping they perish
+You know what you're talking, what you're thinking, what you're wishing, what you're hoping
+We are the bad guys
+
+You and I were the one who made the mess
+You and I were the one who set the cross
+We are the reason why this good guy left his place
+You and I were the one who drove them nails
+We're the ones who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
+
+[Outro]
+I can only give him thanks
+I can only praise his name
+I will follow and obey
+From now on until the end
+
+You and I were the one who made the mess
+You and I were the one who set the cross
+We are the reason why this good guy left his place
+You and I were the one who drove them nails
+We're the one who should have taken the blame
+He loves us, he really do care, and he came down, coming down here
+Coming down here
+Coming down here`,
+            songStory: 'Lagu "Good Guy" merefleksikan kebenaran injil yang mendalam: Kristus, Sang Pribadi yang Benar, rela mati menggantikan kita orang-orang berdosa.',
+            body: 'Sebuah karya musik orisinal dari Boris Manurung untuk memperkaya mezbah penyembahan dan refleksi rohani.',
           },
           {
             locale: 'en',
-            title: 'Your Covenant Love',
-            slug: 'your-covenant-love',
-            excerpt: 'An original worship song born from personal reflection on God’s unfailing faithfulness upholding marriage vows through every season of life.',
+            title: 'Good Guy (by Boris Manurung)',
+            slug: 'good-guy',
+            excerpt: 'An original musical work composed by Boris Manurung depicting the sacrificial love of Christ for humanity.',
             readingTimeMinutes: 3,
             lyrics: `[Verse 1]
-Before Your holy altar, Lord
-Two lives joined together by Your grace
-Not by human strength or wisdom
-Led by Your steadfast guiding hand
+I heard a lot of people talking about the movies
+They said it's a shame that the good guy has to die
+And it would have been nice if only the bad guys had died
+But I'm telling you friend that this good guy has died for the bad guys
+
+[Chorus 1]
+The movie started where there were many unbelievers
+And there were more and more bad guys
+Listening to what they're saying you wish they never exist
+Seeing what they're doing you are hoping they perish
+You know what you're talking, what you're thinking, what you're wishing, what you're hoping
+We are the bad guys
 
 [Chorus]
-Your covenant love will never fail
-Guarding the sacred vows we swore
-May our home reflect Your sacred glory
-Making Your character known on earth
+You and I were the one who made the mess
+You and I were the one who set the cross
+We are the reason why this good guy left his place
+You and I were the one who drove them nails
+We're the ones who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
 
-[Verse 2]
-When storms and testing seasons rise
-Your righteous hand upholds our stride
-We choose each day to forgive and heal
-Just as You first forgave our soul
+[Chorus 2]
+The movie started where there were many unbelievers
+And there were more and more bad guys
+Listening to what they're saying you wish they never exist
+Seeing what they're doing you are hoping they perish
+You know what you're talking, what you're thinking, what you're wishing, what you're hoping
+We are the bad guys
 
-[Bridge]
-Let no man break what God has joined
-United in Your holy name
-Forevermore, to praise Your glory`,
-            songStory: 'Written during personal devotional time reflecting on our family journey. Human romance can waver, but when marriage is anchored in God’s covenant, His divine grace empowers husband and wife to keep choosing forgiveness and covenant faithfulness.',
-            body: 'An original song composed to encourage personal family worship and strengthen marital vows.',
+You and I were the one who made the mess
+You and I were the one who set the cross
+We are the reason why this good guy left his place
+You and I were the one who drove them nails
+We're the ones who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
+
+[Outro]
+I can only give him thanks
+I can only praise his name
+I will follow and obey
+From now on until the end
+
+You and I were the one who made the mess
+You and I were the one who set the cross
+We are the reason why this good guy left his place
+You and I were the one who drove them nails
+We're the one who should have taken the blame
+He loves us, he really do care, and he came down, coming down here
+Coming down here
+Coming down here`,
+            songStory: 'The song "Good Guy" reflects on the profound truth of the Gospel: Christ, the true Good Guy, died to redeem and restore the broken.',
+            body: 'An original musical composition by Boris Manurung to encourage personal devotion and worship.',
           },
         ],
       },

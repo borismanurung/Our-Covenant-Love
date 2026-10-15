@@ -37,7 +37,19 @@ export default async function HomePage({
   ]);
 
   const featuredSermon = sermonsData.items[0];
-  const featuredSong = songsData.items[0];
+  const featuredSong = songsData.items[0] || {
+    id: 'good-guy',
+    author: 'Boris Manurung',
+    audioUrl: '/audio/good-guy.mp3',
+    translation: {
+      title: 'Good Guy (by Boris Manurung)',
+      slug: 'good-guy',
+      excerpt:
+        locale === 'id'
+          ? 'Karya musik orisinal "Good Guy" yang digubah oleh Boris Manurung menceritakan tentang kasih pengorbanan Kristus bagi kita.'
+          : 'An original musical work composed by Boris Manurung depicting the sacrificial love of Christ for humanity.',
+    },
+  };
   const featuredEvent = eventsData.items[0];
 
   return (
@@ -272,19 +284,19 @@ export default async function HomePage({
                       href={`/${locale}/music/${featuredSong.translation.slug}`}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-covenant-700 hover:bg-covenant-800 text-white text-xs font-semibold transition-colors shadow-xs"
                     >
-                      <span>Lihat Lirik & Bagan Akor</span>
+                      <span>
+                        {locale === 'id' ? 'Lihat Lirik & Bagan Akor' : 'View Lyrics & Chord Chart'}
+                      </span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
 
                 <div className="md:col-span-5">
-                  {featuredSong.audioUrl && (
-                    <AudioPlayer
-                      src={featuredSong.audioUrl}
-                      title={featuredSong.translation.title}
-                    />
-                  )}
+                  <AudioPlayer
+                    src={featuredSong.audioUrl || '/audio/good-guy.mp3'}
+                    title={featuredSong.translation.title || 'Good Guy (by Boris Manurung)'}
+                  />
                 </div>
               </div>
             </div>
