@@ -1,0 +1,122 @@
+// Prisma Schema for Our Covenant Love Platform
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String      @id @default(cuid())
+  email        String      @unique
+  passwordHash String
+  name         String
+  role         String      @default("EDITOR") // ADMIN, EDITOR
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  sessions     Session[]
+  auditLogs    AuditLog[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model ContentItem {
+  id              String               @id @default(cuid())
+  type            String               // ARTICLE, DEVOTIONAL, SERMON, SONG, TESTIMONY, EVENT
+  status          String               @default("PUBLISHED") // DRAFT, PUBLISHED, ARCHIVED
+  isFeatured      Boolean              @default(false)
+  author          String?
+  publishedAt     DateTime?            @default(now())
+  
+  // Specific metadata fields
+  speaker         String?              // for SERMON
+  scriptureRef    String?              // for SERMON, DEVOTIONAL, ARTICLE
+  seriesTitle     String?              // for SERMON series
+  videoUrl        String?              // for SERMON or SONG video embed
+  audioUrl        String?              // for SONG audio stream
+  chordSheet      String?              // for SONG chord chart / notes
+  eventDate       DateTime?            // for EVENT
+  eventEndDate    DateTime?            // for EVENT
+  eventLocation   String?              // for EVENT
+  registrationUrl String?              // for EVENT
+  coverImage      String?
+  
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  
+  translations    ContentTranslation[]
+  categories      Category[]
+  tags            Tag[]
+}
+
+model ContentTranslation {
+  id                 String      @id @default(cuid())
+  contentItemId      String
+  contentItem        ContentItem @relation(fields: [contentItemId], references: [id], onDelete: Cascade)
+  locale             String      // "id" or "en"
+  title              String
+  slug               String
+  excerpt            String?
+  body               String      // Markdown or rich text
+  lyrics             String?     // for SONG
+  songStory          String?     // Songwriting testimony / story behind the song
+  readingTimeMinutes Int?        @default(3)
+  metaTitle          String?
+  metaDescription    String?
+  
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+
+  @@unique([locale, slug])
+  @@unique([contentItemId, locale])
+  @@index([locale])
+}
+
+model Category {
+  id            String        @id @default(cuid())
+  slug          String        @unique
+  nameId        String
+  nameEn        String
+  descriptionId String?
+  descriptionEn String?
+  items         ContentItem[]
+}
+
+model Tag {
+  id    String        @id @default(cuid())
+  slug  String        @unique
+  name  String
+  items ContentItem[]
+}
+
+model ContactInquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  locale    String   @default("id")
+  status    String   @default("NEW") // NEW, READ, REPLIED
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String   // e.g. "CREATE_ARTICLE", "UPDATE_EVENT"
+  entityType String   // "CONTENT", "USER", "INQUIRY"
+  entityId   String?
+  details    String?
+  createdAt  DateTime @default(now())
+}
