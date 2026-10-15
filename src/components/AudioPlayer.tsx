@@ -14,33 +14,58 @@ export default function AudioPlayer({ src, title }: AudioPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // Reset state when src changes
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setHasError(false);
+
     const onTimeUpdate = () => setCurrentTime(audio.currentTime);
-    const onLoadedMetadata = () => setDuration(audio.duration || 0);
+    const onLoadedMetadata = () => {
+      setDuration(audio.duration || 0);
+      setHasError(false);
+    };
     const onEnded = () => setIsPlaying(false);
+    const onError = () => {
+      setHasError(true);
+      setIsPlaying(false);
+    };
+
+    // If metadata was already cached by browser
+    if (audio.readyState >= 1) {
+      setDuration(audio.duration || 0);
+    }
 
     audio.addEventListener('timeupdate', onTimeUpdate);
     audio.addEventListener('loadedmetadata', onLoadedMetadata);
     audio.addEventListener('ended', onEnded);
+    audio.addEventListener('error', onError);
 
     return () => {
       audio.removeEventListener('timeupdate', onTimeUpdate);
       audio.removeEventListener('loadedmetadata', onLoadedMetadata);
       audio.removeEventListener('ended', onEnded);
+      audio.removeEventListener('error', onError);
     };
-  }, []);
+  }, [src]);
 
   const togglePlay = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || hasError) return;
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {
+          setIsPlaying(false);
+        });
     }
   };
 
@@ -59,7 +84,7 @@ export default function AudioPlayer({ src, title }: AudioPlayerProps) {
   };
 
   const formatTime = (seconds: number) => {
-    if (isNaN(seconds)) return '0:00';
+    if (isNaN(seconds) || !isFinite(seconds) || seconds < 0) return '0:00';
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
@@ -78,6 +103,11 @@ export default function AudioPlayer({ src, title }: AudioPlayerProps) {
             Audio Preview
           </div>
           <div className="text-sm font-medium text-white truncate">{title}</div>
+          {hasError && (
+            <div className="text-xs text-rose-300 mt-0.5 font-sans">
+              Audio stream currently unavailable
+            </div>
+          )}
         </div>
       </div>
 

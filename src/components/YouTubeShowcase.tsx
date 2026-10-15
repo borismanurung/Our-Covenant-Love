@@ -23,8 +23,12 @@ export default function YouTubeShowcase({
   videos,
 }: YouTubeShowcaseProps) {
   // The first video is the last uploaded video
-  const latestVideo = videos[0];
-  const [activeVideo, setActiveVideo] = useState<YouTubeVideoItem>(latestVideo);
+  const latestVideo = videos && videos.length > 0 ? videos[0] : null;
+  const [activeVideo, setActiveVideo] = useState<YouTubeVideoItem | null>(latestVideo);
+
+  if (!latestVideo || !activeVideo) {
+    return null;
+  }
 
   // The 3 next videos uploaded to the channel
   const threeLastUploadedVideos = videos.slice(1, 4);

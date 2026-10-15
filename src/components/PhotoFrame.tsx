@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Sparkles, Maximize2, X, Heart } from 'lucide-react';
 
 interface PhotoFrameProps {
@@ -28,6 +28,26 @@ export default function PhotoFrame({
   enableModal = true,
 }: PhotoFrameProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
 
   const aspectClasses = {
     square: 'aspect-square',
@@ -106,6 +126,9 @@ export default function PhotoFrame({
       {/* Lightbox Modal */}
       {isOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={caption || alt}
           className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
           onClick={() => setIsOpen(false)}
         >

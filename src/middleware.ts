@@ -4,11 +4,12 @@ import { locales, defaultLocale, isValidLocale } from './i18n/config';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 1. Skip static assets, internal Next.js requests, public images, and APIs
+  // 1. Skip static assets, internal Next.js requests, public images, audio, and APIs
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname.startsWith('/images') ||
+    pathname.startsWith('/audio') ||
     pathname.includes('.') ||
     pathname === '/favicon.ico'
   ) {
@@ -38,5 +39,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|images).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|images|audio).*)'],
 };
