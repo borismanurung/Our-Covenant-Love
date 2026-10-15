@@ -3,8 +3,10 @@ import Image from 'next/image';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import { getContentList } from '@/services/content.service';
+import { getLatestBorisYouTubeVideos } from '@/services/youtube.service';
 import AudioPlayer from '@/components/AudioPlayer';
 import VideoPlayer from '@/components/VideoPlayer';
+import YouTubeShowcase from '@/components/YouTubeShowcase';
 import {
   Heart,
   ArrowRight,
@@ -25,12 +27,13 @@ export default async function HomePage({
   const { locale } = params;
   const dict = getDictionary(locale);
 
-  // Fetch featured items
-  const [articlesData, sermonsData, songsData, eventsData] = await Promise.all([
+  // Fetch featured items and Boris YouTube channel latest uploads
+  const [articlesData, sermonsData, songsData, eventsData, youtubeVideos] = await Promise.all([
     getContentList({ type: 'ARTICLE', locale, limit: 3 }),
     getContentList({ type: 'SERMON', locale, limit: 1 }),
     getContentList({ type: 'SONG', locale, limit: 1 }),
     getContentList({ type: 'EVENT', locale, limit: 1 }),
+    getLatestBorisYouTubeVideos(),
   ]);
 
   const featuredSermon = sermonsData.items[0];
@@ -206,51 +209,41 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* 4. FEATURED VIDEO TEACHING & ORIGINAL MUSIC (SIDE-BY-SIDE) */}
-      <section className="bg-covenant-100/50 py-16 border-y border-covenant-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Featured Video Sermon */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-covenant-800">
-                  <Video className="w-4 h-4 text-covenant-600" />
-                  <span>{dict.home.featuredVideosTitle}</span>
-                </div>
-                <Link
-                  href={`/${locale}/sermons`}
-                  className="text-xs font-semibold text-covenant-700 hover:underline"
-                >
-                  {dict.common.viewAll}
-                </Link>
-              </div>
-
-              {featuredSermon ? (
-                <div className="bg-white rounded-2xl p-5 border border-covenant-200 shadow-sm space-y-4">
-                  {featuredSermon.videoUrl && (
-                    <VideoPlayer
-                      url={featuredSermon.videoUrl}
-                      title={featuredSermon.translation.title}
-                    />
-                  )}
-                  <div>
-                    <span className="text-xs font-mono text-covenant-700 font-semibold">
-                      {featuredSermon.scriptureRef}
-                    </span>
-                    <h3 className="font-serif font-bold text-lg text-slate-900 mt-1">
-                      {featuredSermon.translation.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 mt-1.5 line-clamp-2">
-                      {featuredSermon.translation.excerpt}
-                    </p>
-                  </div>
-                </div>
-              ) : null}
+      {/* 4. YOUTUBE CHANNEL SHOWCASE (@borismanurung2626) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-rose-600 mb-1 flex items-center gap-1.5">
+              <Video className="w-3.5 h-3.5" />
+              <span>{locale === 'id' ? 'Kanal YouTube Resmi' : 'Official YouTube Channel'}</span>
             </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
+              {locale === 'id'
+                ? 'Pengajaran & Video Singkat Ps. Boris Manurung'
+                : 'Teachings & Videos by Ps. Boris Manurung'}
+            </h2>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link
+              href={`/${locale}/sermons`}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-covenant-700 hover:text-covenant-900 group"
+            >
+              <span>{dict.common.viewAll}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
 
-            {/* Featured Original Song */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
+        {/* YouTube Interactive Showcase Component */}
+        <YouTubeShowcase locale={locale} videos={youtubeVideos} />
+      </section>
+
+      {/* 5. FEATURED ORIGINAL WORSHIP MUSIC */}
+      {featuredSong && (
+        <section className="bg-covenant-100/50 py-16 border-y border-covenant-200/60">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-covenant-200 shadow-md space-y-6">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-covenant-800">
                   <Music className="w-4 h-4 text-covenant-600" />
                   <span>{dict.home.featuredMusicTitle}</span>
@@ -259,48 +252,47 @@ export default async function HomePage({
                   href={`/${locale}/music`}
                   className="text-xs font-semibold text-covenant-700 hover:underline"
                 >
-                  {dict.common.viewAll}
+                  {dict.common.viewAll} &rarr;
                 </Link>
               </div>
 
-              {featuredSong ? (
-                <div className="bg-white rounded-2xl p-6 border border-covenant-200 shadow-sm space-y-5">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-covenant-700 font-semibold">
-                      Karya Orisinal / Original Composition
-                    </span>
-                    <h3 className="font-serif font-bold text-xl text-slate-900 mt-1">
-                      {featuredSong.translation.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 mt-1.5">
-                      {featuredSong.translation.excerpt}
-                    </p>
-                  </div>
-
-                  {featuredSong.audioUrl && (
-                    <AudioPlayer
-                      src={featuredSong.audioUrl}
-                      title={featuredSong.translation.title}
-                    />
-                  )}
-
-                  <div className="pt-2 flex items-center justify-between">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div className="md:col-span-7 space-y-3">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-covenant-700 bg-covenant-100 px-2.5 py-1 rounded-md">
+                    Original Worship Song
+                  </span>
+                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900">
+                    {featuredSong.translation.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {featuredSong.translation.excerpt}
+                  </p>
+                  <div className="pt-2">
                     <Link
                       href={`/${locale}/music/${featuredSong.translation.slug}`}
-                      className="text-xs font-semibold text-covenant-700 hover:text-covenant-900 inline-flex items-center gap-1.5"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-covenant-700 hover:bg-covenant-800 text-white text-xs font-semibold transition-colors shadow-xs"
                     >
                       <span>Lihat Lirik & Bagan Akor</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
-              ) : null}
+
+                <div className="md:col-span-5">
+                  {featuredSong.audioUrl && (
+                    <AudioPlayer
+                      src={featuredSong.audioUrl}
+                      title={featuredSong.translation.title}
+                    />
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* 5. UPCOMING EVENT / SEMINAR HIGHLIGHT */}
+      {/* 6. UPCOMING EVENT / SEMINAR HIGHLIGHT */}
       {featuredEvent && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-navy-900 via-navy-800 to-covenant-950 rounded-3xl text-white p-8 sm:p-12 shadow-xl overflow-hidden relative">
@@ -347,7 +339,7 @@ export default async function HomePage({
         </section>
       )}
 
-      {/* 6. FUTURE COUPLES INTERACTIVE MODULE PREVIEW */}
+      {/* 7. FUTURE COUPLES INTERACTIVE MODULE PREVIEW */}
       <section id="couples-preview" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-covenant-200/90 p-8 sm:p-12 shadow-xs">
           <div className="max-w-3xl mb-8">
