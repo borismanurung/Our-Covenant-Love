@@ -2,7 +2,8 @@ import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Heart, Sparkles, BookOpen, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Heart, Sparkles, BookOpen, ArrowRight, Camera, Users } from 'lucide-react';
+import PhotoFrame from '@/components/PhotoFrame';
 
 export default async function OurStoryPage({
   params,
@@ -13,12 +14,12 @@ export default async function OurStoryPage({
   const dict = getDictionary(locale);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
       {/* 1. Header & Vision Statement */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-covenant-100 border border-covenant-300 text-covenant-900 text-xs font-semibold uppercase tracking-wider">
-          <Heart className="w-3.5 h-3.5 text-covenant-600 fill-current" />
-          <span>Kisah & Kesaksian Anugerah / Our Covenant Story</span>
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-covenant-100 to-royalPurple-100 border border-covenant-200 text-covenant-900 text-xs font-semibold uppercase tracking-wider shadow-xs">
+          <Heart className="w-3.5 h-3.5 text-royalPurple-600 fill-current" />
+          <span>Kisah &amp; Kesaksian Anugerah / Our Covenant Story</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
           {dict.ourStory.title}
@@ -28,47 +29,68 @@ export default async function OurStoryPage({
         </p>
       </div>
 
-      {/* 2. Visual / Founders Graphic */}
-      <div className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden border border-covenant-200 shadow-md bg-covenant-100 flex items-center justify-center">
-        <Image
-          src="/images/infographic.png"
-          alt="Our Covenant Love Ministry Infographic"
-          fill
-          className="object-cover"
+      {/* 2. Visual / Full Family Studio Portrait Banner */}
+      <div className="relative">
+        <PhotoFrame
+          src="/images/family/family-full-studio.jpg"
+          alt="Keluarga Besar Boris Manurung - Our Covenant Love Ministry"
+          caption={locale === 'id' ? 'Keluarga Besar Boris Manurung & Kelima Anak' : 'The Boris Manurung Family & Five Children'}
+          subtitle={
+            locale === 'id'
+              ? 'Mezbah keluarga di mana hadirat Allah dialami, karakter Kristus dibentuk, dan generasi dimuridkan.'
+              : 'The family altar where God’s presence is encountered, Christ’s character is forged, and generations are discipled.'
+          }
+          badge={locale === 'id' ? 'Keluarga Kovenan' : 'Covenant Family'}
+          aspectRatio="wide"
+          priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent flex items-end p-6 sm:p-10">
-          <div className="text-white">
-            <div className="font-serif italic text-base sm:text-xl text-covenant-200">
-              &ldquo;{dict.common.motto}&rdquo;
-            </div>
-            <div className="text-xs uppercase tracking-widest text-covenant-300 mt-1 font-semibold">
-              Our Covenant Love &bull; Serpong, Indonesia
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* 3. Founders' Burden & Theological Foundation */}
-      <div className="prose prose-slate max-w-none bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xs space-y-6">
-        <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 border-b border-covenant-200 pb-3">
-          {dict.ourStory.foundersTitle}
-        </h2>
+      <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-xs">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-5">
+            <PhotoFrame
+              src="/images/family/boris-wife-25years.jpg"
+              alt="Boris Manurung & Istri - 25 Tahun Kasih Kovenan"
+              caption={locale === 'id' ? 'Boris & Istri' : 'Boris & Wife'}
+              subtitle={
+                locale === 'id'
+                  ? '"We’ve been married for 25 years" — Kesetiaan kovenan yang dipelihara oleh anugerah Kristus.'
+                  : '"We’ve been married for 25 years" — Covenant faithfulness sustained by the grace of Christ.'
+              }
+              badge={locale === 'id' ? '25 Tahun Pernikahan' : '25 Years of Marriage'}
+              aspectRatio="landscape"
+            />
+          </div>
 
-        <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
-          Ketika Tuhan memanggil dan mempertemukan kami dalam kovenan pernikahan, kami tidak pernah menyangka bahwa perjalanan ini akan menjadi sekolah iman yang paling intensif dalam hidup kami. Di dalam pernikahan, kami melihat betapa ego manusia begitu rapuh, betapa mudahnya luka terjadi, dan betapa kita sangat membutuhkan anugerah salib Kristus setiap hari.
-        </p>
+          <div className="lg:col-span-7 space-y-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-covenant-100 text-covenant-800 text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-covenant-600" />
+              <span>{locale === 'id' ? 'Surat & Kesaksian Pendiri' : 'Founders’ Heart & Testimony'}</span>
+            </div>
 
-        <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
-          Melalui musim-musim pembentukan, pengampunan, pemulihan komunikasi, dan pembaruan komitmen, Tuhan menaruh sebuah beban kudus di dalam hati kami: **Pernikahan bukan sekadar tentang mengejar kebahagiaan dua orang. Pernikahan adalah mahakarya Allah yang dirancang untuk memantulkan gambar dan kemuliaan-Nya.**
-        </p>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+              {dict.ourStory.foundersTitle}
+            </h2>
 
-        <div className="bg-covenant-50 p-6 rounded-2xl border border-covenant-200 my-6">
-          <h3 className="font-serif font-bold text-lg text-covenant-900 mb-2">
-            {dict.ourStory.biblicalFoundationTitle}
-          </h3>
-          <p className="text-sm text-slate-700 leading-relaxed">
-            {dict.ourStory.biblicalFoundationText}
-          </p>
+            <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+              Ketika Tuhan memanggil dan mempertemukan kami dalam kovenan pernikahan, kami tidak pernah menyangka bahwa perjalanan ini akan menjadi sekolah iman yang paling intensif dalam hidup kami. Di dalam pernikahan, kami melihat betapa ego manusia begitu rapuh, betapa mudahnya luka terjadi, dan betapa kita sangat membutuhkan anugerah salib Kristus setiap hari.
+            </p>
+
+            <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+              Melalui musim-musim pembentukan, pengampunan, pemulihan komunikasi, dan pembaruan komitmen, Tuhan menaruh sebuah beban kudus di dalam hati kami: <strong className="text-covenant-800 font-semibold">Pernikahan bukan sekadar tentang mengejar kebahagiaan dua orang. Pernikahan adalah mahakarya Allah yang dirancang untuk memantulkan gambar dan kemuliaan-Nya.</strong>
+            </p>
+
+            <div className="bg-gradient-to-r from-covenant-50 to-royalPurple-50/50 p-5 rounded-2xl border border-covenant-200/80">
+              <h3 className="font-serif font-bold text-sm sm:text-base text-covenant-900 mb-1.5">
+                {dict.ourStory.biblicalFoundationTitle}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                {dict.ourStory.biblicalFoundationText}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -131,7 +153,83 @@ export default async function OurStoryPage({
         </div>
       </div>
 
-      {/* 6. Ministry Declaration */}
+      {/* 6. Family & Generations Gallery */}
+      <div className="space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-covenant-100 to-royalPurple-100 border border-covenant-200 text-covenant-900 text-xs font-semibold uppercase tracking-wider">
+            <Users className="w-3.5 h-3.5 text-royalPurple-600" />
+            <span>{locale === 'id' ? 'Generasi Kovenan' : 'Covenant Generations'}</span>
+          </div>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">
+            {locale === 'id'
+              ? 'Mezbah Keluarga & Buah Kasih Kovenan'
+              : 'The Family Altar & Fruits of Covenant Love'}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            {locale === 'id'
+              ? 'Dari sebuah kovenan pernikahan yang dipegang teguh, Tuhan melahirkan keluarga yang saling mengasihi, mengampuni, dan memancarkan terang Kristus kepada generasi selanjutnya.'
+              : 'From a steadfast covenant marriage, God raises a family that loves unconditionally, walks in forgiveness, and reflects the light of Christ to the next generation.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <PhotoFrame
+            src="/images/family/family-full-maroon.jpg"
+            alt="Keluarga Boris Manurung"
+            caption={locale === 'id' ? 'Sehati, Sepikir, Satu Kasih' : 'One Heart, One Mind, One Love'}
+            subtitle={locale === 'id' ? 'Ketujuh anggota keluarga berakar dalam kasih Kristus.' : 'Seven family members anchored in the love of Christ.'}
+            badge={locale === 'id' ? 'Keluarga Utuh' : 'Whole Family'}
+            aspectRatio="landscape"
+          />
+
+          <PhotoFrame
+            src="/images/family/children-blue-purple.jpg"
+            alt="Kelima Anak Boris Manurung"
+            caption={locale === 'id' ? 'Generasi Penerus Kovenan' : 'Next Generation'}
+            subtitle={locale === 'id' ? 'Kelima anak bertumbuh menjadi garam dan terang di tengah zaman.' : 'Five children growing as salt and light in their generation.'}
+            badge="Next Gen"
+            aspectRatio="portrait"
+          />
+
+          <PhotoFrame
+            src="/images/family/boris-wife-blue-purple.jpg"
+            alt="Boris Manurung dan Istri"
+            caption={locale === 'id' ? 'Cinta yang Berakar pada Kovenan' : 'Love Rooted in Covenant'}
+            subtitle={locale === 'id' ? 'Bukan sekadar perasaan romansa, melainkan komitmen ilahi yang kekal.' : 'Not merely fleeting romance, but an enduring divine commitment.'}
+            badge="Imago Dei"
+            aspectRatio="portrait"
+          />
+
+          <PhotoFrame
+            src="/images/family/boris-and-sons.jpg"
+            alt="Boris Manurung bersama Tiga Putra"
+            caption={locale === 'id' ? 'Ayah & Ketiga Putra' : 'Father & Three Sons'}
+            subtitle={locale === 'id' ? 'Mendidik pria-pria ilahi yang memimpin dengan hikmat dan kerendahan hati.' : 'Raising godly men who lead with wisdom and humility.'}
+            badge="Father & Sons"
+            aspectRatio="landscape"
+          />
+
+          <PhotoFrame
+            src="/images/family/mama-and-daughters.jpg"
+            alt="Mama bersama Kedua Putri"
+            caption={locale === 'id' ? 'Ibu & Kedua Putri' : 'Mother & Two Daughters'}
+            subtitle={locale === 'id' ? 'Mewariskan keanggunan, doa, dan keteladanan hati seorang ibu.' : 'Imparting grace, prayer, and a mother’s faithful heart.'}
+            badge="Mother & Daughters"
+            aspectRatio="portrait"
+          />
+
+          <PhotoFrame
+            src="/images/family/tassel-birthday.jpg"
+            alt="Perayaan Ulang Tahun Tassel"
+            caption={locale === 'id' ? 'Merayakan Musim Pertumbuhan' : 'Celebrating Life Milestones'}
+            subtitle={locale === 'id' ? 'Mengucap syukur atas setiap pertambahan usia dan pemeliharaan Allah.' : 'Giving thanks for every year of growth and divine providence.'}
+            badge="Milestones"
+            aspectRatio="landscape"
+          />
+        </div>
+      </div>
+
+      {/* 7. Ministry Declaration */}
       <div className="bg-gradient-to-br from-covenant-900 to-navy-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-6">
         <span className="text-xs font-semibold tracking-widest uppercase text-covenant-300">
           Ikrar Bersama / Covenant Commitment

@@ -2,6 +2,7 @@ import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import Link from 'next/link';
 import Image from 'next/image';
+import PhotoFrame from '@/components/PhotoFrame';
 import {
   Heart,
   Shield,
@@ -74,8 +75,8 @@ export default async function MarriageFamilyPage({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
       {/* 1. Header Section */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-covenant-100 border border-covenant-300 text-covenant-900 text-xs font-semibold uppercase tracking-wider">
-          <Sparkles className="w-3.5 h-3.5 text-covenant-600" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-covenant-100 to-royalPurple-100 border border-covenant-200 text-covenant-900 text-xs font-semibold uppercase tracking-wider shadow-xs">
+          <Sparkles className="w-3.5 h-3.5 text-royalPurple-600" />
           <span>{dict.common.tagline}</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
@@ -84,6 +85,48 @@ export default async function MarriageFamilyPage({
         <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
           {dict.marriageFamily.subtitle}
         </p>
+      </div>
+
+      {/* Real Covenant Life Showcase */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-xs">
+        <div className="lg:col-span-5">
+          <PhotoFrame
+            src="/images/family/boris-wife-blue-purple.jpg"
+            alt="Boris Manurung & Istri"
+            caption={locale === 'id' ? 'Boris & Istri — 25 Tahun Kasih Kovenan' : 'Boris & Wife — 25 Years of Covenant Love'}
+            subtitle={
+              locale === 'id'
+                ? 'Membuktikan bahwa janji kovenan ilahi mampu melewati badai dan bertumbuh dalam anugerah.'
+                : 'Proving that God’s holy covenant weathers life’s storms and matures in grace.'
+            }
+            badge={locale === 'id' ? 'Kesaksian Hidup' : 'Living Testimony'}
+            aspectRatio="portrait"
+          />
+        </div>
+        <div className="lg:col-span-7 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-covenant-100 to-royalPurple-100 border border-covenant-200 text-covenant-900 text-xs font-semibold">
+            <Heart className="w-3.5 h-3.5 text-royalPurple-600 fill-current" />
+            <span>{locale === 'id' ? 'Bukan Sekadar Teori, Tapi Perjalanan Nyata' : 'Not Merely Theory, but a Lived Reality'}</span>
+          </div>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
+            {locale === 'id'
+              ? 'Pernikahan yang Memancarkan Karakter Allah'
+              : 'Marriage that Reflects the Character of God'}
+          </h2>
+          <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+            {locale === 'id'
+              ? 'Ketika kita berjanji di hadapan altar Allah, kita tidak menandatangani kontrak kerja sama bisnis yang bisa dibatalkan saat salah satu pihak mengecewakan. Kovenan adalah janji kudus di hadapan Allah yang bersedia mengasihi seperti Kristus mengasihi jemaat-Nya—mengorbankan diri, memulihkan yang terluka, dan memilih pengampunan setiap hari.'
+              : 'When we take vows before God’s altar, we are not signing a commercial contract dissolvable when someone disappoints. A covenant is a sacred oath before God to love as Christ loved the church—sacrificing self, binding up wounds, and choosing forgiveness daily.'}
+          </p>
+          <div className="pt-2 flex flex-wrap gap-3">
+            <div className="px-4 py-2.5 rounded-xl bg-covenant-50 border border-covenant-200/80 text-covenant-900 text-xs font-medium">
+              ✨ <strong>Maleakhi 2:14</strong> — Pasangan kovenan hidupmu
+            </div>
+            <div className="px-4 py-2.5 rounded-xl bg-royalPurple-50 border border-royalPurple-200/80 text-royalPurple-900 text-xs font-medium">
+              🕊️ <strong>Efesus 5:31–32</strong> — Misteri kasih Kristus
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 2. Covenant vs Contract Comparison */}

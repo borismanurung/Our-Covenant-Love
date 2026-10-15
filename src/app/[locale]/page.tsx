@@ -7,6 +7,8 @@ import { getLatestBorisYouTubeVideos } from '@/services/youtube.service';
 import AudioPlayer from '@/components/AudioPlayer';
 import VideoPlayer from '@/components/VideoPlayer';
 import YouTubeShowcase from '@/components/YouTubeShowcase';
+import PhotoFrame from '@/components/PhotoFrame';
+import FamilyShowcase from '@/components/FamilyShowcase';
 import {
   Heart,
   ArrowRight,
@@ -98,26 +100,36 @@ export default async function HomePage({
               </div>
             </div>
 
-            {/* Right Visual / Logo Display */}
+            {/* Right Visual / Founders 25th Marriage Photo */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-72 sm:w-88 md:w-96 aspect-square rounded-3xl p-6 bg-gradient-to-tr from-covenant-100 to-white border-2 border-covenant-200/80 shadow-2xl flex flex-col items-center justify-center text-center">
-                <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 bg-covenant-900">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Our Covenant Love"
-                    fill
-                    className="object-contain p-2"
-                    priority
-                  />
-                </div>
-                <div className="font-serif font-bold text-slate-900 text-lg">
-                  Our Covenant Love
-                </div>
-                <div className="text-xs font-semibold uppercase tracking-wider text-covenant-700 mt-1">
-                  Ministry & Family Showcase
-                </div>
-                <div className="text-[11px] text-slate-500 mt-1 italic">
-                  Reflect His Image &bull; Reveal His Glory
+              <div className="relative w-full max-w-md">
+                <PhotoFrame
+                  src="/images/family/boris-wife-25years.jpg"
+                  alt="Boris Manurung & Istri - 25 Tahun Kasih Kovenan"
+                  caption={locale === 'id' ? 'Boris Manurung & Istri' : 'Boris Manurung & Wife'}
+                  subtitle={
+                    locale === 'id'
+                      ? '25 Tahun Pernikahan Kovenan: "we’ve been married for 25 years"'
+                      : '25 Years of Covenant Marriage: "we’ve been married for 25 years"'
+                  }
+                  badge={locale === 'id' ? '25 Tahun Kasih Kovenan' : '25 Years of Covenant Love'}
+                  aspectRatio="landscape"
+                  priority
+                />
+
+                {/* Floating Micro-Badge */}
+                <div className="absolute -bottom-4 -left-3 sm:-left-4 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200/90 shadow-lg flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-covenant-600 via-indigo-600 to-royalPurple-600 flex items-center justify-center text-white font-bold text-xs shadow-xs">
+                    <Heart className="w-4 h-4 fill-current" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xs font-bold text-slate-900 leading-tight">
+                      {locale === 'id' ? 'Keluarga & 5 Anak' : 'Family & 5 Children'}
+                    </div>
+                    <div className="text-[10px] text-covenant-700 font-semibold mt-0.5">
+                      {locale === 'id' ? 'Mezbah Rumah Tangga Kristen' : 'Christian Family Altar'}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,7 +171,10 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* 3. FEATURED ARTICLES & TEACHINGS */}
+      {/* 3. FOUNDERS & FAMILY SHOWCASE (25 YEARS OF COVENANT LOVE) */}
+      <FamilyShowcase locale={locale} />
+
+      {/* 4. FEATURED ARTICLES & TEACHINGS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
