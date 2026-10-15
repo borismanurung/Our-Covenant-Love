@@ -136,7 +136,17 @@ export default function PhotoFrame({
             className="relative max-w-4xl w-full max-h-[90vh] rounded-3xl p-2 bg-gradient-to-tr from-slate-300 via-slate-100 to-slate-200 border border-slate-300/80 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-0.5 rounded-[22px] bg-gradient-to-tr from-covenant-500 via-indigo-500 to-royalPurple-500">
+            <div className="p-0.5 rounded-[22px] bg-gradient-to-tr from-covenant-500 via-indigo-500 to-royalPurple-500 relative">
+              {/* Floating Close Button */}
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 z-30 p-2 rounded-full bg-navy-950/80 hover:bg-navy-900 text-white backdrop-blur-md transition-transform hover:scale-105 active:scale-95 shadow-lg border border-white/20"
+                aria-label="Tutup"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
               <div className="p-1 sm:p-2 bg-white rounded-[20px] overflow-hidden">
                 <div className="relative w-full h-[65vh] sm:h-[75vh] rounded-[16px] overflow-hidden bg-slate-900">
                   <Image
@@ -148,8 +158,8 @@ export default function PhotoFrame({
                   />
                 </div>
 
-                <div className="p-4 sm:p-5 flex items-center justify-between gap-4 border-t border-slate-100">
-                  <div>
+                {(caption || subtitle) && (
+                  <div className="p-4 sm:p-5 border-t border-slate-100">
                     {caption && (
                       <h3 className="font-serif font-bold text-lg text-slate-900">
                         {caption}
@@ -161,16 +171,7 @@ export default function PhotoFrame({
                       </p>
                     )}
                   </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
-                    aria-label="Tutup"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
+                )}
               </div>
             </div>
           </div>

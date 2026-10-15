@@ -1,6 +1,7 @@
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import ContactForm from '@/components/ContactForm';
+import PhotoFrame from '@/components/PhotoFrame';
 import {
   Mail,
   Phone,
@@ -102,6 +103,15 @@ export default async function ContactPage({
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Welcoming Nuance Photo */}
+          <div className="w-full">
+            <PhotoFrame
+              src="/images/family/boris-wife-25years.jpg"
+              alt="Our Covenant Love Ministry"
+              aspectRatio="landscape"
+            />
           </div>
 
           {/* Ministry Pastoral Promise */}

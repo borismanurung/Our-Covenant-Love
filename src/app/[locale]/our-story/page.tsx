@@ -33,14 +33,7 @@ export default async function OurStoryPage({
       <div className="relative">
         <PhotoFrame
           src="/images/family/family-full-studio.jpg"
-          alt="Keluarga Besar Boris Manurung - Our Covenant Love Ministry"
-          caption={locale === 'id' ? 'Keluarga Besar Boris Manurung & Kelima Anak' : 'The Boris Manurung Family & Five Children'}
-          subtitle={
-            locale === 'id'
-              ? 'Mezbah keluarga di mana hadirat Allah dialami, karakter Kristus dibentuk, dan generasi dimuridkan.'
-              : 'The family altar where God’s presence is encountered, Christ’s character is forged, and generations are discipled.'
-          }
-          badge={locale === 'id' ? 'Keluarga Kovenan' : 'Covenant Family'}
+          alt="Keluarga Besar Boris Manurung"
           aspectRatio="wide"
           priority
         />
@@ -52,14 +45,7 @@ export default async function OurStoryPage({
           <div className="lg:col-span-5">
             <PhotoFrame
               src="/images/family/boris-wife-25years.jpg"
-              alt="Boris Manurung & Istri - 25 Tahun Kasih Kovenan"
-              caption={locale === 'id' ? 'Boris & Istri' : 'Boris & Wife'}
-              subtitle={
-                locale === 'id'
-                  ? '"We’ve been married for 25 years" — Kesetiaan kovenan yang dipelihara oleh anugerah Kristus.'
-                  : '"We’ve been married for 25 years" — Covenant faithfulness sustained by the grace of Christ.'
-              }
-              badge={locale === 'id' ? '25 Tahun Pernikahan' : '25 Years of Marriage'}
+              alt="Boris Manurung & Istri"
               aspectRatio="landscape"
             />
           </div>
@@ -176,54 +162,36 @@ export default async function OurStoryPage({
           <PhotoFrame
             src="/images/family/family-full-maroon.jpg"
             alt="Keluarga Boris Manurung"
-            caption={locale === 'id' ? 'Sehati, Sepikir, Satu Kasih' : 'One Heart, One Mind, One Love'}
-            subtitle={locale === 'id' ? 'Ketujuh anggota keluarga berakar dalam kasih Kristus.' : 'Seven family members anchored in the love of Christ.'}
-            badge={locale === 'id' ? 'Keluarga Utuh' : 'Whole Family'}
             aspectRatio="landscape"
           />
 
           <PhotoFrame
             src="/images/family/children-blue-purple.jpg"
             alt="Kelima Anak Boris Manurung"
-            caption={locale === 'id' ? 'Generasi Penerus Kovenan' : 'Next Generation'}
-            subtitle={locale === 'id' ? 'Kelima anak bertumbuh menjadi garam dan terang di tengah zaman.' : 'Five children growing as salt and light in their generation.'}
-            badge="Next Gen"
             aspectRatio="portrait"
           />
 
           <PhotoFrame
             src="/images/family/boris-wife-blue-purple.jpg"
             alt="Boris Manurung dan Istri"
-            caption={locale === 'id' ? 'Cinta yang Berakar pada Kovenan' : 'Love Rooted in Covenant'}
-            subtitle={locale === 'id' ? 'Bukan sekadar perasaan romansa, melainkan komitmen ilahi yang kekal.' : 'Not merely fleeting romance, but an enduring divine commitment.'}
-            badge="Imago Dei"
             aspectRatio="portrait"
           />
 
           <PhotoFrame
             src="/images/family/boris-and-sons.jpg"
             alt="Boris Manurung bersama Tiga Putra"
-            caption={locale === 'id' ? 'Ayah & Ketiga Putra' : 'Father & Three Sons'}
-            subtitle={locale === 'id' ? 'Mendidik pria-pria ilahi yang memimpin dengan hikmat dan kerendahan hati.' : 'Raising godly men who lead with wisdom and humility.'}
-            badge="Father & Sons"
             aspectRatio="landscape"
           />
 
           <PhotoFrame
             src="/images/family/mama-and-daughters.jpg"
             alt="Mama bersama Kedua Putri"
-            caption={locale === 'id' ? 'Ibu & Kedua Putri' : 'Mother & Two Daughters'}
-            subtitle={locale === 'id' ? 'Mewariskan keanggunan, doa, dan keteladanan hati seorang ibu.' : 'Imparting grace, prayer, and a mother’s faithful heart.'}
-            badge="Mother & Daughters"
             aspectRatio="portrait"
           />
 
           <PhotoFrame
             src="/images/family/tassel-birthday.jpg"
             alt="Perayaan Ulang Tahun Tassel"
-            caption={locale === 'id' ? 'Merayakan Musim Pertumbuhan' : 'Celebrating Life Milestones'}
-            subtitle={locale === 'id' ? 'Mengucap syukur atas setiap pertambahan usia dan pemeliharaan Allah.' : 'Giving thanks for every year of growth and divine providence.'}
-            badge="Milestones"
             aspectRatio="landscape"
           />
         </div>

@@ -93,13 +93,6 @@ export default async function MarriageFamilyPage({
           <PhotoFrame
             src="/images/family/boris-wife-blue-purple.jpg"
             alt="Boris Manurung & Istri"
-            caption={locale === 'id' ? 'Boris & Istri — 25 Tahun Kasih Kovenan' : 'Boris & Wife — 25 Years of Covenant Love'}
-            subtitle={
-              locale === 'id'
-                ? 'Membuktikan bahwa janji kovenan ilahi mampu melewati badai dan bertumbuh dalam anugerah.'
-                : 'Proving that God’s holy covenant weathers life’s storms and matures in grace.'
-            }
-            badge={locale === 'id' ? 'Kesaksian Hidup' : 'Living Testimony'}
             aspectRatio="portrait"
           />
         </div>
@@ -223,6 +216,15 @@ export default async function MarriageFamilyPage({
           })}
         </div>
       </section>
+
+      {/* Ambient Family Nuance Photo */}
+      <div className="relative">
+        <PhotoFrame
+          src="/images/family/family-full-studio.jpg"
+          alt="Keluarga Kovenan"
+          aspectRatio="wide"
+        />
+      </div>
 
       {/* 4. Practical Roadmap for Couples */}
       <section className="bg-covenant-50 border border-covenant-200 rounded-3xl p-8 sm:p-12 space-y-8">

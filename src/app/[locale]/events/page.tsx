@@ -3,6 +3,7 @@ import { getDictionary } from '@/i18n/getDictionary';
 import { getContentList } from '@/services/content.service';
 import Link from 'next/link';
 import { Calendar, MapPin, Clock, ArrowRight, Sparkles, Church, Users, ExternalLink } from 'lucide-react';
+import PhotoFrame from '@/components/PhotoFrame';
 
 export default async function EventsPage({
   params,
@@ -20,18 +21,31 @@ export default async function EventsPage({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
-      {/* Header */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-covenant-100 border border-covenant-300 text-covenant-900 text-xs font-semibold uppercase tracking-wider">
-          <Calendar className="w-3.5 h-3.5 text-covenant-600" />
-          <span>{locale === 'id' ? 'Konferensi, Retret & Lokakarya' : 'Conferences, Retreats & Workshops'}</span>
+      {/* Header with Fellowship Nuance Visual */}
+      <div className="bg-gradient-to-b from-covenant-50/70 via-white to-slate-50/50 rounded-3xl p-6 sm:p-10 border border-covenant-200/80 shadow-xs">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-8 space-y-4 text-center lg:text-left">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-covenant-100 border border-covenant-300 text-covenant-900 text-xs font-semibold uppercase tracking-wider">
+              <Calendar className="w-3.5 h-3.5 text-covenant-600" />
+              <span>{locale === 'id' ? 'Konferensi, Retret & Lokakarya' : 'Conferences, Retreats & Workshops'}</span>
+            </div>
+            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
+              {dict.events.title}
+            </h1>
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
+              {dict.events.subtitle}
+            </p>
+          </div>
+          <div className="lg:col-span-4 flex justify-center">
+            <div className="w-full max-w-xs">
+              <PhotoFrame
+                src="/images/family/tassel-birthday.jpg"
+                alt="Persekutuan & Acara Keluarga"
+                aspectRatio="landscape"
+              />
+            </div>
+          </div>
         </div>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
-          {dict.events.title}
-        </h1>
-        <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-          {dict.events.subtitle}
-        </p>
       </div>
 
       {/* Events List */}
