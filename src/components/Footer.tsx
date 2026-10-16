@@ -32,7 +32,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-covenant-500/50 bg-covenant-950">
+              <div className="relative w-11 h-11 rounded-full overflow-hidden border border-covenant-500/50 bg-covenant-950 flex-shrink-0">
                 <Image
                   src="/images/ocl-logo.jpg"
                   alt={locale === 'id' ? 'Logo Our Covenant Love' : 'Our Covenant Love'}
@@ -40,9 +40,14 @@ export default function Footer({ locale, dict }: FooterProps) {
                   className="object-cover"
                 />
               </div>
-              <span className="font-serif font-bold text-xl text-white">
-                Our Covenant Love
-              </span>
+              <div className="flex flex-col justify-center">
+                <span className="font-serif font-bold text-xl text-white whitespace-nowrap leading-tight">
+                  Our Covenant Love
+                </span>
+                <span className="text-[11px] font-medium tracking-wide text-covenant-400 whitespace-nowrap">
+                  {locale === 'id' ? 'Memancarkan Kemuliaan Allah' : "Reflecting God's glory"}
+                </span>
+              </div>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
               {dict.footer.aboutText}

@@ -49,9 +49,9 @@ export default function Navbar({ locale, dict }: NavbarProps) {
           {/* Logo & Brand */}
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-covenant-500 rounded-lg p-1"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-covenant-500 rounded-lg p-1 flex-shrink-0"
           >
-            <div className="relative w-11 h-11 rounded-full overflow-hidden border border-covenant-300 shadow-xs bg-covenant-100 flex-shrink-0">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-covenant-300 shadow-xs bg-covenant-100 flex-shrink-0">
               <Image
                 src="/images/ocl-logo.jpg"
                 alt={locale === 'id' ? 'Logo Our Covenant Love' : 'Our Covenant Love Logo'}
@@ -60,23 +60,23 @@ export default function Navbar({ locale, dict }: NavbarProps) {
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg sm:text-xl tracking-tight text-slate-900 group-hover:text-covenant-800 transition-colors">
+            <div className="flex flex-col justify-center min-w-0">
+              <span className="font-serif font-bold text-base sm:text-lg lg:text-xl tracking-tight text-slate-900 group-hover:text-covenant-800 transition-colors whitespace-nowrap leading-tight">
                 Our Covenant Love
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium tracking-wider text-covenant-700 uppercase -mt-0.5">
-                {locale === 'id' ? 'Memancarkan Kemuliaan Allah' : "Reflecting God's Glory"}
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-wider text-covenant-700 whitespace-nowrap">
+                {locale === 'id' ? 'Memancarkan Kemuliaan Allah' : "Reflecting God's glory"}
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1" aria-label={locale === 'id' ? 'Navigasi Utama' : 'Main Navigation'}>
+          <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 flex-shrink" aria-label={locale === 'id' ? 'Navigasi Utama' : 'Main Navigation'}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors ${
+                className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
                   isActive(link.href)
                     ? 'text-covenant-800 bg-covenant-100/70 font-semibold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-covenant-50'
