@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
-import { getLatestBorisYouTubeVideos } from '@/services/youtube.service';
+import { getHomeCategorizedYouTubeVideos } from '@/services/youtube.service';
 import AudioPlayer from '@/components/AudioPlayer';
 import YouTubeShowcase from '@/components/YouTubeShowcase';
 import PhotoFrame from '@/components/PhotoFrame';
@@ -26,8 +26,8 @@ export default async function HomePage({
   const { locale } = params;
   const dict = getDictionary(locale);
 
-  // Fetch YouTube channel latest uploads
-  const youtubeVideos = await getLatestBorisYouTubeVideos();
+  // Fetch YouTube channel latest categorized uploads (Together & Solo)
+  const categorizedVideos = await getHomeCategorizedYouTubeVideos();
 
   const featuredSong = {
     title: 'Good Guy (by Boris Manurung)',
@@ -199,8 +199,12 @@ export default async function HomePage({
           </div>
         </div>
 
-        {/* YouTube Interactive Showcase Component (Running Video + 3 Last Uploads) */}
-        <YouTubeShowcase locale={locale} videos={youtubeVideos} />
+        {/* YouTube Interactive Showcase Component (Dual Categories: Together & Solo with Narrative) */}
+        <YouTubeShowcase
+          locale={locale}
+          together={categorizedVideos.together}
+          solo={categorizedVideos.solo}
+        />
       </section>
 
       {/* 3. FEATURED AUDIO PREVIEW: "Good Guy (by Boris Manurung)" */}
