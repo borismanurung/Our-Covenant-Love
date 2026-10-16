@@ -40,8 +40,9 @@ export default async function MusicPage({
             <div className="w-full max-w-xs">
               <PhotoFrame
                 src="/images/family/children-blue-purple.jpg"
-                alt="Pujian & Penyembahan Keluarga"
+                alt={locale === 'id' ? 'Pujian & Penyembahan Keluarga' : 'Family Praise & Worship'}
                 aspectRatio="portrait"
+                locale={locale}
               />
             </div>
           </div>
@@ -76,12 +77,12 @@ export default async function MusicPage({
                   <div className="flex items-center justify-between">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-covenant-100 text-covenant-800 text-xs font-semibold">
                       <Heart className="w-3.5 h-3.5 text-covenant-600 fill-current" />
-                      <span>Original Worship</span>
+                      <span>{locale === 'id' ? 'Pujian Orisinal' : 'Original Worship'}</span>
                     </div>
                     {item.isFeatured && (
                       <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md">
                         <Sparkles className="w-3 h-3 text-amber-600" />
-                        <span>Featured</span>
+                        <span>{locale === 'id' ? 'Unggulan' : 'Featured'}</span>
                       </span>
                     )}
                   </div>
@@ -114,7 +115,7 @@ export default async function MusicPage({
                     {item.chordSheet && (
                       <span className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">
                         <FileText className="w-3 h-3 text-slate-500" />
-                        <span>Chord Chart</span>
+                        <span>{locale === 'id' ? 'Bagan Akor' : 'Chord Chart'}</span>
                       </span>
                     )}
                   </div>

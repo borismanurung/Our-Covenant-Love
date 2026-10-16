@@ -14,7 +14,7 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = params;
   const item = await getContentBySlug(locale, slug);
-  if (!item) return { title: 'Sermon Not Found' };
+  if (!item) return { title: locale === 'id' ? 'Khotbah Tidak Ditemukan | Our Covenant Love' : 'Sermon Not Found | Our Covenant Love' };
 
   return {
     title: `${item.translation.title} | Our Covenant Love`,
@@ -63,7 +63,9 @@ export default async function SermonDetailPage({
         <div className="w-full aspect-video rounded-2xl bg-slate-900 flex items-center justify-center text-slate-400">
           <div className="text-center space-y-2">
             <Video className="w-12 h-12 mx-auto text-slate-600" />
-            <p className="text-sm">Video link not available</p>
+            <p className="text-sm">
+              {locale === 'id' ? 'Tautan video belum tersedia' : 'Video link not available'}
+            </p>
           </div>
         </div>
       )}
@@ -79,7 +81,7 @@ export default async function SermonDetailPage({
           {item.isFeatured && (
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
               <Sparkles className="w-3 h-3 text-amber-600" />
-              <span>Featured Teaching</span>
+              <span>{locale === 'id' ? 'Pengajaran Unggulan' : 'Featured Teaching'}</span>
             </span>
           )}
         </div>
@@ -130,7 +132,7 @@ export default async function SermonDetailPage({
 
       {/* External Links & Share */}
       <div className="pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
-        <ShareButtons title={translation.title} />
+        <ShareButtons title={translation.title} locale={locale} />
 
         {item.videoUrl && (
           <a

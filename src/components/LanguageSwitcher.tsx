@@ -42,6 +42,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: Loc
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="true"
+        aria-label={currentLocale === 'id' ? 'Ganti bahasa' : 'Switch language'}
         className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-full shadow-sm hover:bg-slate-50 hover:text-covenant-800 transition-colors focus:ring-2 focus:ring-covenant-500 focus:outline-none"
       >
         <Globe className="w-3.5 h-3.5 text-covenant-600" />
@@ -58,7 +59,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: Loc
           />
           <div className="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-xl ring-1 ring-black ring-opacity-5 z-50 py-1.5 overflow-hidden">
             <div className="px-3 py-1.5 border-b border-slate-100 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-              Pilih Bahasa / Select Language
+              {currentLocale === 'id' ? 'Pilih Bahasa' : 'Select Language'}
             </div>
             {locales.map((loc) => (
               <button

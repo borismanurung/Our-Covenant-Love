@@ -153,9 +153,15 @@ export default async function HomePage({
 
               {/* Key Scripture Anchors */}
               <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-covenant-800 font-mono">
-                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">Kejadian 1:26–28</span>
-                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">Yohanes 17:21–23</span>
-                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">Efesus 5:31–32</span>
+                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">
+                  {locale === 'id' ? 'Kejadian 1:26–28' : 'Genesis 1:26–28'}
+                </span>
+                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">
+                  {locale === 'id' ? 'Yohanes 17:21–23' : 'John 17:21–23'}
+                </span>
+                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">
+                  {locale === 'id' ? 'Efesus 5:31–32' : 'Ephesians 5:31–32'}
+                </span>
               </div>
             </div>
 
@@ -164,8 +170,9 @@ export default async function HomePage({
               <div className="w-full max-w-sm sm:max-w-md">
                 <PhotoFrame
                   src="/images/family/berdua.jpeg"
-                  alt="Boris Manurung dan Istri"
+                  alt={locale === 'id' ? 'Boris Manurung dan Istri' : 'Boris Manurung and Wife'}
                   aspectRatio="portrait"
+                  locale={locale}
                   priority
                 />
               </div>
@@ -227,7 +234,7 @@ export default async function HomePage({
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-7 space-y-3">
                 <span className="text-xs font-semibold uppercase tracking-wider text-covenant-700 bg-covenant-100 px-2.5 py-1 rounded-md">
-                  Original Worship Song
+                  {locale === 'id' ? 'Lagu Pujian Orisinal' : 'Original Worship Song'}
                 </span>
                 <h3 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900">
                   {featuredSong.title}
@@ -252,6 +259,7 @@ export default async function HomePage({
                 <AudioPlayer
                   src={featuredSong.audioUrl}
                   title={featuredSong.title}
+                  locale={locale}
                 />
               </div>
             </div>

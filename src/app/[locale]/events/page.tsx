@@ -40,8 +40,9 @@ export default async function EventsPage({
             <div className="w-full max-w-xs">
               <PhotoFrame
                 src="/images/family/tassel-birthday.jpg"
-                alt="Persekutuan & Acara Keluarga"
+                alt={locale === 'id' ? 'Persekutuan & Acara Keluarga' : 'Family Fellowship & Events'}
                 aspectRatio="landscape"
+                locale={locale}
               />
             </div>
           </div>
@@ -93,7 +94,7 @@ export default async function EventsPage({
                       {item.isFeatured && (
                         <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md">
                           <Sparkles className="w-3 h-3 text-amber-600" />
-                          <span>Featured</span>
+                          <span>{locale === 'id' ? 'Unggulan' : 'Featured'}</span>
                         </span>
                       )}
                     </div>

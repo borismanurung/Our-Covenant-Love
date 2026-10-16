@@ -4,6 +4,7 @@ import {
   getTogetherYouTubeVideos,
   getSoloYouTubeVideos,
   YOUTUBE_CHANNEL,
+  YouTubeVideoItem,
 } from '@/services/youtube.service';
 import { getContentList } from '@/services/content.service';
 import Link from 'next/link';
@@ -38,12 +39,19 @@ export default async function SermonsPage({
   const allTogether = await getTogetherYouTubeVideos();
   const allSolo = await getSoloYouTubeVideos();
 
+  // Helper functions for localized video metadata
+  const getTitle = (v: YouTubeVideoItem) => (!isIndo && v.titleEn ? v.titleEn : v.title);
+  const getCategory = (v: YouTubeVideoItem) => (!isIndo && v.categoryEn ? v.categoryEn : v.category);
+  const getSpeaker = (v: YouTubeVideoItem) => (!isIndo && v.speakerNameEn ? v.speakerNameEn : v.speakerName);
+
   // Filter based on search query if present
-  const filterByQuery = (v: (typeof allTogether)[0]) => {
+  const filterByQuery = (v: YouTubeVideoItem) => {
     if (!searchQuery) return true;
     const q = searchQuery.toLowerCase();
-    const matchTitle = v.title.toLowerCase().includes(q);
-    const matchCategory = v.category.toLowerCase().includes(q);
+    const matchTitle =
+      v.title.toLowerCase().includes(q) || Boolean(v.titleEn && v.titleEn.toLowerCase().includes(q));
+    const matchCategory =
+      v.category.toLowerCase().includes(q) || Boolean(v.categoryEn && v.categoryEn.toLowerCase().includes(q));
     const matchNarrative =
       (v.narrative?.id && v.narrative.id.toLowerCase().includes(q)) ||
       (v.narrative?.en && v.narrative.en.toLowerCase().includes(q));
@@ -73,7 +81,7 @@ export default async function SermonsPage({
             </div>
 
             <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
-              {isIndo ? 'Khotbah & Video Pengajaran' : 'Sermons & Video Teachings'}
+              {dict.sermons.title}
             </h1>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
@@ -110,8 +118,9 @@ export default async function SermonsPage({
             <div className="w-full max-w-xs">
               <PhotoFrame
                 src="/images/family/boris-wife-blue-purple.jpg"
-                alt="Ps. Boris Manurung dan Istri"
+                alt={isIndo ? 'Ps. Boris Manurung dan Istri' : 'Ps. Boris Manurung and Wife'}
                 aspectRatio="portrait"
+                locale={locale}
                 priority
               />
             </div>
@@ -202,71 +211,77 @@ export default async function SermonsPage({
             </div>
           ) : (
             <div className="space-y-6">
-              {togetherVideos.map((video, idx) => (
-                <div
-                  key={video.id}
-                  className="bg-white rounded-2xl border border-covenant-200/90 overflow-hidden shadow-xs hover:shadow-md hover:border-covenant-400 transition-all flex flex-col justify-between"
-                >
-                  {/* Embedded Video Player */}
-                  <div className="relative w-full aspect-video bg-black">
-                    <iframe
-                      src={`${video.embedUrl}?autoplay=0&rel=0`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full border-0"
-                    />
-                  </div>
+              {togetherVideos.map((video, idx) => {
+                const videoTitle = getTitle(video);
+                const videoCategory = getCategory(video);
+                const videoSpeaker = getSpeaker(video);
 
-                  {/* Video Meta & Title */}
-                  <div className="p-5 space-y-3">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-covenant-700 bg-covenant-100 px-2.5 py-0.5 rounded-md font-semibold">
-                        #{idx + 1} &bull; {video.category}
-                      </span>
-                      <span className="text-xs text-slate-500 font-medium">
-                        {video.speakerName}
-                      </span>
+                return (
+                  <div
+                    key={video.id}
+                    className="bg-white rounded-2xl border border-covenant-200/90 overflow-hidden shadow-xs hover:shadow-md hover:border-covenant-400 transition-all flex flex-col justify-between"
+                  >
+                    {/* Embedded Video Player */}
+                    <div className="relative w-full aspect-video bg-black">
+                      <iframe
+                        src={`${video.embedUrl}?autoplay=0&rel=0`}
+                        title={videoTitle}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full border-0"
+                      />
                     </div>
 
-                    <h3 className="font-serif font-bold text-base sm:text-lg text-slate-900 leading-snug">
-                      <a
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-covenant-700 transition-colors"
-                      >
-                        {video.title}
-                      </a>
-                    </h3>
+                    {/* Video Meta & Title */}
+                    <div className="p-5 space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-covenant-700 bg-covenant-100 px-2.5 py-0.5 rounded-md font-semibold">
+                          #{idx + 1} &bull; {videoCategory}
+                        </span>
+                        <span className="text-xs text-slate-500 font-medium">
+                          {videoSpeaker}
+                        </span>
+                      </div>
 
-                    {/* Shared Insight / Narrative if present */}
-                    {video.narrative && (
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-slate-50 p-3 rounded-xl border border-slate-100 font-sans italic">
-                        &ldquo;{video.narrative[locale] || video.narrative.id}&rdquo;
-                      </p>
-                    )}
+                      <h3 className="font-serif font-bold text-base sm:text-lg text-slate-900 leading-snug">
+                        <a
+                          href={video.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-covenant-700 transition-colors"
+                        >
+                          {videoTitle}
+                        </a>
+                      </h3>
 
-                    {/* Direct YouTube Link Button */}
-                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
-                      <a
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-covenant-700 hover:text-covenant-900 group"
-                      >
-                        <Play className="w-3.5 h-3.5 fill-current text-rose-600" />
-                        <span>{isIndo ? 'Buka & Tonton di YouTube' : 'Open & Watch on YouTube'}</span>
-                        <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                      </a>
+                      {/* Shared Insight / Narrative if present */}
+                      {video.narrative && (
+                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 bg-slate-50 p-3 rounded-xl border border-slate-100 font-sans italic">
+                          &ldquo;{video.narrative[locale] || video.narrative.id}&rdquo;
+                        </p>
+                      )}
 
-                      <span className="text-[11px] text-slate-400 font-mono">
-                        {video.isShort ? 'YouTube Shorts' : 'Full Video'}
-                      </span>
+                      {/* Direct YouTube Link Button */}
+                      <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                        <a
+                          href={video.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-covenant-700 hover:text-covenant-900 group"
+                        >
+                          <Play className="w-3.5 h-3.5 fill-current text-rose-600" />
+                          <span>{isIndo ? 'Buka & Tonton di YouTube' : 'Open & Watch on YouTube'}</span>
+                          <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+
+                        <span className="text-[11px] text-slate-400 font-mono">
+                          {video.isShort ? 'YouTube Shorts' : (isIndo ? 'Video Penuh' : 'Full Video')}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
@@ -309,87 +324,93 @@ export default async function SermonsPage({
             </div>
           ) : (
             <div className="space-y-6">
-              {soloVideos.map((video, idx) => (
-                <div
-                  key={video.id}
-                  className="bg-white rounded-2xl border border-royalPurple-200/90 overflow-hidden shadow-xs hover:shadow-md hover:border-royalPurple-400 transition-all flex flex-col justify-between"
-                >
-                  {/* Embedded Video Player */}
-                  <div className="relative w-full aspect-video bg-black">
-                    <iframe
-                      src={`${video.embedUrl}?autoplay=0&rel=0`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full border-0"
-                    />
-                  </div>
+              {soloVideos.map((video, idx) => {
+                const videoTitle = getTitle(video);
+                const videoCategory = getCategory(video);
+                const videoSpeaker = getSpeaker(video);
 
-                  {/* Video Meta & Title */}
-                  <div className="p-5 space-y-4">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-royalPurple-700 bg-royalPurple-100 px-2.5 py-0.5 rounded-md font-semibold">
-                        #{idx + 1} &bull; {video.category}
-                      </span>
-                      <span className="text-xs text-slate-500 font-medium">
-                        {video.speakerName}
-                      </span>
+                return (
+                  <div
+                    key={video.id}
+                    className="bg-white rounded-2xl border border-royalPurple-200/90 overflow-hidden shadow-xs hover:shadow-md hover:border-royalPurple-400 transition-all flex flex-col justify-between"
+                  >
+                    {/* Embedded Video Player */}
+                    <div className="relative w-full aspect-video bg-black">
+                      <iframe
+                        src={`${video.embedUrl}?autoplay=0&rel=0`}
+                        title={videoTitle}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full border-0"
+                      />
                     </div>
 
-                    <h3 className="font-serif font-bold text-base sm:text-lg text-slate-900 leading-snug">
-                      <a
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-royalPurple-700 transition-colors"
-                      >
-                        {video.title}
-                      </a>
-                    </h3>
+                    {/* Video Meta & Title */}
+                    <div className="p-5 space-y-4">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-royalPurple-700 bg-royalPurple-100 px-2.5 py-0.5 rounded-md font-semibold">
+                          #{idx + 1} &bull; {videoCategory}
+                        </span>
+                        <span className="text-xs text-slate-500 font-medium">
+                          {videoSpeaker}
+                        </span>
+                      </div>
 
-                    {/* SPOKEN TEXT NARRATIVE: WHAT IS BEING SAID BY PS. BORIS MANURUNG */}
-                    {video.narrative && (
-                      <div className="rounded-xl bg-gradient-to-br from-royalPurple-50/70 via-slate-50 to-white p-4 border border-royalPurple-200/80 shadow-2xs space-y-2">
-                        <div className="flex items-center justify-between border-b border-royalPurple-200/60 pb-1.5">
-                          <div className="flex items-center gap-1.5 text-xs font-semibold text-royalPurple-900">
-                            <Quote className="w-3.5 h-3.5 text-royalPurple-600" />
-                            <span>
-                              {isIndo
-                                ? 'Narasi Firman yang Disampaikan oleh Ps. Boris Manurung:'
-                                : 'Spoken Narrative by Ps. Boris Manurung:'}
+                      <h3 className="font-serif font-bold text-base sm:text-lg text-slate-900 leading-snug">
+                        <a
+                          href={video.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-royalPurple-700 transition-colors"
+                        >
+                          {videoTitle}
+                        </a>
+                      </h3>
+
+                      {/* SPOKEN TEXT NARRATIVE: WHAT IS BEING SAID BY PS. BORIS MANURUNG */}
+                      {video.narrative && (
+                        <div className="rounded-xl bg-gradient-to-br from-royalPurple-50/70 via-slate-50 to-white p-4 border border-royalPurple-200/80 shadow-2xs space-y-2">
+                          <div className="flex items-center justify-between border-b border-royalPurple-200/60 pb-1.5">
+                            <div className="flex items-center gap-1.5 text-xs font-semibold text-royalPurple-900">
+                              <Quote className="w-3.5 h-3.5 text-royalPurple-600" />
+                              <span>
+                                {isIndo
+                                  ? 'Narasi Firman yang Disampaikan oleh Ps. Boris Manurung:'
+                                  : 'Spoken Narrative by Ps. Boris Manurung:'}
+                              </span>
+                            </div>
+                            <span className="text-[9px] font-mono text-royalPurple-700 bg-royalPurple-100 px-1.5 py-0.2 rounded font-medium">
+                              {isIndo ? 'Teks Narasi' : 'Spoken Text'}
                             </span>
                           </div>
-                          <span className="text-[9px] font-mono text-royalPurple-700 bg-royalPurple-100 px-1.5 py-0.2 rounded font-medium">
-                            {isIndo ? 'Teks Narasi' : 'Spoken Text'}
-                          </span>
+
+                          <p className="text-xs text-slate-700 leading-relaxed font-sans italic">
+                            &ldquo;{video.narrative[locale] || video.narrative.id}&rdquo;
+                          </p>
                         </div>
+                      )}
 
-                        <p className="text-xs text-slate-700 leading-relaxed font-sans italic">
-                          &ldquo;{video.narrative[locale] || video.narrative.id}&rdquo;
-                        </p>
+                      {/* Direct YouTube Link Button */}
+                      <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                        <a
+                          href={video.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-royalPurple-700 hover:text-royalPurple-900 group"
+                        >
+                          <Play className="w-3.5 h-3.5 fill-current text-rose-600" />
+                          <span>{isIndo ? 'Buka & Tonton di YouTube' : 'Open & Watch on YouTube'}</span>
+                          <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+
+                        <span className="text-[11px] text-slate-400 font-mono">
+                          {video.isShort ? 'YouTube Shorts' : (isIndo ? 'Video Penuh' : 'Full Video')}
+                        </span>
                       </div>
-                    )}
-
-                    {/* Direct YouTube Link Button */}
-                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
-                      <a
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-royalPurple-700 hover:text-royalPurple-900 group"
-                      >
-                        <Play className="w-3.5 h-3.5 fill-current text-rose-600" />
-                        <span>{isIndo ? 'Buka & Tonton di YouTube' : 'Open & Watch on YouTube'}</span>
-                        <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                      </a>
-
-                      <span className="text-[11px] text-slate-400 font-mono">
-                        {video.isShort ? 'YouTube Shorts' : 'Full Video'}
-                      </span>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

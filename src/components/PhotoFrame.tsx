@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Sparkles, Maximize2, X, Heart } from 'lucide-react';
+import { Locale } from '@/i18n/config';
 
 interface PhotoFrameProps {
   src: string;
@@ -14,6 +15,7 @@ interface PhotoFrameProps {
   className?: string;
   priority?: boolean;
   enableModal?: boolean;
+  locale?: Locale;
 }
 
 export default function PhotoFrame({
@@ -26,6 +28,7 @@ export default function PhotoFrame({
   className = '',
   priority = false,
   enableModal = true,
+  locale = 'id',
 }: PhotoFrameProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -97,7 +100,7 @@ export default function PhotoFrame({
                   type="button"
                   onClick={() => setIsOpen(true)}
                   className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md text-slate-700 hover:text-covenant-700 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-md hover:scale-110 active:scale-95"
-                  aria-label="Perbesar foto"
+                  aria-label={locale === 'en' ? 'Enlarge photo' : 'Perbesar foto'}
                 >
                   <Maximize2 className="w-4 h-4" />
                 </button>
@@ -142,7 +145,7 @@ export default function PhotoFrame({
                 type="button"
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 z-30 p-2 rounded-full bg-navy-950/80 hover:bg-navy-900 text-white backdrop-blur-md transition-transform hover:scale-105 active:scale-95 shadow-lg border border-white/20"
-                aria-label="Tutup"
+                aria-label={locale === 'en' ? 'Close' : 'Tutup'}
               >
                 <X className="w-5 h-5" />
               </button>

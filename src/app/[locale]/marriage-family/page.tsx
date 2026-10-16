@@ -92,8 +92,9 @@ export default async function MarriageFamilyPage({
         <div className="lg:col-span-5">
           <PhotoFrame
             src="/images/family/boris-wife-blue-purple.jpg"
-            alt="Boris Manurung & Istri"
+            alt={locale === 'id' ? 'Boris Manurung & Istri' : 'Boris Manurung & Wife'}
             aspectRatio="portrait"
+            locale={locale}
           />
         </div>
         <div className="lg:col-span-7 space-y-4">
@@ -113,10 +114,10 @@ export default async function MarriageFamilyPage({
           </p>
           <div className="pt-2 flex flex-wrap gap-3">
             <div className="px-4 py-2.5 rounded-xl bg-covenant-50 border border-covenant-200/80 text-covenant-900 text-xs font-medium">
-              ✨ <strong>Maleakhi 2:14</strong> — Pasangan kovenan hidupmu
+              ✨ <strong>{locale === 'id' ? 'Maleakhi 2:14' : 'Malachi 2:14'}</strong> — {locale === 'id' ? 'Pasangan kovenan hidupmu' : 'Your covenant companion for life'}
             </div>
             <div className="px-4 py-2.5 rounded-xl bg-royalPurple-50 border border-royalPurple-200/80 text-royalPurple-900 text-xs font-medium">
-              🕊️ <strong>Efesus 5:31–32</strong> — Misteri kasih Kristus
+              🕊️ <strong>{locale === 'id' ? 'Efesus 5:31–32' : 'Ephesians 5:31–32'}</strong> — {locale === 'id' ? 'Misteri kasih Kristus' : 'The sacred mystery of Christ’s love'}
             </div>
           </div>
         </div>
@@ -221,8 +222,9 @@ export default async function MarriageFamilyPage({
       <div className="relative">
         <PhotoFrame
           src="/images/family/family-full-studio.jpg"
-          alt="Keluarga Kovenan"
+          alt={locale === 'id' ? 'Keluarga Kovenan' : 'Covenant Family'}
           aspectRatio="wide"
+          locale={locale}
         />
       </div>
 

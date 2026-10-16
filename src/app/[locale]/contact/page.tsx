@@ -79,7 +79,7 @@ export default async function ContactPage({
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs text-emerald-700 font-semibold hover:text-emerald-800 mt-1"
                   >
-                    <span>Chat WhatsApp Langsung</span>
+                    <span>{locale === 'id' ? 'Chat WhatsApp Langsung' : 'Direct WhatsApp Chat'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
@@ -109,7 +109,8 @@ export default async function ContactPage({
           <div className="w-full">
             <PhotoFrame
               src="/images/family/boris-wife-25years.jpg"
-              alt="Our Covenant Love Ministry"
+              alt={locale === 'id' ? 'Pelayanan Our Covenant Love' : 'Our Covenant Love Ministry'}
+              locale={locale}
               aspectRatio="landscape"
             />
           </div>

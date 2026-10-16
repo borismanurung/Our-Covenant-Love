@@ -13,7 +13,7 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = params;
   const item = await getContentBySlug(locale, slug);
-  if (!item) return { title: 'Article Not Found' };
+  if (!item) return { title: locale === 'id' ? 'Artikel Tidak Ditemukan | Our Covenant Love' : 'Article Not Found | Our Covenant Love' };
 
   return {
     title: `${item.translation.title} | Our Covenant Love`,
@@ -72,7 +72,7 @@ export default async function ArticleDetailPage({
           {item.isFeatured && (
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
               <Sparkles className="w-3 h-3 text-amber-600" />
-              <span>Featured</span>
+              <span>{locale === 'id' ? 'Unggulan' : 'Featured'}</span>
             </span>
           )}
         </div>
@@ -130,7 +130,7 @@ export default async function ArticleDetailPage({
 
       {/* Social Sharing & Actions */}
       <div className="pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
-        <ShareButtons title={translation.title} />
+        <ShareButtons title={translation.title} locale={locale} />
 
         <Link
           href={`/${locale}/articles`}

@@ -2,19 +2,23 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX, Music } from 'lucide-react';
+import { Locale } from '@/i18n/config';
 
 interface AudioPlayerProps {
   src: string;
   title: string;
+  locale?: Locale;
 }
 
-export default function AudioPlayer({ src, title }: AudioPlayerProps) {
+export default function AudioPlayer({ src, title, locale = 'id' }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [hasError, setHasError] = useState(false);
+
+  const isIndo = locale === 'id';
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -100,12 +104,12 @@ export default function AudioPlayer({ src, title }: AudioPlayerProps) {
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-xs uppercase tracking-wider text-covenant-300 font-semibold">
-            Audio Preview
+            {isIndo ? 'Pratinjau Audio' : 'Audio Preview'}
           </div>
           <div className="text-sm font-medium text-white truncate">{title}</div>
           {hasError && (
             <div className="text-xs text-rose-300 mt-0.5 font-sans">
-              Audio stream currently unavailable
+              {isIndo ? 'File audio saat ini belum tersedia' : 'Audio stream currently unavailable'}
             </div>
           )}
         </div>
@@ -132,7 +136,11 @@ export default function AudioPlayer({ src, title }: AudioPlayerProps) {
           type="button"
           onClick={togglePlay}
           className="flex items-center justify-center w-12 h-12 rounded-full bg-covenant-500 hover:bg-covenant-400 text-covenant-950 font-bold transition-transform active:scale-95 shadow-md"
-          aria-label={isPlaying ? 'Pause' : 'Play'}
+          aria-label={
+            isPlaying
+              ? isIndo ? 'Jeda Audio' : 'Pause Audio'
+              : isIndo ? 'Putar Audio' : 'Play Audio'
+          }
         >
           {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
         </button>
@@ -141,7 +149,11 @@ export default function AudioPlayer({ src, title }: AudioPlayerProps) {
           type="button"
           onClick={toggleMute}
           className="p-2 text-covenant-300 hover:text-white transition-colors"
-          aria-label={isMuted ? 'Unmute' : 'Mute'}
+          aria-label={
+            isMuted
+              ? isIndo ? 'Bunyikan Suara' : 'Unmute Audio'
+              : isIndo ? 'Bisukan Suara' : 'Mute Audio'
+          }
         >
           {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
         </button>

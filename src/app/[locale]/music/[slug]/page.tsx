@@ -14,7 +14,7 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = params;
   const item = await getContentBySlug(locale, slug);
-  if (!item) return { title: 'Song Not Found' };
+  if (!item) return { title: locale === 'id' ? 'Lagu Tidak Ditemukan | Our Covenant Love Music' : 'Song Not Found | Our Covenant Love Music' };
 
   return {
     title: `${item.translation.title} | Our Covenant Love Music`,
@@ -53,12 +53,12 @@ export default async function SongDetailPage({
         <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-covenant-100 text-covenant-800 text-xs font-semibold">
             <Heart className="w-3.5 h-3.5 text-covenant-600 fill-current" />
-            <span>Original Worship Music</span>
+            <span>{locale === 'id' ? 'Musik Pujian Orisinal' : 'Original Worship Music'}</span>
           </span>
           {item.isFeatured && (
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
               <Sparkles className="w-3 h-3 text-amber-600" />
-              <span>Featured</span>
+              <span>{locale === 'id' ? 'Unggulan' : 'Featured'}</span>
             </span>
           )}
         </div>
@@ -78,7 +78,7 @@ export default async function SongDetailPage({
       {/* Audio Player Card */}
       {item.audioUrl && (
         <section className="space-y-2">
-          <AudioPlayer src={item.audioUrl} title={translation.title} />
+          <AudioPlayer src={item.audioUrl} title={translation.title} locale={locale} />
         </section>
       )}
 
@@ -135,7 +135,7 @@ export default async function SongDetailPage({
 
       {/* Share and Back */}
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <ShareButtons title={translation.title} />
+        <ShareButtons title={translation.title} locale={locale} />
 
         <Link
           href={`/${locale}/music`}

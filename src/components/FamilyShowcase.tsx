@@ -18,12 +18,12 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'founders-25',
       category: 'founders',
       src: '/images/family/boris-wife-25years.jpg',
-      alt: 'Boris Manurung dan Istri - 25 Tahun Pernikahan Kovenan',
+      alt: locale === 'id' ? 'Boris Manurung dan Istri - 25 Tahun Pernikahan Kovenan' : 'Boris Manurung and Wife - 25 Years of Covenant Marriage',
       caption: locale === 'id' ? 'Boris & Istri — 25 Tahun Kasih Kovenan' : 'Boris & Wife — 25 Years of Covenant Love',
       subtitle: locale === 'id'
         ? '"We’ve been married for 25 years" — Menjadi saksi nyata bahwa kasih Allah memampukan kita setia seumur hidup.'
         : '"We’ve been married for 25 years" — A living testimony that God’s steadfast love sustains lifelong faithfulness.',
-      badge: '25th Anniversary',
+      badge: locale === 'id' ? 'HUT Pernikahan ke-25' : '25th Anniversary',
       featured: true,
       aspectRatio: 'landscape' as const,
     },
@@ -31,7 +31,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'family-studio',
       category: 'family',
       src: '/images/family/family-full-studio.jpg',
-      alt: 'Keluarga Lengkap Boris Manurung dan Kelima Anak',
+      alt: locale === 'id' ? 'Keluarga Lengkap Boris Manurung dan Kelima Anak' : 'Full Boris Manurung Family and Five Children',
       caption: locale === 'id' ? 'Keluarga Besar Boris Manurung' : 'The Boris Manurung Family',
       subtitle: locale === 'id'
         ? 'Diberkati dengan 5 orang anak yang bertumbuh bersama dalam firman dan mezbah keluarga.'
@@ -44,12 +44,12 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'children-neon',
       category: 'children',
       src: '/images/family/children-blue-purple.jpg',
-      alt: 'Kelima Anak Boris Manurung',
+      alt: locale === 'id' ? 'Kelima Anak Boris Manurung' : 'The Five Children of Boris Manurung',
       caption: locale === 'id' ? 'Kelima Buah Hati & Generasi Kovenan' : 'The Five Children & Next Generation',
       subtitle: locale === 'id'
         ? 'Memuridkan generasi penerus untuk mengenal dan mencintai kebenaran Kristus.'
         : 'Discipling the next generation to know and abide in the truth of Christ.',
-      badge: 'Next Generation',
+      badge: locale === 'id' ? 'Generasi Penerus' : 'Next Generation',
       featured: false,
       aspectRatio: 'portrait' as const,
     },
@@ -57,7 +57,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'founders-purple',
       category: 'founders',
       src: '/images/family/boris-wife-blue-purple.jpg',
-      alt: 'Boris Manurung dan Istri',
+      alt: locale === 'id' ? 'Boris Manurung dan Istri' : 'Boris Manurung and Wife',
       caption: locale === 'id' ? 'Kesatuan Jiwa & Roh' : 'Oneness of Soul & Spirit',
       subtitle: locale === 'id'
         ? 'Pernikahan adalah penyingkapan misteri Kristus dan jemaat-Nya.'
@@ -70,12 +70,12 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'father-sons',
       category: 'children',
       src: '/images/family/boris-and-sons.jpg',
-      alt: 'Boris Manurung bersama Ketiga Putra',
+      alt: locale === 'id' ? 'Boris Manurung bersama Ketiga Putra' : 'Boris Manurung with Three Sons',
       caption: locale === 'id' ? 'Teladan Ayah & Ketiga Putra' : 'Father & Three Sons',
       subtitle: locale === 'id'
         ? 'Mewariskan integritas iman, karakter kepemimpinan yang melayani, dan kasih bagi keluarga.'
         : 'Imparting faith integrity, servant leadership, and covenant love to sons.',
-      badge: 'Father & Sons',
+      badge: locale === 'id' ? 'Ayah & Tiga Putra' : 'Father & Sons',
       featured: false,
       aspectRatio: 'landscape' as const,
     },
@@ -83,12 +83,12 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'mother-daughters',
       category: 'children',
       src: '/images/family/mama-and-daughters.jpg',
-      alt: 'Mama bersama Kedua Putri',
+      alt: locale === 'id' ? 'Mama bersama Kedua Putri' : 'Mother with Two Daughters',
       caption: locale === 'id' ? 'Teladan Ibu & Kedua Putri' : 'Mother & Two Daughters',
       subtitle: locale === 'id'
         ? 'Membimbing putri-putri menjadi wanita salehah yang berakar kuat dalam anugerah Tuhan.'
         : 'Nurturing daughters into godly women anchored in divine grace and dignity.',
-      badge: 'Mother & Daughters',
+      badge: locale === 'id' ? 'Ibu & Dua Putri' : 'Mother & Daughters',
       featured: false,
       aspectRatio: 'portrait' as const,
     },
@@ -96,12 +96,12 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'family-maroon',
       category: 'family',
       src: '/images/family/family-full-maroon.jpg',
-      alt: 'Keluarga Boris Manurung Seragam Maroon',
+      alt: locale === 'id' ? 'Keluarga Boris Manurung Seragam Maroon' : 'Boris Manurung Family in Maroon',
       caption: locale === 'id' ? 'Sehati, Sepikir, Satu Kasih' : 'One Heart, One Mind, One Love',
       subtitle: locale === 'id'
         ? 'Kebersamaan hangat yang dirawat melalui doa, pengampunan, dan komunikasi harian.'
         : 'Warm unity nurtured through prayer, forgiveness, and daily intentional connection.',
-      badge: 'United in Christ',
+      badge: locale === 'id' ? 'Satu dalam Kristus' : 'United in Christ',
       featured: false,
       aspectRatio: 'landscape' as const,
     },
@@ -109,12 +109,12 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'tassel-birthday',
       category: 'family',
       src: '/images/family/tassel-birthday.jpg',
-      alt: 'Ulang Tahun Tassel bersama Orang Tua',
+      alt: locale === 'id' ? 'Ulang Tahun Tassel bersama Orang Tua' : 'Tassel Birthday with Parents',
       caption: locale === 'id' ? 'Merayakan Kasih Pertambahan Usia' : 'Celebrating Life & Milestones',
       subtitle: locale === 'id'
         ? 'Bersyukur atas setiap musim kehidupan dan kesetiaan Tuhan yang nyata.'
         : 'Thankful for every season of life and God’s evident faithfulness.',
-      badge: 'Family Milestone',
+      badge: locale === 'id' ? 'Momen Spesial Keluarga' : 'Family Milestone',
       featured: false,
       aspectRatio: 'landscape' as const,
     },
@@ -195,6 +195,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
               subtitle={photo.subtitle}
               badge={photo.badge}
               aspectRatio={photo.aspectRatio}
+              locale={locale}
               className="h-full"
             />
           ))}
@@ -215,7 +216,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
               &rdquo;
             </blockquote>
             <div className="pt-2 text-xs sm:text-sm text-covenant-300 font-medium">
-              — Boris Manurung &amp; Istri &bull; Our Covenant Love Ministry
+              — {locale === 'id' ? 'Boris Manurung & Istri' : 'Boris Manurung & Wife'} &bull; Our Covenant Love Ministry
             </div>
             <div className="pt-4">
               <Link

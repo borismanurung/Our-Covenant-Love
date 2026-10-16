@@ -1,8 +1,7 @@
 import { Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Heart, Sparkles, BookOpen, ArrowRight, Camera, Users } from 'lucide-react';
+import { Heart, Sparkles, BookOpen, ArrowRight, Users } from 'lucide-react';
 import PhotoFrame from '@/components/PhotoFrame';
 
 export default async function OurStoryPage({
@@ -12,6 +11,7 @@ export default async function OurStoryPage({
 }) {
   const { locale } = params;
   const dict = getDictionary(locale);
+  const isIndo = locale === 'id';
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
@@ -19,7 +19,7 @@ export default async function OurStoryPage({
       <div className="text-center space-y-4 max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-covenant-100 to-royalPurple-100 border border-covenant-200 text-covenant-900 text-xs font-semibold uppercase tracking-wider shadow-xs">
           <Heart className="w-3.5 h-3.5 text-royalPurple-600 fill-current" />
-          <span>Kisah &amp; Kesaksian Anugerah / Our Covenant Story</span>
+          <span>{isIndo ? 'Kisah & Kesaksian Anugerah' : 'Our Covenant Story & Testimony'}</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
           {dict.ourStory.title}
@@ -33,8 +33,9 @@ export default async function OurStoryPage({
       <div className="relative">
         <PhotoFrame
           src="/images/family/family-full-studio.jpg"
-          alt="Keluarga Besar Boris Manurung"
+          alt={isIndo ? 'Keluarga Besar Boris Manurung' : 'Boris Manurung Family Portrait'}
           aspectRatio="wide"
+          locale={locale}
           priority
         />
       </div>
@@ -45,28 +46,41 @@ export default async function OurStoryPage({
           <div className="lg:col-span-5">
             <PhotoFrame
               src="/images/family/boris-wife-25years.jpg"
-              alt="Boris Manurung & Istri"
+              alt={isIndo ? 'Boris Manurung & Istri' : 'Boris Manurung & Wife'}
               aspectRatio="landscape"
+              locale={locale}
             />
           </div>
 
           <div className="lg:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-covenant-100 text-covenant-800 text-xs font-semibold">
               <Sparkles className="w-3.5 h-3.5 text-covenant-600" />
-              <span>{locale === 'id' ? 'Surat & Kesaksian Pendiri' : 'Founders’ Heart & Testimony'}</span>
+              <span>{isIndo ? 'Surat & Kesaksian Pendiri' : 'Founders’ Heart & Testimony'}</span>
             </div>
 
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
               {dict.ourStory.foundersTitle}
             </h2>
 
-            <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-              Ketika Tuhan memanggil dan mempertemukan kami dalam kovenan pernikahan, kami tidak pernah menyangka bahwa perjalanan ini akan menjadi sekolah iman yang paling intensif dalam hidup kami. Di dalam pernikahan, kami melihat betapa ego manusia begitu rapuh, betapa mudahnya luka terjadi, dan betapa kita sangat membutuhkan anugerah salib Kristus setiap hari.
-            </p>
-
-            <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-              Melalui musim-musim pembentukan, pengampunan, pemulihan komunikasi, dan pembaruan komitmen, Tuhan menaruh sebuah beban kudus di dalam hati kami: <strong className="text-covenant-800 font-semibold">Pernikahan bukan sekadar tentang mengejar kebahagiaan dua orang. Pernikahan adalah mahakarya Allah yang dirancang untuk memantulkan gambar dan kemuliaan-Nya.</strong>
-            </p>
+            {isIndo ? (
+              <>
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+                  Ketika Tuhan memanggil dan mempertemukan kami dalam kovenan pernikahan, kami tidak pernah menyangka bahwa perjalanan ini akan menjadi sekolah iman yang paling intensif dalam hidup kami. Di dalam pernikahan, kami melihat betapa ego manusia begitu rapuh, betapa mudahnya luka terjadi, dan betapa kita sangat membutuhkan anugerah salib Kristus setiap hari.
+                </p>
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+                  Melalui musim-musim pembentukan, pengampunan, pemulihan komunikasi, dan pembaruan komitmen, Tuhan menaruh sebuah beban kudus di dalam hati kami: <strong className="text-covenant-800 font-semibold">Pernikahan bukan sekadar tentang mengejar kebahagiaan dua orang. Pernikahan adalah mahakarya Allah yang dirancang untuk memantulkan gambar dan kemuliaan-Nya.</strong>
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+                  When God called and united us in holy covenant marriage, we never anticipated that this journey would become the most intensive school of faith in our lives. In marriage, we realized how fragile human ego is, how easily wounds occur, and how desperately we need the grace of Christ’s cross every single day.
+                </p>
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+                  Through seasons of refining, forgiveness, restored communication, and renewed vows, God placed a sacred burden within our hearts: <strong className="text-covenant-800 font-semibold">Marriage is not merely about pursuing personal happiness between two people. Marriage is God’s masterpiece designed to reflect His image and His glory.</strong>
+                </p>
+              </>
+            )}
 
             <div className="bg-gradient-to-r from-covenant-50 to-royalPurple-50/50 p-5 rounded-2xl border border-covenant-200/80">
               <h3 className="font-serif font-bold text-sm sm:text-base text-covenant-900 mb-1.5">
@@ -119,7 +133,9 @@ export default async function OurStoryPage({
             {dict.ourStory.valuesTitle}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-2">
-            Nilai-nilai alkitabiah yang menjadi pegangan kami dalam membina keluarga dan melayani jemaat.
+            {isIndo
+              ? 'Nilai-nilai alkitabiah yang menjadi pegangan kami dalam membina keluarga dan melayani jemaat.'
+              : 'Biblical core values guiding our family formation and ministry service.'}
           </p>
         </div>
 
@@ -144,15 +160,15 @@ export default async function OurStoryPage({
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-covenant-100 to-royalPurple-100 border border-covenant-200 text-covenant-900 text-xs font-semibold uppercase tracking-wider">
             <Users className="w-3.5 h-3.5 text-royalPurple-600" />
-            <span>{locale === 'id' ? 'Generasi Kovenan' : 'Covenant Generations'}</span>
+            <span>{isIndo ? 'Generasi Kovenan' : 'Covenant Generations'}</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">
-            {locale === 'id'
+            {isIndo
               ? 'Mezbah Keluarga & Buah Kasih Kovenan'
               : 'The Family Altar & Fruits of Covenant Love'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            {locale === 'id'
+            {isIndo
               ? 'Dari sebuah kovenan pernikahan yang dipegang teguh, Tuhan melahirkan keluarga yang saling mengasihi, mengampuni, dan memancarkan terang Kristus kepada generasi selanjutnya.'
               : 'From a steadfast covenant marriage, God raises a family that loves unconditionally, walks in forgiveness, and reflects the light of Christ to the next generation.'}
           </p>
@@ -161,38 +177,44 @@ export default async function OurStoryPage({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <PhotoFrame
             src="/images/family/family-full-maroon.jpg"
-            alt="Keluarga Boris Manurung"
+            alt={isIndo ? 'Keluarga Boris Manurung' : 'Boris Manurung Family'}
             aspectRatio="landscape"
+            locale={locale}
           />
 
           <PhotoFrame
             src="/images/family/children-blue-purple.jpg"
-            alt="Kelima Anak Boris Manurung"
+            alt={isIndo ? 'Kelima Anak Boris Manurung' : 'Five Children of Boris Manurung'}
             aspectRatio="portrait"
+            locale={locale}
           />
 
           <PhotoFrame
             src="/images/family/boris-wife-blue-purple.jpg"
-            alt="Boris Manurung dan Istri"
+            alt={isIndo ? 'Boris Manurung dan Istri' : 'Boris Manurung and Wife'}
             aspectRatio="portrait"
+            locale={locale}
           />
 
           <PhotoFrame
             src="/images/family/boris-and-sons.jpg"
-            alt="Boris Manurung bersama Tiga Putra"
+            alt={isIndo ? 'Boris Manurung bersama Tiga Putra' : 'Boris Manurung with Three Sons'}
             aspectRatio="landscape"
+            locale={locale}
           />
 
           <PhotoFrame
             src="/images/family/mama-and-daughters.jpg"
-            alt="Mama bersama Kedua Putri"
+            alt={isIndo ? 'Mama bersama Kedua Putri' : 'Mama with Two Daughters'}
             aspectRatio="portrait"
+            locale={locale}
           />
 
           <PhotoFrame
             src="/images/family/tassel-birthday.jpg"
-            alt="Perayaan Ulang Tahun Tassel"
+            alt={isIndo ? 'Perayaan Ulang Tahun Tassel' : 'Tassel Birthday Celebration'}
             aspectRatio="landscape"
+            locale={locale}
           />
         </div>
       </div>
@@ -200,7 +222,7 @@ export default async function OurStoryPage({
       {/* 7. Ministry Declaration */}
       <div className="bg-gradient-to-br from-covenant-900 to-navy-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-6">
         <span className="text-xs font-semibold tracking-widest uppercase text-covenant-300">
-          Ikrar Bersama / Covenant Commitment
+          {isIndo ? 'Ikrar Komitmen Kovenan' : 'Covenant Commitment Declaration'}
         </span>
         <h3 className="font-serif text-2xl sm:text-3xl font-bold text-covenant-100">
           {dict.ourStory.declarationTitle}

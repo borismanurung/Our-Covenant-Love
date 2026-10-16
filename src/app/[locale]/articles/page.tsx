@@ -50,8 +50,9 @@ export default async function ArticlesPage({
             <div className="w-full max-w-xs">
               <PhotoFrame
                 src="/images/family/boris-wife-portrait.jpg"
-                alt="Pernikahan Kovenan"
+                alt={locale === 'id' ? 'Pernikahan Kovenan' : 'Covenant Marriage'}
                 aspectRatio="portrait"
+                locale={locale}
               />
             </div>
           </div>
@@ -165,7 +166,7 @@ export default async function ArticlesPage({
                     {item.isFeatured && (
                       <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md">
                         <Sparkles className="w-3 h-3 text-amber-600" />
-                        <span>Featured</span>
+                        <span>{locale === 'id' ? 'Unggulan' : 'Featured'}</span>
                       </span>
                     )}
                   </div>

@@ -13,7 +13,7 @@ export async function generateMetadata({
 }) {
   const { locale, slug } = params;
   const item = await getContentBySlug(locale, slug);
-  if (!item) return { title: 'Event Not Found' };
+  if (!item) return { title: locale === 'id' ? 'Acara Tidak Ditemukan | Our Covenant Love Events' : 'Event Not Found | Our Covenant Love Events' };
 
   return {
     title: `${item.translation.title} | Our Covenant Love Events`,
@@ -52,7 +52,7 @@ export default async function EventDetailPage({
         {item.isFeatured && (
           <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
             <Sparkles className="w-3 h-3 text-amber-600" />
-            <span>Featured Event</span>
+            <span>{locale === 'id' ? 'Acara Unggulan' : 'Featured Event'}</span>
           </span>
         )}
 
@@ -98,7 +98,7 @@ export default async function EventDetailPage({
               <Users className="w-5 h-5 text-covenant-700 flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-covenant-800 block">
-                  {dict.common.speaker} / Fasilitator
+                  {dict.common.speaker} / {locale === 'id' ? 'Fasilitator' : 'Facilitator'}
                 </span>
                 <span className="text-sm font-medium text-slate-800">
                   {item.speaker}
@@ -155,7 +155,7 @@ export default async function EventDetailPage({
 
       {/* Share and Back */}
       <div className="pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
-        <ShareButtons title={translation.title} />
+        <ShareButtons title={translation.title} locale={locale} />
 
         <Link
           href={`/${locale}/events`}

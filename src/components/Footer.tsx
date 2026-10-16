@@ -19,7 +19,9 @@ export default function Footer({ locale, dict }: FooterProps) {
             &ldquo;{dict.common.motto}&rdquo;
           </p>
           <span className="inline-block mt-2 text-xs font-semibold tracking-widest uppercase text-covenant-400">
-            Genesis 1:26–28 &bull; John 17:20–23 &bull; Ephesians 5:31–32
+            {locale === 'id'
+              ? 'Kejadian 1:26–28 • Yohanes 17:20–23 • Efesus 5:31–32'
+              : 'Genesis 1:26–28 • John 17:20–23 • Ephesians 5:31–32'}
           </span>
         </div>
       </div>
@@ -33,7 +35,7 @@ export default function Footer({ locale, dict }: FooterProps) {
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-covenant-500/50 bg-covenant-950">
                 <Image
                   src="/images/ocl-logo.jpg"
-                  alt="Our Covenant Love"
+                  alt={locale === 'id' ? 'Logo Our Covenant Love' : 'Our Covenant Love'}
                   fill
                   className="object-cover"
                 />

@@ -50,6 +50,12 @@ export default function YouTubeShowcase({
 
   const isIndo = locale === 'id';
 
+  // Helper functions to get localized metadata
+  const getTitle = (v: YouTubeVideoItem) => (!isIndo && v.titleEn ? v.titleEn : v.title);
+  const getCategory = (v: YouTubeVideoItem) => (!isIndo && v.categoryEn ? v.categoryEn : v.category);
+  const getSpeaker = (v: YouTubeVideoItem) => (!isIndo && v.speakerNameEn ? v.speakerNameEn : v.speakerName);
+  const getUploadedAt = (v: YouTubeVideoItem) => (!isIndo && v.uploadedAtEn ? v.uploadedAtEn : v.uploadedAt);
+
   return (
     <div className="bg-gradient-to-br from-slate-950 via-covenant-950 to-royalPurple-950 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl space-y-10">
       {/* 1. Official Channel Header Bar */}
@@ -163,7 +169,7 @@ export default function YouTubeShowcase({
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-covenant-400" />
                   <span className="text-xs text-slate-300">
-                    Ps. Boris & Meilita Manurung
+                    {getSpeaker(together.latest)}
                   </span>
                 </div>
                 <h4 className="font-serif font-bold text-xl sm:text-2xl text-white">
@@ -196,7 +202,7 @@ export default function YouTubeShowcase({
                 </div>
 
                 <span className="text-[11px] font-medium text-slate-400 bg-white/5 px-2.5 py-0.5 rounded-md border border-white/10">
-                  {activeTogetherVideo.category}
+                  {getCategory(activeTogetherVideo)}
                 </span>
               </div>
 
@@ -204,7 +210,7 @@ export default function YouTubeShowcase({
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-covenant-700/60">
                 <iframe
                   src={`${activeTogetherVideo.embedUrl}?autoplay=0&rel=0`}
-                  title={activeTogetherVideo.title}
+                  title={getTitle(activeTogetherVideo)}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full border-0"
@@ -215,7 +221,7 @@ export default function YouTubeShowcase({
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pt-1">
                 <div className="space-y-1">
                   <h5 className="font-serif font-bold text-base sm:text-lg text-white">
-                    {activeTogetherVideo.title}
+                    {getTitle(activeTogetherVideo)}
                   </h5>
                   <p className="text-xs text-slate-400">
                     {isIndo
@@ -253,6 +259,8 @@ export default function YouTubeShowcase({
               <div className="space-y-3">
                 {together.previous.map((item, idx) => {
                   const isCurrent = activeTogetherVideo.id === item.id;
+                  const itemTitle = getTitle(item);
+                  const itemCategory = getCategory(item);
 
                   return (
                     <div
@@ -268,7 +276,7 @@ export default function YouTubeShowcase({
                       <div className="relative w-24 h-16 sm:w-28 sm:h-18 rounded-xl overflow-hidden bg-slate-800 flex-shrink-0 border border-white/10">
                         <Image
                           src={item.thumbnail}
-                          alt={item.title}
+                          alt={itemTitle}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
@@ -283,18 +291,18 @@ export default function YouTubeShowcase({
                       <div className="flex-1 min-w-0 space-y-1">
                         <div className="flex items-center gap-2">
                           <span className="text-[10px] font-mono text-covenant-300 uppercase tracking-wider font-semibold">
-                            {isIndo ? `Upload #${idx + 2}` : `Upload #${idx + 2}`} &bull; {item.category}
+                            {isIndo ? `Upload #${idx + 2}` : `Upload #${idx + 2}`} &bull; {itemCategory}
                           </span>
                           {isCurrent && (
                             <span className="inline-flex items-center gap-1 text-[9px] font-bold text-covenant-300 bg-covenant-500/20 px-1.5 py-0.5 rounded">
                               <CheckCircle2 className="w-2.5 h-2.5 text-covenant-300" />
-                              <span>Active</span>
+                              <span>{isIndo ? 'Aktif' : 'Active'}</span>
                             </span>
                           )}
                         </div>
 
                         <h6 className="font-serif font-bold text-xs sm:text-sm text-white line-clamp-2 group-hover:text-covenant-200 transition-colors leading-snug">
-                          {item.title}
+                          {itemTitle}
                         </h6>
 
                         <div className="flex items-center justify-between text-[11px] text-slate-400 pt-0.5">
@@ -345,7 +353,7 @@ export default function YouTubeShowcase({
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-royalPurple-400" />
                   <span className="text-xs text-slate-300">
-                    Ps. Boris Manurung (Solo)
+                    {getSpeaker(solo.latest)}
                   </span>
                 </div>
                 <h4 className="font-serif font-bold text-xl sm:text-2xl text-white">
@@ -381,7 +389,7 @@ export default function YouTubeShowcase({
                 </div>
 
                 <span className="text-[11px] font-medium text-slate-400 bg-white/5 px-2.5 py-0.5 rounded-md border border-white/10">
-                  {activeSoloVideo.category}
+                  {getCategory(activeSoloVideo)}
                 </span>
               </div>
 
@@ -389,7 +397,7 @@ export default function YouTubeShowcase({
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-royalPurple-700/60">
                 <iframe
                   src={`${activeSoloVideo.embedUrl}?autoplay=0&rel=0`}
-                  title={activeSoloVideo.title}
+                  title={getTitle(activeSoloVideo)}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full border-0"
@@ -400,7 +408,7 @@ export default function YouTubeShowcase({
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pt-1">
                 <div className="space-y-1">
                   <h5 className="font-serif font-bold text-base sm:text-lg text-white">
-                    {activeSoloVideo.title}
+                    {getTitle(activeSoloVideo)}
                   </h5>
                   <p className="text-xs text-slate-400">
                     {isIndo
@@ -480,6 +488,8 @@ export default function YouTubeShowcase({
               <div className="space-y-3">
                 {solo.previous.map((item, idx) => {
                   const isCurrent = activeSoloVideo.id === item.id;
+                  const itemTitle = getTitle(item);
+                  const itemCategory = getCategory(item);
 
                   return (
                     <div
@@ -496,7 +506,7 @@ export default function YouTubeShowcase({
                         <div className="relative w-24 h-16 sm:w-28 sm:h-18 rounded-xl overflow-hidden bg-slate-800 flex-shrink-0 border border-white/10">
                           <Image
                             src={item.thumbnail}
-                            alt={item.title}
+                            alt={itemTitle}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
@@ -511,18 +521,18 @@ export default function YouTubeShowcase({
                         <div className="flex-1 min-w-0 space-y-1">
                           <div className="flex items-center gap-2">
                             <span className="text-[10px] font-mono text-royalPurple-300 uppercase tracking-wider font-semibold">
-                              {isIndo ? `Upload #${idx + 2}` : `Upload #${idx + 2}`} &bull; {item.category}
+                              {isIndo ? `Upload #${idx + 2}` : `Upload #${idx + 2}`} &bull; {itemCategory}
                             </span>
                             {isCurrent && (
                               <span className="inline-flex items-center gap-1 text-[9px] font-bold text-royalPurple-300 bg-royalPurple-500/20 px-1.5 py-0.5 rounded">
                                 <CheckCircle2 className="w-2.5 h-2.5 text-royalPurple-300" />
-                                <span>Active</span>
+                                <span>{isIndo ? 'Aktif' : 'Active'}</span>
                               </span>
                             )}
                           </div>
 
                           <h6 className="font-serif font-bold text-xs sm:text-sm text-white line-clamp-2 group-hover:text-royalPurple-200 transition-colors leading-snug">
-                            {item.title}
+                            {itemTitle}
                           </h6>
 
                           <div className="flex items-center justify-between text-[11px] text-slate-400 pt-0.5">

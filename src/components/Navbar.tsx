@@ -54,7 +54,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             <div className="relative w-11 h-11 rounded-full overflow-hidden border border-covenant-300 shadow-xs bg-covenant-100 flex-shrink-0">
               <Image
                 src="/images/ocl-logo.jpg"
-                alt="Our Covenant Love Logo"
+                alt={locale === 'id' ? 'Logo Our Covenant Love' : 'Our Covenant Love Logo'}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 priority
@@ -65,13 +65,13 @@ export default function Navbar({ locale, dict }: NavbarProps) {
                 Our Covenant Love
               </span>
               <span className="text-[10px] sm:text-[11px] font-medium tracking-wider text-covenant-700 uppercase -mt-0.5">
-                Reflecting God&apos;s Glory
+                {locale === 'id' ? 'Memancarkan Kemuliaan Allah' : "Reflecting God's Glory"}
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center space-x-1" aria-label={locale === 'id' ? 'Navigasi Utama' : 'Main Navigation'}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -92,7 +92,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             <LanguageSwitcher currentLocale={locale} />
             <Link
               href={`/${locale}/admin`}
-              title="Admin Portal"
+              title={locale === 'id' ? 'Portal Admin' : 'Admin Portal'}
               className="p-2 text-slate-500 hover:text-covenant-700 hover:bg-covenant-50 rounded-full transition-colors"
             >
               <Shield className="w-4 h-4" />
@@ -106,7 +106,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-covenant-500"
-              aria-label="Toggle menu"
+              aria-label={locale === 'id' ? 'Buka atau tutup menu' : 'Toggle navigation menu'}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
