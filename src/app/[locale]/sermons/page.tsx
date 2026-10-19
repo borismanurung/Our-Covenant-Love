@@ -200,8 +200,8 @@ export default async function SermonsPage({
 
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             {isIndo
-              ? 'Pengajaran mendalam, dialog pasutri, dan kesaksian 25 tahun pernikahan kovenan yang dibagikan bersama oleh Ps. Boris Manurung dan istri.'
-              : 'Marital teachings, candid discussions, and 25-year covenant marriage testimony shared together by Ps. Boris and his wife.'}
+              ? 'Video pengajaran pernikahan dan keluarga di mana Ps. Boris Manurung dan istri tampil berdua, membagikan hikmat serta pengalaman kovenan pernikahan kudus.'
+              : 'Marriage and family teachings featuring Ps. Boris Manurung and his wife appearing together, sharing biblical covenant wisdom and marital insights.'}
           </p>
 
           {/* Videos List (Top to Bottom) */}
@@ -313,8 +313,8 @@ export default async function SermonsPage({
 
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             {isIndo
-              ? 'Video solo firman oleh Ps. Boris Manurung yang membuka dengan "Ayat firman hari ini: ...", dilengkapi narasi teks apa yang disampaikan.'
-              : 'Solo scripture videos by Ps. Boris Manurung opening with "The verse of the day today: ...", accompanied by full spoken narrative texts.'}
+              ? 'Video renungan firman di mana hanya 1 orang (Ps. Boris Manurung sendiri) yang tampil membuka dengan ayat firman hari ini dari kitab Amsal, dilengkapi teks narasi apa yang disampaikan.'
+              : 'Scripture devotion videos where only 1 person (Ps. Boris Manurung alone) appears declaring the verse of the day from Proverbs, accompanied by full spoken narrative texts.'}
           </p>
 
           {/* Videos List (Top to Bottom) */}

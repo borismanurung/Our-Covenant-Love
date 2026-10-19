@@ -238,6 +238,39 @@ export default function YouTubeShowcase({
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
+
+              {/* SHARED NARRATIVE BOX: Ps. Boris & Meilita Manurung */}
+              {activeTogetherVideo.narrative && (
+                <div className="mt-4 rounded-2xl bg-gradient-to-br from-covenant-950/70 via-slate-900 to-covenant-950 p-5 sm:p-6 border border-covenant-500/30 shadow-lg space-y-3">
+                  <div className="flex items-center justify-between border-b border-covenant-500/20 pb-2.5">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg bg-covenant-600/30 border border-covenant-400/40 flex items-center justify-center text-covenant-300">
+                        <Users className="w-4 h-4" />
+                      </div>
+                      <h6 className="font-serif font-bold text-sm sm:text-base text-covenant-200">
+                        {isIndo
+                          ? 'Pesan Kovenan Pernikahan (Our Covenant Love)'
+                          : 'Covenant Marriage Message (Our Covenant Love)'}
+                      </h6>
+                    </div>
+                    <span className="text-[10px] font-mono text-covenant-300 uppercase tracking-widest bg-covenant-500/20 px-2 py-0.5 rounded">
+                      Ps. Boris &amp; Meilita
+                    </span>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans italic">
+                    &ldquo;{activeTogetherVideo.narrative[locale] || activeTogetherVideo.narrative.id}&rdquo;
+                  </p>
+
+                  <div className="text-[11px] text-covenant-300/80 pt-1 flex items-center justify-between">
+                    <span>
+                      {isIndo
+                        ? '&bull; Dibagikan bersama oleh Ps. Boris & Meilita Manurung'
+                        : '&bull; Shared together by Ps. Boris & Meilita Manurung'}
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* 2 Latest Videos Before That */}
