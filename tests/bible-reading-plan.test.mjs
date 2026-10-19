@@ -116,37 +116,96 @@ test('Quality Check 1: All 66 canonical books are represented with correct chapt
   assert.strictEqual(ntBooks.reduce((sum, b) => sum + b.chapters, 0), 260, 'NT must have 260 chapters');
 });
 
-// 2. Quality Check 2: Every chapter covered without omissions or duplicates
-test('Quality Check 2: Every single chapter (1189) is covered with zero omissions and zero duplicates', () => {
-  const chapterSeen = new Map();
+// 2. Quality Check 2: 4 Streams Coverage (OT 748 ch, NT 260 ch, Psalms 2x, Proverbs 4x)
+test('Quality Check 2: 4 distinct streams with full canonical coverage, Psalms 2x, and Proverbs 4x', () => {
+  const otChaptersSeen = new Map();
+  const ntChaptersSeen = new Map();
+  const psalmsCycle1 = new Set();
+  const psalmsCycle2 = new Set();
+  const proverbsQ1 = new Set();
+  const proverbsQ2 = new Set();
+  const proverbsQ3 = new Set();
+  const proverbsQ4 = new Set();
+  const booksSeen = new Set();
 
   for (const day of plan) {
+    const categoriesOnDay = new Set();
+
     for (const passage of day.passages) {
       assert.ok(passage.bookId, `Day ${day.day} passage must have bookId`);
       assert.ok(passage.chapterStart >= 1, `Day ${day.day} chapterStart must be >= 1`);
       assert.ok(passage.chapterEnd >= passage.chapterStart, `Day ${day.day} chapterEnd must be >= chapterStart`);
-      
+      booksSeen.add(passage.bookId);
+      categoriesOnDay.add(passage.category);
+
       for (let ch = passage.chapterStart; ch <= passage.chapterEnd; ch++) {
         const key = `${passage.bookId}:${ch}`;
-        assert.strictEqual(chapterSeen.has(key), false, `Duplicate chapter detected: ${key} on day ${day.day}`);
-        chapterSeen.set(key, (chapterSeen.get(key) || 0) + 1);
+
+        if (passage.category === 'OT') {
+          assert.strictEqual(otChaptersSeen.has(key), false, `OT Duplicate detected: ${key} on day ${day.day}`);
+          otChaptersSeen.set(key, 1);
+        } else if (passage.category === 'NT') {
+          ntChaptersSeen.set(key, (ntChaptersSeen.get(key) || 0) + 1);
+        } else if (passage.category === 'PSALM') {
+          if (day.day <= 182) {
+            psalmsCycle1.add(ch);
+          } else {
+            psalmsCycle2.add(ch);
+          }
+        } else if (passage.category === 'PROVERB') {
+          if (day.day <= 91) {
+            proverbsQ1.add(ch);
+          } else if (day.day <= 182) {
+            proverbsQ2.add(ch);
+          } else if (day.day <= 273) {
+            proverbsQ3.add(ch);
+          } else {
+            proverbsQ4.add(ch);
+          }
+        }
       }
+    }
+
+    // Every day must have all 4 streams present
+    assert.ok(categoriesOnDay.has('OT'), `Day ${day.day} missing OT stream`);
+    assert.ok(categoriesOnDay.has('NT'), `Day ${day.day} missing NT stream`);
+    assert.ok(categoriesOnDay.has('PSALM'), `Day ${day.day} missing PSALM stream`);
+    assert.ok(categoriesOnDay.has('PROVERB'), `Day ${day.day} missing PROVERB stream`);
+  }
+
+  // A. All 66 canonical books represented
+  assert.strictEqual(booksSeen.size, 66, 'All 66 books must be represented in the plan');
+
+  // B. OT (excl PSA/PRO): Exactly 37 books and 748 chapters with zero omissions
+  const otExpected = EXPECTED_BOOKS.filter((b) => b.testament === 'OT' && b.id !== 'PSA' && b.id !== 'PRO');
+  assert.strictEqual(otExpected.length, 37, 'OT excluding PSA/PRO must have 37 books');
+  assert.strictEqual(otChaptersSeen.size, 748, 'OT must cover exactly 748 chapters');
+  for (const b of otExpected) {
+    for (let ch = 1; ch <= b.chapters; ch++) {
+      const key = `${b.id}:${ch}`;
+      assert.ok(otChaptersSeen.has(key), `Missing OT chapter: ${key}`);
     }
   }
 
-  // Check every expected book and chapter
-  const missing = [];
-  for (const book of EXPECTED_BOOKS) {
-    for (let ch = 1; ch <= book.chapters; ch++) {
-      const key = `${book.id}:${ch}`;
-      if (!chapterSeen.has(key)) {
-        missing.push(key);
-      }
+  // C. NT: All 27 books and 260 chapters covered
+  const ntExpected = EXPECTED_BOOKS.filter((b) => b.testament === 'NT');
+  assert.strictEqual(ntChaptersSeen.size, 260, 'NT must cover all 260 chapters');
+  for (const b of ntExpected) {
+    for (let ch = 1; ch <= b.chapters; ch++) {
+      const key = `${b.id}:${ch}`;
+      assert.ok(ntChaptersSeen.has(key), `Missing NT chapter: ${key}`);
     }
   }
 
-  assert.strictEqual(missing.length, 0, `Missing chapters: ${missing.join(', ')}`);
-  assert.strictEqual(chapterSeen.size, 1189, 'All 1189 unique chapters must be covered');
+  // D. Psalms: Exactly 2 complete cycles of 150 chapters
+  assert.strictEqual(psalmsCycle1.size, 150, 'Psalms Cycle 1 (Days 1-182) must cover all 150 chapters');
+  assert.strictEqual(psalmsCycle2.size, 150, 'Psalms Cycle 2 (Days 183-365) must cover all 150 chapters');
+
+  // E. Proverbs: Exactly 4 complete cycles of 31 chapters
+  assert.strictEqual(proverbsQ1.size, 31, 'Proverbs Q1 (Days 1-91) must cover all 31 chapters');
+  assert.strictEqual(proverbsQ2.size, 31, 'Proverbs Q2 (Days 92-182) must cover all 31 chapters');
+  assert.strictEqual(proverbsQ3.size, 31, 'Proverbs Q3 (Days 183-273) must cover all 31 chapters');
+  assert.strictEqual(proverbsQ4.size, 31, 'Proverbs Q4 (Days 274-365) must cover all 31 chapters');
 });
 
 // 3. Quality Check 3: Exactly 365 reading days for the plan
@@ -156,8 +215,8 @@ test('Quality Check 3: Exactly 365 reading days with manageable daily reading lo
   for (let i = 0; i < plan.length; i++) {
     const day = plan[i];
     assert.strictEqual(day.day, i + 1, `Day number must match index + 1 (day ${day.day})`);
-    assert.ok(day.passages.length >= 1, `Day ${day.day} must have at least 1 passage`);
-    assert.ok(day.totalChapters >= 2 && day.totalChapters <= 5, `Day ${day.day} has ${day.totalChapters} chapters (expected 2-5)`);
+    assert.ok(day.passages.length >= 4, `Day ${day.day} must have at least 4 passages (4 streams)`);
+    assert.ok(day.totalChapters >= 5 && day.totalChapters <= 6, `Day ${day.day} has ${day.totalChapters} chapters (expected 5-6)`);
     assert.ok(day.summaryRefId, `Day ${day.day} must have Indonesian summary reference`);
     assert.ok(day.summaryRefEn, `Day ${day.day} must have English summary reference`);
   }
@@ -174,7 +233,7 @@ test('Quality Check 4: Progress statistics and percentage calculations', () => {
   const pHalf = calculateProgress(Array.from({ length: 182 }, (_, i) => i + 1));
   assert.strictEqual(pHalf.completedDays, 182);
   assert.strictEqual(pHalf.remainingDays, 183);
-  assert.strictEqual(pHalf.percentage, 49.9); // 182 / 365 = 49.86% -> 49.9%
+  assert.strictEqual(pHalf.percentage, 49.9);
 
   const pFull = calculateProgress(Array.from({ length: 365 }, (_, i) => i + 1));
   assert.strictEqual(pFull.completedDays, 365);
@@ -185,7 +244,7 @@ test('Quality Check 4: Progress statistics and percentage calculations', () => {
   const pDedup = calculateProgress([1, 1, 1, 2, 2, 0, -5, 366, 999]);
   assert.strictEqual(pDedup.completedDays, 2);
   assert.strictEqual(pDedup.remainingDays, 363);
-  assert.strictEqual(pDedup.percentage, 0.5); // 2 / 365 = 0.5%
+  assert.strictEqual(pDedup.percentage, 0.5);
 });
 
 // 5. Quality Check 5: Date navigation works across month and year boundaries
@@ -205,12 +264,11 @@ test('Quality Check 5: Date navigation across month and year boundaries', () => 
 
   // Year boundary (Dec 31 to Jan 1 next year)
   assert.strictEqual(getDayForDate(new Date(2026, 11, 31), startDate), 365);
-  assert.strictEqual(getDayForDate(new Date(2027, 0, 1), startDate), 1); // cycles to day 1
+  assert.strictEqual(getDayForDate(new Date(2027, 0, 1), startDate), 1);
 });
 
 // 6. Quality Check 6: Changing plan start date produces correct daily assignment
 test('Quality Check 6: Custom start date correctly shifts daily assignments', () => {
-  // Scenario: User starts plan on March 15, 2026
   const customStartDate = new Date(2026, 2, 15); // March 15, 2026
 
   // Day 1 must fall on March 15
@@ -219,19 +277,26 @@ test('Quality Check 6: Custom start date correctly shifts daily assignments', ()
   // Day 2 must fall on March 16
   assert.strictEqual(getDayForDate(new Date(2026, 2, 16), customStartDate), 2);
 
-  // Reading for Day 1 must be Genesis 1–3
+  // Day 1 has Genesis 1–3, Matthew 1, Psalm 1, Proverbs 1
   const day1 = plan[0];
   assert.strictEqual(day1.day, 1);
   assert.strictEqual(day1.passages[0].bookId, 'GEN');
   assert.strictEqual(day1.passages[0].chapterStart, 1);
   assert.strictEqual(day1.passages[0].chapterEnd, 3);
+  assert.strictEqual(day1.passages[1].bookId, 'MAT');
+  assert.strictEqual(day1.passages[2].bookId, 'PSA');
+  assert.strictEqual(day1.passages[3].bookId, 'PRO');
 
   // Day 365 must fall on March 14, 2027
   assert.strictEqual(getDayForDate(new Date(2027, 2, 14), customStartDate), 365);
   const day365 = plan[364];
   assert.strictEqual(day365.day, 365);
-  assert.strictEqual(day365.passages[0].bookId, 'REV');
-  assert.strictEqual(day365.passages[0].chapterEnd, 22);
+  assert.strictEqual(day365.passages[0].bookId, 'MAL');
+  assert.strictEqual(day365.passages[1].bookId, 'REV');
+  assert.strictEqual(day365.passages[2].bookId, 'PSA');
+  assert.strictEqual(day365.passages[2].chapterStart, 150);
+  assert.strictEqual(day365.passages[3].bookId, 'PRO');
+  assert.strictEqual(day365.passages[3].chapterStart, 31);
 });
 
 // 7. Quality Check 7: Authorized external Bible links are well-formed

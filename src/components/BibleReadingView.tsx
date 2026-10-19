@@ -234,6 +234,22 @@ export default function BibleReadingView({ locale, dict }: BibleReadingViewProps
           {t.heroSubtitle}
         </p>
 
+        {/* 4 Streams Indicator Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs font-semibold">
+          <span className="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-900 border border-amber-200">
+            {t.otStream}
+          </span>
+          <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 border border-indigo-200">
+            {t.ntStream}
+          </span>
+          <span className="px-2.5 py-1 rounded-lg bg-purple-50 text-purple-900 border border-purple-200">
+            {t.psalmsStream}
+          </span>
+          <span className="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200">
+            {t.proverbsStream}
+          </span>
+        </div>
+
         {/* Start Date & Status Pill */}
         <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-700 shadow-2xs">
@@ -413,11 +429,38 @@ export default function BibleReadingView({ locale, dict }: BibleReadingViewProps
             {t.todayBadge} ({currentReading.passages.length} {isId ? 'Bagian' : 'Passages'})
           </h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {currentReading.passages.map((passage: BibleReadingPassage, idx: number) => {
               const displayRef = isId ? passage.displayRefId : passage.displayRefEn;
               const externalUrl = isId ? passage.externalUrlId : passage.externalUrlEn;
-              const testamentLabel = passage.testament === 'OT' ? t.oldTestament : t.newTestament;
+
+              // Distinctive styling per 4 streams
+              let streamBadge = {
+                label: passage.testament === 'OT' ? t.oldTestament : t.newTestament,
+                className: 'bg-slate-100 text-slate-700 border-slate-200',
+              };
+
+              if (passage.category === 'OT') {
+                streamBadge = {
+                  label: t.otStream,
+                  className: 'bg-amber-50 text-amber-900 border-amber-200',
+                };
+              } else if (passage.category === 'NT') {
+                streamBadge = {
+                  label: t.ntStream,
+                  className: 'bg-indigo-50 text-indigo-900 border-indigo-200',
+                };
+              } else if (passage.category === 'PSALM') {
+                streamBadge = {
+                  label: t.psalmsStream,
+                  className: 'bg-purple-50 text-purple-900 border-purple-200',
+                };
+              } else if (passage.category === 'PROVERB') {
+                streamBadge = {
+                  label: t.proverbsStream,
+                  className: 'bg-emerald-50 text-emerald-900 border-emerald-200',
+                };
+              }
 
               return (
                 <div
@@ -426,8 +469,8 @@ export default function BibleReadingView({ locale, dict }: BibleReadingViewProps
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md bg-white border border-slate-200 text-covenant-700">
-                        {testamentLabel}
+                      <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md border ${streamBadge.className}`}>
+                        {streamBadge.label}
                       </span>
                       <span className="text-xs text-slate-500 font-medium">
                         {passage.chapterCount} {t.chaptersLabel}
