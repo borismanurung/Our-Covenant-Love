@@ -86,8 +86,8 @@ export default async function SermonsPage({
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
               {isIndo
-                ? 'Koleksi lengkap video YouTube dari @borismanurung2626 yang dibagi menjadi dua kolom berdampingan: Our Covenant Love di kolom kiri dan Verse of The Day dengan narasi firman di kolom kanan.'
-                : 'Complete YouTube video library from @borismanurung2626 arranged in two side-by-side columns: Our Covenant Love on the left and Verse of The Day with spoken narratives on the right.'}
+                ? 'Koleksi lengkap video YouTube dari @borismanurung2626 yang dibagi menjadi dua kolom berdampingan: Our Covenant Love (bersama istri) di kolom kiri dan Verse of The Day (Ps. Boris sendiri) di kolom kanan.'
+                : 'Complete YouTube video library from @borismanurung2626 arranged in two side-by-side columns: Our Covenant Love (with wife) on the left and Verse of The Day (Ps. Boris alone) on the right.'}
             </p>
 
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
@@ -287,7 +287,7 @@ export default async function SermonsPage({
         </div>
 
         {/* ========================================================= */}
-        {/* RIGHT COLUMN: JUST ME (BORIS ALONE & OTHERS) WITH NARRATIVE */}
+        {/* RIGHT COLUMN: 2. VERSE OF THE DAY (BORIS ALONE) WITH NARRATIVE */}
         {/* ========================================================= */}
         <div className="space-y-6 bg-gradient-to-b from-royalPurple-50/50 via-white to-royalPurple-50/30 p-6 sm:p-7 rounded-3xl border border-royalPurple-200 shadow-xs">
           {/* Column Header */}
@@ -313,8 +313,8 @@ export default async function SermonsPage({
 
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             {isIndo
-              ? 'Renungan hikmat praktis, edukasi relasi, dan pembentukan karakter oleh Ps. Boris Manurung, dilengkapi narasi teks apa yang disampaikan.'
-              : 'Practical wisdom reflections, relationship coaching, and character formation by Ps. Boris Manurung, accompanied by full spoken narrative texts.'}
+              ? 'Video solo firman oleh Ps. Boris Manurung yang membuka dengan "Ayat firman hari ini: ...", dilengkapi narasi teks apa yang disampaikan.'
+              : 'Solo scripture videos by Ps. Boris Manurung opening with "The verse of the day today: ...", accompanied by full spoken narrative texts.'}
           </p>
 
           {/* Videos List (Top to Bottom) */}
