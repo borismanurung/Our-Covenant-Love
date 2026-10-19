@@ -145,19 +145,30 @@ export default async function HomePage({
   return (
     <div className="space-y-16 sm:space-y-24 pb-20">
       {/* 1. INTRODUCTION & HERO SECTION WITH "Berdua.jpeg" */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-covenant-100/80 via-white to-covenant-50/50 pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-covenant-200/50">
+      <section className="relative overflow-hidden bg-gradient-to-b from-covenant-100/80 via-white to-covenant-50/50 pt-12 sm:pt-16 pb-16 sm:pb-24 border-b border-covenant-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Middle Top: Strong Title "Our Covenant Love" */}
+          <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-covenant-200/80 border border-covenant-300 text-covenant-900 text-xs font-semibold tracking-wide shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-royalPurple-600" />
+              <span>{dict.home.heroBadge}</span>
+            </div>
+
+            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+              Our Covenant Love
+            </h1>
+
+            <p className="font-serif text-lg sm:text-2xl text-covenant-800 font-semibold tracking-wide">
+              {locale === 'id' ? 'Memancarkan Gambar & Kemuliaan Allah' : "Reflecting God's Glory"}
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-covenant-200/80 border border-covenant-300 text-covenant-900 text-xs font-semibold tracking-wide shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-royalPurple-600" />
-                <span>{dict.home.heroBadge}</span>
-              </div>
-
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.15]">
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-snug">
                 {dict.home.heroTitle}
-              </h1>
+              </h2>
 
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 {dict.home.heroSubtitle}
@@ -181,13 +192,10 @@ export default async function HomePage({
                 </Link>
               </div>
 
-              {/* Key Scripture Anchors */}
+              {/* Key Scripture Anchors (John 17:21-23 deleted) */}
               <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-covenant-800 font-mono">
                 <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">
                   {locale === 'id' ? 'Kejadian 1:26–28' : 'Genesis 1:26–28'}
-                </span>
-                <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">
-                  {locale === 'id' ? 'Yohanes 17:21–23' : 'John 17:21–23'}
                 </span>
                 <span className="px-2.5 py-1 bg-covenant-100 rounded-lg border border-covenant-200">
                   {locale === 'id' ? 'Efesus 5:31–32' : 'Ephesians 5:31–32'}
@@ -368,8 +376,8 @@ export default async function HomePage({
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
               {locale === 'id'
-                ? 'Pengajaran & Video Singkat Ps. Boris Manurung'
-                : 'Teachings & Videos by Ps. Boris Manurung'}
+                ? 'Pengajaran & Video'
+                : 'Teachings & Videos'}
             </h2>
           </div>
           <div className="flex items-center gap-3">

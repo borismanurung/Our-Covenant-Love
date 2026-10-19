@@ -74,11 +74,6 @@ export default function YouTubeShowcase({
                 {YOUTUBE_CHANNEL.handle}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 mt-0.5">
-              {isIndo
-                ? 'Dua Kategori Pengajaran: Video Bersama Pasutri & Renungan Pribadi Ps. Boris Manurung'
-                : 'Two Video Categories: Couple Ministry with Wife & Solo Reflections with Spoken Narrative'}
-            </p>
           </div>
         </div>
 
@@ -105,33 +100,40 @@ export default function YouTubeShowcase({
         </div>
       </div>
 
-      {/* 2. Category Tab Switcher Pills */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white/5 p-2 rounded-2xl border border-white/10">
-        <div className="flex flex-wrap items-center gap-2">
+      {/* 2. Category Tab Switcher: Categories, with 1. Our Covenant Love and 2. Verse of The Day below */}
+      <div className="bg-white/5 p-3.5 sm:p-4 rounded-2xl border border-white/10 space-y-2.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-2.5">
           <button
             type="button"
             onClick={() => setActiveTab('all')}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
               activeTab === 'all'
                 ? 'bg-gradient-to-r from-covenant-600 to-royalPurple-600 text-white shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-slate-300 hover:text-white hover:bg-white/10'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span>{isIndo ? 'Semua Kategori (Keduanya)' : 'All Categories (Both)'}</span>
+            <span>{isIndo ? 'Kategori' : 'Categories'}</span>
           </button>
 
+          <div className="text-[11px] text-slate-400 font-mono px-1 hidden sm:block">
+            {isIndo ? 'Menampilkan video terkini + 2 video sebelumnya' : 'Showing latest video + 2 previous uploads'}
+          </div>
+        </div>
+
+        {/* Categories placed below */}
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => setActiveTab('together')}
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               activeTab === 'together'
                 ? 'bg-covenant-600 text-white shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-slate-300 hover:text-white hover:bg-white/5 border border-white/10'
             }`}
           >
             <Users className="w-3.5 h-3.5 text-covenant-300" />
-            <span>{isIndo ? '1. Bersama Istri (Pasutri)' : '1. With Wife (Together)'}</span>
+            <span>1. Our Covenant Love</span>
           </button>
 
           <button
@@ -140,20 +142,16 @@ export default function YouTubeShowcase({
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               activeTab === 'solo'
                 ? 'bg-royalPurple-600 text-white shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-slate-300 hover:text-white hover:bg-white/5 border border-white/10'
             }`}
           >
             <User className="w-3.5 h-3.5 text-royalPurple-300" />
-            <span>{isIndo ? '2. Ps. Boris Sendiri (dengan Narasi)' : '2. Just Boris (with Narrative)'}</span>
+            <span>2. Verse of The Day</span>
           </button>
-        </div>
-
-        <div className="text-[11px] text-slate-400 font-mono px-2 hidden sm:block">
-          {isIndo ? 'Menampilkan video terkini + 2 video sebelumnya' : 'Showing latest video + 2 previous uploads'}
         </div>
       </div>
 
-      {/* 3. SHOWCASE CATEGORY 1: TOGETHER ME & MY WIFE */}
+      {/* 3. SHOWCASE CATEGORY 1: OUR COVENANT LOVE */}
       {(activeTab === 'all' || activeTab === 'together') && (
         <div className="space-y-6 pt-2">
           {/* Category Header */}
@@ -165,7 +163,7 @@ export default function YouTubeShowcase({
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-covenant-400 font-bold">
-                    {isIndo ? 'Kategori 1' : 'Category 1'}
+                    1. Our Covenant Love
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-covenant-400" />
                   <span className="text-xs text-slate-300">
@@ -173,7 +171,7 @@ export default function YouTubeShowcase({
                   </span>
                 </div>
                 <h4 className="font-serif font-bold text-xl sm:text-2xl text-white">
-                  {isIndo ? 'Video Bersama Me & My Wife' : 'Videos Together: Me & My Wife'}
+                  Our Covenant Love
                 </h4>
               </div>
             </div>
@@ -225,7 +223,7 @@ export default function YouTubeShowcase({
                   </h5>
                   <p className="text-xs text-slate-400">
                     {isIndo
-                      ? 'Klik salah satu dari 2 video di sebelah kanan untuk memutar video bersama lainnya.'
+                      ? 'Klik salah satu dari 2 video di sebelah kanan untuk memutar video Our Covenant Love lainnya.'
                       : 'Click either of the 2 previous videos on the right to swap into this player.'}
                   </p>
                 </div>
@@ -337,7 +335,7 @@ export default function YouTubeShowcase({
         <div className="border-t border-white/10 pt-4" />
       )}
 
-      {/* 4. SHOWCASE CATEGORY 2: JUST ME / SOLO (WITH SPOKEN NARRATIVE) */}
+      {/* 4. SHOWCASE CATEGORY 2: VERSE OF THE DAY */}
       {(activeTab === 'all' || activeTab === 'solo') && (
         <div className="space-y-6">
           {/* Category Header */}
@@ -349,7 +347,7 @@ export default function YouTubeShowcase({
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-royalPurple-400 font-bold">
-                    {isIndo ? 'Kategori 2' : 'Category 2'}
+                    2. Verse of The Day
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-royalPurple-400" />
                   <span className="text-xs text-slate-300">
@@ -357,9 +355,7 @@ export default function YouTubeShowcase({
                   </span>
                 </div>
                 <h4 className="font-serif font-bold text-xl sm:text-2xl text-white">
-                  {isIndo
-                    ? 'Video Ps. Boris Manurung (Just Me & Others)'
-                    : 'Videos: Ps. Boris Manurung (Solo & Spoken Narrative)'}
+                  Verse of The Day
                 </h4>
               </div>
             </div>
@@ -438,8 +434,8 @@ export default function YouTubeShowcase({
                       </div>
                       <h6 className="font-serif font-bold text-sm sm:text-base text-royalPurple-200">
                         {isIndo
-                          ? 'Narasi Firman yang Disampaikan oleh Ps. Boris Manurung'
-                          : 'Spoken Word Narrative by Ps. Boris Manurung'}
+                          ? 'Narasi Firman yang Disampaikan (Verse of The Day)'
+                          : 'Spoken Word Narrative (Verse of The Day)'}
                       </h6>
                     </div>
                     <span className="text-[10px] font-mono text-royalPurple-300 uppercase tracking-widest bg-royalPurple-500/20 px-2 py-0.5 rounded">

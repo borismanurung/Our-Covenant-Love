@@ -86,8 +86,8 @@ export default async function SermonsPage({
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
               {isIndo
-                ? 'Koleksi lengkap video YouTube dari @borismanurung2626 yang dibagi menjadi dua kolom berdampingan: Video Bersama Pasutri di kolom kiri dan Pengajaran Ps. Boris Manurung sendiri dengan narasi firman di kolom kanan.'
-                : 'Complete YouTube video library from @borismanurung2626 arranged in two side-by-side columns: Couple videos on the left and Ps. Boris Manurung solo teachings with spoken narratives on the right.'}
+                ? 'Koleksi lengkap video YouTube dari @borismanurung2626 yang dibagi menjadi dua kolom berdampingan: Our Covenant Love di kolom kiri dan Verse of The Day dengan narasi firman di kolom kanan.'
+                : 'Complete YouTube video library from @borismanurung2626 arranged in two side-by-side columns: Our Covenant Love on the left and Verse of The Day with spoken narratives on the right.'}
             </p>
 
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
@@ -165,8 +165,8 @@ export default async function SermonsPage({
         <div className="text-center text-xs text-slate-600 bg-covenant-50/60 p-3 rounded-xl border border-covenant-200">
           <span>
             {isIndo
-              ? `Menampilkan hasil pencarian untuk "${searchQuery}": ${togetherVideos.length} video bersama, ${soloVideos.length} video sendiri.`
-              : `Showing search results for "${searchQuery}": ${togetherVideos.length} together videos, ${soloVideos.length} solo videos.`}
+              ? `Menampilkan hasil pencarian untuk "${searchQuery}": ${togetherVideos.length} video Our Covenant Love, ${soloVideos.length} video Verse of The Day.`
+              : `Showing search results for "${searchQuery}": ${togetherVideos.length} Our Covenant Love videos, ${soloVideos.length} Verse of The Day videos.`}
           </span>
         </div>
       )}
@@ -174,7 +174,7 @@ export default async function SermonsPage({
       {/* 3. SIDE-BY-SIDE TWO COLUMNS (FROM TOP TO BOTTOM) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {/* ========================================================= */}
-        {/* LEFT COLUMN: TOGETHER (BORIS & HIS WIFE'S VIDEOS)         */}
+        {/* LEFT COLUMN: 1. OUR COVENANT LOVE                         */}
         {/* ========================================================= */}
         <div className="space-y-6 bg-gradient-to-b from-covenant-50/50 via-white to-covenant-50/30 p-6 sm:p-7 rounded-3xl border border-covenant-200 shadow-xs">
           {/* Column Header */}
@@ -185,10 +185,10 @@ export default async function SermonsPage({
               </div>
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-covenant-700 font-bold">
-                  {isIndo ? 'KOLOM KIRI &bull; BERSAMA' : 'LEFT COLUMN &bull; TOGETHER'}
+                  {isIndo ? 'KOLOM KIRI &bull; 1. OUR COVENANT LOVE' : 'LEFT COLUMN &bull; 1. OUR COVENANT LOVE'}
                 </span>
                 <h2 className="font-serif font-bold text-xl sm:text-2xl text-slate-900">
-                  {isIndo ? 'Boris & Istri (Video Bersama)' : 'Boris & Wife (Together)'}
+                  Our Covenant Love
                 </h2>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default async function SermonsPage({
           {/* Videos List (Top to Bottom) */}
           {togetherVideos.length === 0 ? (
             <div className="p-8 text-center bg-white rounded-2xl border border-dashed border-slate-300 text-slate-500 text-xs">
-              {isIndo ? 'Tidak ada video bersama yang cocok dengan pencarian.' : 'No together videos matched your query.'}
+              {isIndo ? 'Tidak ada video Our Covenant Love yang cocok dengan pencarian.' : 'No Our Covenant Love videos matched your query.'}
             </div>
           ) : (
             <div className="space-y-6">
@@ -298,10 +298,10 @@ export default async function SermonsPage({
               </div>
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-royalPurple-700 font-bold">
-                  {isIndo ? 'KOLOM KANAN &bull; SENDIRI' : 'RIGHT COLUMN &bull; JUST BORIS'}
+                  {isIndo ? 'KOLOM KANAN &bull; 2. VERSE OF THE DAY' : 'RIGHT COLUMN &bull; 2. VERSE OF THE DAY'}
                 </span>
                 <h2 className="font-serif font-bold text-xl sm:text-2xl text-slate-900">
-                  {isIndo ? 'Ps. Boris Manurung (Sendiri & Lainnya)' : 'Ps. Boris Manurung (Solo & Others)'}
+                  Verse of The Day
                 </h2>
               </div>
             </div>
@@ -320,7 +320,7 @@ export default async function SermonsPage({
           {/* Videos List (Top to Bottom) */}
           {soloVideos.length === 0 ? (
             <div className="p-8 text-center bg-white rounded-2xl border border-dashed border-slate-300 text-slate-500 text-xs">
-              {isIndo ? 'Tidak ada video solo yang cocok dengan pencarian.' : 'No solo videos matched your query.'}
+              {isIndo ? 'Tidak ada video Verse of The Day yang cocok dengan pencarian.' : 'No Verse of The Day videos matched your query.'}
             </div>
           ) : (
             <div className="space-y-6">
