@@ -16,8 +16,10 @@ model User {
   role         String      @default("EDITOR") // ADMIN, EDITOR
   createdAt    DateTime    @default(now())
   updatedAt    DateTime    @updatedAt
-  sessions     Session[]
-  auditLogs    AuditLog[]
+  sessions        Session[]
+  auditLogs       AuditLog[]
+  readingProgress UserReadingProgress[]
+  readingSettings UserReadingSettings?
 }
 
 model Session {
@@ -119,4 +121,25 @@ model AuditLog {
   entityId   String?
   details    String?
   createdAt  DateTime @default(now())
+}
+
+model UserReadingProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dayNumber   Int      // 1 to 365
+  completed   Boolean  @default(true)
+  completedAt DateTime @default(now())
+
+  @@unique([userId, dayNumber])
+  @@index([userId])
+}
+
+model UserReadingSettings {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startDate DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

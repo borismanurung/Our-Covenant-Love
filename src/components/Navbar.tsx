@@ -28,6 +28,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
     { href: `/${locale}`, label: dict.common.home },
     { href: `/${locale}/our-story`, label: dict.common.ourStory },
     { href: `/${locale}/marriage-family`, label: dict.common.marriageFamily },
+    { href: `/${locale}/bible-reading`, label: dict.common.bibleReading },
     { href: `/${locale}/articles`, label: dict.common.articles },
     { href: `/${locale}/sermons`, label: dict.common.sermons },
     { href: `/${locale}/music`, label: dict.common.music },

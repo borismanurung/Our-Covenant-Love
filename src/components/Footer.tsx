@@ -98,6 +98,11 @@ export default function Footer({ locale, dict }: FooterProps) {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <Link href={`/${locale}/bible-reading`} className="hover:text-covenant-400 transition-colors">
+                  {dict.common.bibleReading}
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${locale}/articles`} className="hover:text-covenant-400 transition-colors">
                   {dict.common.articles}
                 </Link>

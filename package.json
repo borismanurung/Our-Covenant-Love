@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
-    "test": "node --test src/lib/auth.test.js"
+    "test": "node --test src/lib/auth.test.js tests/bible-reading-plan.test.mjs"
   },
   "dependencies": {
     "@prisma/client": "^5.21.1",
