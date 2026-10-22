@@ -62,10 +62,10 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               />
             </div>
             <div className="flex flex-col justify-center min-w-0">
-              <span className="font-serif font-bold text-base sm:text-lg lg:text-xl tracking-tight text-slate-900 group-hover:text-covenant-800 transition-colors whitespace-normal leading-tight">
+              <span className="font-serif font-bold text-base sm:text-lg lg:text-xl tracking-tight text-slate-900 group-hover:text-covenant-800 transition-colors whitespace-normal break-words text-center max-w-[8rem] overflow-hidden leading-tight">
                 Our Covenant Love
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium tracking-wider text-covenant-700 whitespace-normal">
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-wider text-covenant-700 whitespace-normal break-words text-center max-w-[8rem] overflow-hidden">
                 {locale === 'id' ? 'Memancarkan Kemuliaan Allah' : "Reflecting God's glory"}
               </span>
             </div>
@@ -77,7 +77,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-normal ${
+                className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-normal break-words text-center max-w-[8rem] overflow-hidden ${
                   isActive(link.href)
                     ? 'text-covenant-800 bg-covenant-100/70 font-semibold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-covenant-50'

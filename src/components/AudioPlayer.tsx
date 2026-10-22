@@ -16,6 +16,23 @@ export default function AudioPlayer({ src, title, locale = 'id' }: AudioPlayerPr
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
+  const [volume, setVolume] = useState(1);
+
+  // Sync volume changes to the audio element
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const vol = Number(e.target.value);
+    setVolume(vol);
+    if (audioRef.current) {
+      audioRef.current.volume = vol;
+      setIsMuted(vol === 0);
+    }
+  };
   const [hasError, setHasError] = useState(false);
 
   const isIndo = locale === 'id';
@@ -129,6 +146,20 @@ export default function AudioPlayer({ src, title, locale = 'id' }: AudioPlayerPr
           onChange={handleSeek}
           className="w-full h-1.5 bg-covenant-950 rounded-lg appearance-none cursor-pointer accent-covenant-400"
         />
+
+        {/* Volume Slider */}
+        <div className="flex items-center space-x-2 mt-2">
+          <Volume2 className="w-4 h-4 text-covenant-300" />
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={volume}
+            onChange={handleVolumeChange}
+            className="flex-1 h-1.5 bg-covenant-950 rounded-lg appearance-none cursor-pointer accent-covenant-400"
+          />
+        </div>
       </div>
 
       <div className="flex items-center justify-between mt-4">
