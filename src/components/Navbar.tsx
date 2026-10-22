@@ -34,6 +34,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
     { href: `/${locale}/music`, label: dict.common.music },
     { href: `/${locale}/events`, label: dict.common.events },
     { href: `/${locale}/contact`, label: dict.common.contact },
+    { href: `/${locale}/pernikahan-keluarga`, label: 'Pernikahan & Keluarga' },
   ];
 
   const isActive = (href: string) => {
