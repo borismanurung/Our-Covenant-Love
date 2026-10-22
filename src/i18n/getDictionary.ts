@@ -7,7 +7,7 @@ const dictionaries = {
   en,
 };
 
-export type Dictionary = typeof id;
+export type Dictionary = any;
 
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale] || dictionaries[defaultLocale];

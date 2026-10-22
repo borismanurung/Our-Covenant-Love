@@ -14,7 +14,7 @@ interface Chapter {
 
 
 export async function generateMetadata({ params }: { params: { locale: Locale } }) {
-  const dict = getDictionary(params.locale);
+  const dict: any = getDictionary(params.locale);
   return {
     title: `${dict.common.pernikahanKeluarga || 'Pernikahan & Keluarga'} | Our Covenant Love`,
     description: dict.music.storyTitle,
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
 
 export default function PernikahanKeluargaPage({ params }: { params: { locale: Locale } }) {
   const subHeading = '2=1 Marriage For Life Ministry';
-  const dict = getDictionary(params.locale);
+  const dict: any = getDictionary(params.locale);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8">

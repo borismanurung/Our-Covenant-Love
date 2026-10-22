@@ -184,7 +184,7 @@ export default async function MarriageFamilyPage({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {dict.marriageFamily.topics.map((topic) => {
+          {dict.marriageFamily.topics.map((topic: { id: string; title: string; desc: string }) => {
             const Icon = topicIcons[topic.id] || Heart;
             const scripture = topicScriptures[topic.id]?.[locale] || '';
 
