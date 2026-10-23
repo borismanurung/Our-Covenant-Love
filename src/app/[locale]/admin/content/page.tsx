@@ -9,9 +9,9 @@ import ContentManager from '@/components/ContentManager';
 export default async function AdminContentPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   const cookieStore = cookies();
   const sessionToken = cookieStore.get('ocl_session')?.value;
