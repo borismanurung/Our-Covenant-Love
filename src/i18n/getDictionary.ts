@@ -17,8 +17,8 @@ export function getDictionary(locale: Locale): Dictionary {
   const localeHome = raw.home || {};
   const mergedHome = { ...defaultHome, ...localeHome };
   // Ensure the `bibleReadingPlan` section exists and merge defaults.
-  const defaultBPR = dictionaries[defaultLocale].bibleReadingPlan || {};
-  const localeBPR = raw.bibleReadingPlan || {};
+  const defaultBPR = (dictionaries[defaultLocale] as any).bibleReadingPlan || {};
+  const localeBPR = (raw as any).bibleReadingPlan || {};
   const mergedBPR = { ...defaultBPR, ...localeBPR };
   // Return a shallow copy with merged sections.
   return { ...raw, home: mergedHome, bibleReadingPlan: mergedBPR };
