@@ -116,7 +116,7 @@ export default async function OurStoryPage({
             {dict.ourStory.missionTitle}
           </h3>
           <ul className="space-y-3">
-            {dict.ourStory.missionPoints.map((point, idx) => (
+            {dict.ourStory.missionPoints.map((point: {title:string; desc:string}, idx: number) => (
               <li key={idx} className="text-xs sm:text-sm text-slate-700">
                 <span className="font-semibold text-slate-900 block">{point.title}</span>
                 <span className="text-slate-600">{point.desc}</span>
@@ -140,7 +140,7 @@ export default async function OurStoryPage({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {dict.ourStory.values.map((v) => (
+          {dict.ourStory.values.map((v: {letter:string; title:string; desc:string}) => (
             <div
               key={v.letter}
               className="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-xs space-y-2"
