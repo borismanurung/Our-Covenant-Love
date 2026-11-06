@@ -125,7 +125,7 @@ Coming down here Coming down here Yeah`,
       title: dict.common.ourStory,
       description:
         locale === 'id'
-          ? 'Perjalanan 25 tahun pernikahan kovenan, beban pendiri, dan nilai-nilai inti I-M-A-G-E.'
+          ? 'Perjalanan 25 tahun pernikahan perjanjian, beban pendiri, dan nilai-nilai inti I-M-A-G-E.'
           : 'The 25-year covenant marriage journey, founders’ burden, and core I-M-A-G-E values.',
       cta: locale === 'id' ? 'Baca Kisah Kami' : 'Read Our Story',
     },
@@ -135,7 +135,7 @@ Coming down here Coming down here Yeah`,
       title: dict.common.marriageFamily,
       description:
         locale === 'id'
-          ? 'Fondasi alkitabiah mengenai kovenan pernikahan, keintiman emosional, dan mezbah keluarga.'
+          ? 'Fondasi alkitabiah mengenai perjanjian pernikahan, keintiman emosional, dan mezbah keluarga.'
           : 'Biblical foundation of covenant marriage, emotional intimacy, and family altar discipleship.',
       cta: locale === 'id' ? 'Masuk ke Halaman' : 'Explore Page',
     },
@@ -155,7 +155,7 @@ Coming down here Coming down here Yeah`,
       title: dict.common.articles,
       description:
         locale === 'id'
-          ? 'Kumpulan renungan dan artikel teologis untuk memperkuat pemahaman kovenan Anda.'
+          ? 'Kumpulan renungan dan artikel teologis untuk memperkuat pemahaman perjanjian Anda.'
           : 'Theological articles and devotionals to strengthen your covenant understanding.',
       cta: locale === 'id' ? 'Jelajahi Artikel' : 'Browse Articles',
     },

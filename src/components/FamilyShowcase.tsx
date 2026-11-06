@@ -18,8 +18,8 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       id: 'founders-25',
       category: 'founders',
       src: '/images/family/boris-wife-25years.jpg',
-      alt: locale === 'id' ? 'Boris Manurung dan Istri - 25 Tahun Pernikahan Kovenan' : 'Boris Manurung and Wife - 25 Years of Covenant Marriage',
-      caption: locale === 'id' ? 'Boris & Istri — 25 Tahun Kasih Kovenan' : 'Boris & Wife — 25 Years of Covenant Love',
+      alt: locale === 'id' ? 'Boris Manurung dan Istri - 25 Tahun Pernikahan Perjanjian' : 'Boris Manurung and Wife - 25 Years of Covenant Marriage',
+      caption: locale === 'id' ? 'Boris & Istri — 25 Tahun Kasih Perjanjian' : 'Boris & Wife — 25 Years of Covenant Love',
       subtitle: locale === 'id'
         ? '"We’ve been married for 25 years" — Menjadi saksi nyata bahwa kasih Allah memampukan kita setia seumur hidup.'
         : '"We’ve been married for 25 years" — A living testimony that God’s steadfast love sustains lifelong faithfulness.',
@@ -36,7 +36,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       subtitle: locale === 'id'
         ? 'Diberkati dengan 5 orang anak yang bertumbuh bersama dalam firman dan mezbah keluarga.'
         : 'Blessed with 5 children growing together in God’s Word and family altar.',
-      badge: locale === 'id' ? 'Keluarga Kovenan' : 'Covenant Family',
+      badge: locale === 'id' ? 'Keluarga Perjanjian' : 'Covenant Family',
       featured: true,
       aspectRatio: 'landscape' as const,
     },
@@ -45,7 +45,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
       category: 'children',
       src: '/images/family/children-blue-purple.jpg',
       alt: locale === 'id' ? 'Kelima Anak Boris Manurung' : 'The Five Children of Boris Manurung',
-      caption: locale === 'id' ? 'Kelima Buah Hati & Generasi Kovenan' : 'The Five Children & Next Generation',
+      caption: locale === 'id' ? 'Kelima Buah Hati & Generasi Perjanjian' : 'The Five Children & Next Generation',
       subtitle: locale === 'id'
         ? 'Memuridkan generasi penerus untuk mengenal dan mencintai kebenaran Kristus.'
         : 'Discipling the next generation to know and abide in the truth of Christ.',
@@ -144,13 +144,13 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
 
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
             {locale === 'id'
-              ? '25 Tahun Kasih Kovenan: Menjadi Panggung Berjalan Kemuliaan Allah'
+              ? '25 Tahun Kasih Perjanjian: Menjadi Panggung Berjalan Kemuliaan Allah'
               : '25 Years of Covenant Love: A Living Showcase of God’s Glory'}
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             {locale === 'id'
-              ? 'Our Covenant Love tidak lahir dari teori akademis, melainkan dari perjalanan nyata 25 tahun pernikahan kovenan Boris Manurung dan istri, membina mezbah keluarga, membesarkan 5 orang anak, dan mengalami anugerah pemulihan Kristus setiap hari.'
+              ? 'Our Covenant Love tidak lahir dari teori akademis, melainkan dari perjalanan nyata 25 tahun pernikahan perjanjian Boris Manurung dan istri, membina mezbah keluarga, membesarkan 5 orang anak, dan mengalami anugerah pemulihan Kristus setiap hari.'
               : 'Our Covenant Love was born not of abstract theory, but through 25 years of covenant marriage of Boris Manurung and his wife, building the family altar, raising 5 children, and experiencing the redeeming grace of Christ daily.'}
           </p>
         </div>
@@ -206,7 +206,7 @@ export default function FamilyShowcase({ locale }: FamilyShowcaseProps) {
           <div className="absolute top-0 right-0 w-64 h-64 bg-royalPurple-600/10 rounded-full blur-2xl" />
           <div className="relative z-10 max-w-3xl mx-auto text-center space-y-4">
             <span className="text-xs font-semibold uppercase tracking-widest text-covenant-300">
-              {locale === 'id' ? 'Kesaksian Kovenan Boris & Keluarga' : 'Boris & Family Covenant Testimony'}
+              {locale === 'id' ? 'Kesaksian Perjanjian Boris & Keluarga' : 'Boris & Family Covenant Testimony'}
             </span>
             <blockquote className="font-serif italic text-lg sm:text-2xl text-slate-100 leading-relaxed">
               &ldquo;

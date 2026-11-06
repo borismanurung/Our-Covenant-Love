@@ -177,7 +177,7 @@ export default function YouTubeShowcase({
             </div>
 
             <span className="text-xs text-covenant-300 bg-covenant-500/10 border border-covenant-500/20 px-3 py-1 rounded-full self-start sm:self-auto">
-              {isIndo ? 'Pernikahan Kovenan & Mezbah Keluarga' : 'Covenant Marriage & Family Altar'}
+              {isIndo ? 'Pernikahan Perjanjian & Mezbah Keluarga' : 'Covenant Marriage & Family Altar'}
             </span>
           </div>
 
@@ -249,7 +249,7 @@ export default function YouTubeShowcase({
                       </div>
                       <h6 className="font-serif font-bold text-sm sm:text-base text-covenant-200">
                         {isIndo
-                          ? 'Pesan Kovenan Pernikahan (Our Covenant Love)'
+                          ? 'Pesan Perjanjian Pernikahan (Our Covenant Love)'
                           : 'Covenant Marriage Message (Our Covenant Love)'}
                       </h6>
                     </div>

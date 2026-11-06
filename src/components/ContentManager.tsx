@@ -325,7 +325,7 @@ export default function ContentManager({ locale, initialItems }: ContentManagerP
                   type="text"
                   value={formData.seriesTitle}
                   onChange={(e) => setFormData({ ...formData, seriesTitle: e.target.value })}
-                  placeholder="e.g. Fondasi Kovenan"
+                  placeholder="e.g. Fondasi Perjanjian"
                   className="w-full px-3 py-2 text-xs bg-white border border-purple-200 rounded-lg outline-none"
                 />
               </div>

@@ -81,7 +81,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Mengenakan kaos resmi Our Covenant Love berdua, kami menegaskan bahwa rasa ketertarikan adalah hal yang wajar, namun jangan terburu-buru mengikat hubungan jika secara rohani, emosional, dan karakter belum siap. Fokuslah bertumbuh di dalam Tuhan dan mempersiapkan diri menjadi pribadi yang matang sebelum melangkah ke komitmen kovenan pernikahan kudus.',
+      id: 'Mengenakan kaos resmi Our Covenant Love berdua, kami menegaskan bahwa rasa ketertarikan adalah hal yang wajar, namun jangan terburu-buru mengikat hubungan jika secara rohani, emosional, dan karakter belum siap. Fokuslah bertumbuh di dalam Tuhan dan mempersiapkan diri menjadi pribadi yang matang sebelum melangkah ke komitmen perjanjian pernikahan kudus.',
       en: 'Wearing our official Our Covenant Love shirts together, we share that romantic attraction is natural, but one must never rush into a premature relationship without spiritual, emotional, and character readiness. Focus on maturing in Christ and preparing yourself to be a godly partner before entering a sacred marriage covenant.',
     },
   },
@@ -103,7 +103,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Bersama istri dengan cangkir Our Covenant Love, kami mengupas bahwa perbedaan latar belakang ekonomi atau status sosial bukanlah penghalang utama, melainkan keselarasan iman, kedewasaan karakter, dan kerelaan saling merendahkan hati untuk belajar. Carilah pasangan yang sepadan di dalam Kristus dan memiliki komitmen kovenan yang teguh.',
+      id: 'Bersama istri dengan cangkir Our Covenant Love, kami mengupas bahwa perbedaan latar belakang ekonomi atau status sosial bukanlah penghalang utama, melainkan keselarasan iman, kedewasaan karakter, dan kerelaan saling merendahkan hati untuk belajar. Carilah pasangan yang sepadan di dalam Kristus dan memiliki komitmen perjanjian yang teguh.',
       en: 'Together with my wife and our Our Covenant Love mugs, we explain that differences in social status or financial background are secondary to alignment in faith, Christlike humility, and godly character. Seek a partner who is spiritually equally yoked in Christ and committed to sacred covenant.',
     },
   },
@@ -147,7 +147,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Bersama istri, kami menegaskan bahwa pacaran bertahun-tahun bukanlah jaminan pernikahan akan sukses atau bahagia. Yang terpenting bukanlah "berapa lama" waktu berpacaran, melainkan "apa yang dibangun" selama masa pendekatan tersebut: keselarasan visi kovenan, keterbukaan karakter, kesepakatan iman, dan kesiapan memikul tanggung jawab.',
+      id: 'Bersama istri, kami menegaskan bahwa pacaran bertahun-tahun bukanlah jaminan pernikahan akan sukses atau bahagia. Yang terpenting bukanlah "berapa lama" waktu berpacaran, melainkan "apa yang dibangun" selama masa pendekatan tersebut: keselarasan visi perjanjian, keterbukaan karakter, kesepakatan iman, dan kesiapan memikul tanggung jawab.',
       en: 'Together with my wife, we emphasize that dating for a long duration is never a guarantee of marital happiness or success. What truly matters is not "how long" you date, but "what you build" during that season: alignment in covenant vision, character transparency, shared faith values, and readiness for responsibility.',
     },
   },
@@ -279,7 +279,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Kami mengulas ketetapan 2 Korintus 6:14 tentang kesatuan iman. Pernikahan kovenan adalah kesatuan roh, jiwa, dan tubuh di hadapan Kristus. Ketika iman dasar berbeda, suami dan istri tidak memiliki mezbah doa bersama yang sejati, dan arah pendidikan iman anak akan terombang-ambing.',
+      id: 'Kami mengulas ketetapan 2 Korintus 6:14 tentang kesatuan iman. Pernikahan perjanjian adalah kesatuan roh, jiwa, dan tubuh di hadapan Kristus. Ketika iman dasar berbeda, suami dan istri tidak memiliki mezbah doa bersama yang sejati, dan arah pendidikan iman anak akan terombang-ambing.',
       en: 'We examine the biblical principle of 2 Corinthians 6:14 regarding spiritual unity. Covenant marriage is a sacred union of spirit, soul, and body centered on Christ. When core faith is divided, husband and wife cannot establish a truly unified prayer altar.',
     },
   },
@@ -301,7 +301,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Dari pengalaman 25 tahun pernikahan kami, kami belajar bahwa kemampuan menerima teguran dengan lapang dada adalah kunci keharmonisan kovenan. Amsal 12:1 mengingatkan bahwa siapa mencintai didikan mencintai pengetahuan. Teguran yang tulus dari pasangan adalah instrumen kasih Allah untuk menyempurnakan kita.',
+      id: 'Dari pengalaman 25 tahun pernikahan kami, kami belajar bahwa kemampuan menerima teguran dengan lapang dada adalah kunci keharmonisan perjanjian. Amsal 12:1 mengingatkan bahwa siapa mencintai didikan mencintai pengetahuan. Teguran yang tulus dari pasangan adalah instrumen kasih Allah untuk menyempurnakan kita.',
       en: 'From our 25-year marriage journey, we learned that humility in receiving correction is vital for covenant harmony. Proverbs 12:1 reminds us that whoever loves instruction loves knowledge. Loving correction from your spouse is God’s instrument to refine our character.',
     },
   },
@@ -312,7 +312,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     categoryType: 'together',
     speakerName: 'Ps. Boris & Meilita Manurung',
     speakerNameEn: 'Ps. Boris & Meilita Manurung',
-    category: 'Pengasuhan Anak & Kovenan Keluarga',
+    category: 'Pengasuhan Anak & Perjanjian Keluarga',
     categoryEn: 'Parenting & Covenant Heritage',
     url: 'https://www.youtube.com/shorts/MkyjbhwhL3k',
     embedUrl: 'https://www.youtube.com/embed/MkyjbhwhL3k',
@@ -367,7 +367,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Kami membahas pandangan Alkitab mengenai keterbukaan keuangan suami istri. Di dalam ikatan kovenan kudus, dua orang telah dipersatukan menjadi satu daging—termasuk dalam perencanaan anggaran, keterbukaan penghasilan, dan pertanggungjawaban pengeluaran bersama.',
+      id: 'Kami membahas pandangan Alkitab mengenai keterbukaan keuangan suami istri. Di dalam ikatan perjanjian kudus, dua orang telah dipersatukan menjadi satu daging—termasuk dalam perencanaan anggaran, keterbukaan penghasilan, dan pertanggungjawaban pengeluaran bersama.',
       en: 'We discuss biblical stewardship and transparency in marital finances. In holy covenant, two become one flesh—including budget planning, income transparency, and mutual accountability for household expenses.',
     },
   },
@@ -389,7 +389,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Bersama istri, kami menekankan bahwa seseorang belum siap menikah jika belum siap mematikan keegoisan diri sendiri. Pernikahan bukan tempat mencari pemenuhan ego pribadi, melainkan tempat memberi hidup dan melayani dalam kovenan kudus.',
+      id: 'Bersama istri, kami menekankan bahwa seseorang belum siap menikah jika belum siap mematikan keegoisan diri sendiri. Pernikahan bukan tempat mencari pemenuhan ego pribadi, melainkan tempat memberi hidup dan melayani dalam perjanjian kudus.',
       en: 'Together with my wife, we stress that one is not ready to marry until one is ready to lay down personal selfishness. Marriage is not primarily where you extract personal happiness, but a sacred covenant where you give your life to serve.',
     },
   },
@@ -400,7 +400,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     categoryType: 'together',
     speakerName: 'Ps. Boris & Meilita Manurung',
     speakerNameEn: 'Ps. Boris & Meilita Manurung',
-    category: 'Kesetiaan & Keharmonisan Kovenan',
+    category: 'Kesetiaan & Keharmonisan Perjanjian',
     categoryEn: 'Covenant Faithfulness & Longevity',
     url: 'https://www.youtube.com/shorts/kV9DoWIEPAA',
     embedUrl: 'https://www.youtube.com/embed/kV9DoWIEPAA',
@@ -422,7 +422,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     categoryType: 'together',
     speakerName: 'Ps. Boris & Meilita Manurung',
     speakerNameEn: 'Ps. Boris & Meilita Manurung',
-    category: 'Romansa & Api Kovenan',
+    category: 'Romansa & Api Perjanjian',
     categoryEn: 'Romance & Sustaining the Flame',
     url: 'https://www.youtube.com/shorts/D1MGvmqvdeM',
     embedUrl: 'https://www.youtube.com/embed/D1MGvmqvdeM',
@@ -433,7 +433,7 @@ export const BORIS_YOUTUBE_VIDEOS: YouTubeVideoItem[] = [
     uploadedAt: 'Video Bersama',
     uploadedAtEn: 'Couple Video',
     narrative: {
-      id: 'Api cinta dan kencan tidak boleh padam setelah mengucap janji nikah! Bersama istri dengan kaos God Loves Indonesia, kami membagikan pentingnya terus berpacaran, menciptakan waktu berkualitas berdua, dan merawat binar romansa di sepanjang perjalanan kovenan.',
+      id: 'Api cinta dan kencan tidak boleh padam setelah mengucap janji nikah! Bersama istri dengan kaos God Loves Indonesia, kami membagikan pentingnya terus berpacaran, menciptakan waktu berkualitas berdua, dan merawat binar romansa di sepanjang perjalanan perjanjian.',
       en: 'Dating must never stop once you say "I do"! Together with my wife, we highlight the vital importance of intentional couple dates, continuous courtship, and nurturing romance throughout your lifelong covenant journey.',
     },
   },
