@@ -157,8 +157,34 @@ export default function ContactForm({ locale, dict }: ContactFormProps) {
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-covenant-500 focus:border-covenant-500 transition-all outline-none"
-            placeholder={locale === 'id' ? 'misal: Konsultasi Seminar / Pertanyaan' : 'e.g. Seminar Inquiry / Question'}
+            placeholder={locale === 'id' ? 'misal: Permohonan Doa / Konsultasi / Komentar' : 'e.g. Prayer Request / Counseling / Comment'}
           />
+        </div>
+      </div>
+
+      {/* Quick Category Suggestions */}
+      <div className="space-y-1.5">
+        <span className="text-[11px] font-medium text-slate-500">
+          {locale === 'id' ? 'Pilihan Cepat Kategori:' : 'Quick Subject Presets:'}
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          {(locale === 'id'
+            ? ['Permohonan Doa', 'Konseling Keluarga', 'Komentar & Masukan', 'Undangan Seminar']
+            : ['Prayer Request', 'Family Counseling', 'Comments & Feedback', 'Seminar Invitation']
+          ).map((preset) => (
+            <button
+              key={preset}
+              type="button"
+              onClick={() => setFormData((prev) => ({ ...prev, subject: preset }))}
+              className={`px-2.5 py-1 text-xs rounded-lg border transition-all ${
+                formData.subject === preset
+                  ? 'bg-covenant-100 border-covenant-400 text-covenant-900 font-semibold shadow-xs'
+                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              {preset}
+            </button>
+          ))}
         </div>
       </div>
 

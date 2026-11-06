@@ -48,7 +48,7 @@ export default async function PernikahanKeluargaPage({ params }: { params: Promi
 
       <div className="space-y-4">
         {chapters.map((ch: Chapter) => (
-          <ChapterAccordion key={ch.id} chapter={ch} locale={params.locale} />
+          <ChapterAccordion key={ch.id} chapter={ch} locale={locale} />
         ))}
       </div>
     </div>

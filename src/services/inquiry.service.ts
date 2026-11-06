@@ -1,4 +1,6 @@
 import { prisma } from '@/lib/prisma';
+import { sendInquiryNotificationEmail } from '@/services/email.service';
+import { appendInquiryToSpreadsheet } from '@/services/spreadsheet.service';
 
 export interface SubmitInquiryInput {
   name: string;
@@ -51,6 +53,17 @@ export async function submitContactInquiry(data: SubmitInquiryInput) {
       status: 'NEW',
     },
   });
+
+  // Non-blocking asynchronous notifications:
+  // 1. Send instant email via SMTP to ministry inbox
+  sendInquiryNotificationEmail(inquiry).catch((err) =>
+    console.error('[Inquiry Service] Background email sending failed:', err)
+  );
+
+  // 2. Append new row directly into Google Sheets (if webhook configured)
+  appendInquiryToSpreadsheet(inquiry).catch((err) =>
+    console.error('[Inquiry Service] Background spreadsheet sync failed:', err)
+  );
 
   return { success: true, inquiryId: inquiry.id };
 }

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Locale } from '@/i18n/config';
-import { Mail, Phone, Calendar, ExternalLink, CheckCircle, Search, MessageSquare } from 'lucide-react';
+import { Mail, Phone, Calendar, ExternalLink, CheckCircle, Search, MessageSquare, FileSpreadsheet } from 'lucide-react';
 
 interface Inquiry {
   id: string;
@@ -65,14 +65,26 @@ export default function InquiriesManager({
           ))}
         </div>
 
-        <div className="w-full sm:w-64">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={locale === 'id' ? 'Cari nama, email, isi...' : 'Search name, email, text...'}
-            className="w-full px-3.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:ring-1 focus:ring-covenant-500 outline-none"
-          />
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          <a
+            href="/api/admin/inquiries/export"
+            download
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors shadow-xs"
+            title={locale === 'id' ? 'Unduh seluruh data kontak ke format spreadsheet (.csv)' : 'Download all contacts in spreadsheet format (.csv)'}
+          >
+            <FileSpreadsheet className="w-3.5 h-3.5" />
+            <span>{locale === 'id' ? 'Unduh Spreadsheet (CSV)' : 'Export Spreadsheet'}</span>
+          </a>
+
+          <div className="w-full sm:w-64">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={locale === 'id' ? 'Cari nama, email, isi...' : 'Search name, email, text...'}
+              className="w-full px-3.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:ring-1 focus:ring-covenant-500 outline-none"
+            />
+          </div>
         </div>
       </div>
 
