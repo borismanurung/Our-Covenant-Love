@@ -153,10 +153,10 @@ export const id = {
     sendingButton: 'Mengirim...',
     successTitle: 'Pesan Anda Telah Diterima!',
     successDesc: 'Terima kasih telah menghubungi Our Covenant Love. Tim kami akan segera menanggapi pesan Anda.',
-    officeTitle: 'Kantor Pelayanan',
-    officeAddress: 'VMM, Blok i-11 No.26, Serpong (15323)',
-    contactPerson: 'Ita Kitting: 0815 8641 8641',
-    socialMedia: 'Media Sosial: Instagram, TikTok, Facebook (@OurCovenantLove)',
+    officeTitle: 'Hubungi Kami',
+    emailAddress: 'ourcovenantlove@gmail.com',
+
+
   },
   couplesPreview: {
     badge: 'Rancangan Modul Masa Depan',

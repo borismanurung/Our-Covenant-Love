@@ -17,6 +17,7 @@ import {
   Users,
   MessageSquare,
   Compass,
+  ExternalLink,
 } from 'lucide-react';
 
 export default async function HomePage({
@@ -50,13 +51,71 @@ export default async function HomePage({
   const categorizedVideos = await getHomeCategorizedYouTubeVideos();
 
   const featuredSong = {
-    title: 'Good Guy (by Boris Manurung)',
+    title: 'Good Guy - Official Music Video',
+    author: 'Ps. Boris Manurung',
+    videoId: '7vAGf2R9Yyc',
+    embedUrl: 'https://www.youtube.com/embed/7vAGf2R9Yyc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=7vAGf2R9Yyc',
     audioUrl: '/audio/good-guy.mp3',
     slug: 'good-guy',
     description:
       locale === 'id'
-        ? 'Karya musik orisinal "Good Guy" yang digubah oleh Boris Manurung menceritakan tentang kasih pengorbanan Kristus bagi kita.'
-        : 'An original musical work composed by Boris Manurung depicting the sacrificial love of Christ for humanity.',
+        ? 'Lagu pujian orisinal "Good Guy" dari kanal YouTube resmi Ps. Boris Manurung (@borismanurung2626), mengangkat kebenaran pengorbanan Kristus di kayu salib bagi kita orang-orang berdosa.'
+        : 'Official original worship song "Good Guy" from the YouTube channel of Ps. Boris Manurung (@borismanurung2626), portraying the sacrificial love of Christ on the cross for us.',
+    lyrics: `[Verse 1]
+I heard lotsa people talking about the movies
+They said it's a shame that the good guy has to die
+And it would have been nice if only the bad guys had died
+But I'm telling you, friend, that this good guy has died for the bad guys
+
+[Verse 2]
+The Movie started where there were many unbelievers
+And there were more and more bad guys
+Listening to what they're saying you wish they never exist
+Seeing what they're doing you are hoping they perish
+
+[pre Chorus]
+You know what you're talking, what you're thinking,
+What you're wishing, what you're hoping
+We are the bad guys,
+
+[Chorus]
+You and I were the ones who made the mess,
+You and I were the one who set the cross
+We are the reason why this Good guy left his place
+You and I were the one who drove them nails,
+We're the one who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
+
+[Verse 3]
+The Movie started where there were many unbelievers
+And there were more and more bad guys
+Listening to what they're saying you wish they never exist
+Seeing what they're doing you are hoping they perish
+You know what you're talking, what you're thinking,
+What you're wishing, what you're hoping We are the bad guys,
+
+[Chorus]
+You and I were the ones who made the mess,
+You and I were the one who set the cross
+We are the reason why this Good guy left his place
+You and I were the one who drove them nails,
+We're the one who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
+
+[Bridge]
+I can only give Him thanks, yeah
+I can only praise His name I will follow and obey, yeah
+From now on until the end
+
+[Chorus]
+You and I were the ones who made the mess,
+You and I were the one who set the cross
+We are the reason why this Good guy left his place
+You and I were the one who drove them nails,
+We're the one who should have taken the blame
+He loves us, he really do care, as he came down, coming down here
+Coming down here Coming down here Yeah`,
   };
 
   const ministryCards = [
@@ -399,53 +458,100 @@ export default async function HomePage({
         />
       </section>
 
-      {/* 3. FEATURED AUDIO PREVIEW: "Good Guy (by Boris Manurung)" */}
+      {/* 3. FEATURED ORIGINAL WORSHIP: YouTube Official Video "Good Guy" + Lyrics */}
       <section className="bg-covenant-100/50 py-16 border-y border-covenant-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-covenant-200 shadow-md space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-covenant-800">
-                <Music className="w-4 h-4 text-covenant-600" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-covenant-200/80 text-covenant-900 text-xs font-semibold uppercase tracking-wider mb-2">
+                <Music className="w-3.5 h-3.5 text-covenant-700" />
                 <span>{dict.home.featuredMusicTitle}</span>
               </div>
-              <Link
-                href={`/${locale}/music`}
-                className="text-xs font-semibold text-covenant-700 hover:underline"
-              >
-                {dict.common.viewAll} &rarr;
-              </Link>
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">
+                {locale === 'id' ? 'Lagu Pujian Orisinal di YouTube' : 'Original Worship on YouTube'}
+              </h2>
             </div>
+            <Link
+              href={`/${locale}/music`}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-covenant-700 hover:text-covenant-900 group"
+            >
+              <span>{dict.common.viewAll}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-7 space-y-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-covenant-700 bg-covenant-100 px-2.5 py-1 rounded-md">
-                  {locale === 'id' ? 'Lagu Pujian Orisinal' : 'Original Worship Song'}
-                </span>
-                <h3 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900">
-                  {featuredSong.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {featuredSong.description}
-                </p>
-                <div className="pt-2">
-                  <Link
-                    href={`/${locale}/music/${featuredSong.slug}`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-covenant-700 hover:bg-covenant-800 text-white text-xs font-semibold transition-colors shadow-xs"
-                  >
-                    <span>
-                      {locale === 'id' ? 'Lihat Lirik & Bagan Akor' : 'View Lyrics & Chord Chart'}
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-covenant-200 shadow-md">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: YouTube Video Embed + Details */}
+              <div className="lg:col-span-7 space-y-5">
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-black">
+                  <iframe
+                    src={featuredSong.embedUrl}
+                    title={featuredSong.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-covenant-800 bg-covenant-100 px-3 py-1 rounded-full">
+                      {locale === 'id' ? 'Video Musik Orisinal' : 'Official Original Music Video'}
                     </span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {dict.common.author}: <strong>{featuredSong.author}</strong>
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900">
+                    {featuredSong.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {featuredSong.description}
+                  </p>
+
+                  <div className="pt-2 flex flex-wrap items-center gap-3">
+                    <a
+                      href={featuredSong.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold transition-colors shadow-xs"
+                    >
+                      <span>{locale === 'id' ? 'Tonton di YouTube' : 'Watch on YouTube'}</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+
+                    <Link
+                      href={`/${locale}/music/${featuredSong.slug}`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-covenant-700 hover:bg-covenant-800 text-white text-xs font-semibold transition-colors shadow-xs"
+                    >
+                      <span>
+                        {locale === 'id' ? 'Halaman Musik & Lirik' : 'Song Page & Lyrics'}
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              <div className="md:col-span-5">
-                <AudioPlayer
-                  src={featuredSong.audioUrl}
-                  title={featuredSong.title}
-                  locale={locale}
-                />
+              {/* Right Column: Lyrics From YouTube */}
+              <div className="lg:col-span-5 bg-covenant-50/70 border border-covenant-200/90 rounded-2xl p-6 sm:p-7 space-y-4">
+                <div className="flex items-center justify-between border-b border-covenant-200/80 pb-3">
+                  <div className="flex items-center gap-2 text-covenant-900 font-serif font-bold text-lg">
+                    <Music className="w-5 h-5 text-covenant-600" />
+                    <h4>{locale === 'id' ? 'Lirik Lagu (dari YouTube)' : 'Song Lyrics (from YouTube)'}</h4>
+                  </div>
+                  <span className="text-[11px] font-mono text-covenant-700 bg-covenant-200/60 px-2 py-0.5 rounded">
+                    Good Guy
+                  </span>
+                </div>
+
+                <div className="max-h-[460px] overflow-y-auto pr-2 space-y-4 font-serif text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-line scrollbar-thin">
+                  {featuredSong.lyrics}
+                </div>
               </div>
             </div>
           </div>

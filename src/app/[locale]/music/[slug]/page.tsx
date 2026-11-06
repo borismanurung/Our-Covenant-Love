@@ -75,7 +75,34 @@ export default async function SongDetailPage({
         )}
       </header>
 
-      {/* Audio Player Card */}
+      {/* YouTube Video Player Embed */}
+      {item.videoUrl && (
+        <section className="space-y-3">
+          <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-black">
+            <iframe
+              src={item.videoUrl}
+              title={translation.title}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <div className="flex items-center justify-between text-xs text-slate-500 px-1">
+            <span>{locale === 'id' ? 'Video Musik Orisinal Resmi di YouTube' : 'Official Original Music Video on YouTube'}</span>
+            <a
+              href="https://www.youtube.com/watch?v=7vAGf2R9Yyc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-rose-600 font-semibold hover:text-rose-700"
+            >
+              <span>{locale === 'id' ? 'Buka di YouTube' : 'Open in YouTube'}</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
+        </section>
+      )}
+
+      {/* Audio Player Card (Optional fallback) */}
       {item.audioUrl && (
         <section className="space-y-2">
           <AudioPlayer src={item.audioUrl} title={translation.title} locale={locale} />
@@ -96,7 +123,7 @@ export default async function SongDetailPage({
       )}
 
       {/* Lyrics & Chords Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className={`grid grid-cols-1 ${item.chordSheet ? 'md:grid-cols-2' : ''} gap-8`}>
         {/* Lyrics */}
         <section className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 space-y-4">
           <div className="flex items-center gap-2 border-b border-slate-100 pb-3">

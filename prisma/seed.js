@@ -229,7 +229,7 @@ True emotional oneness does not happen automatically simply by cohabitation. It 
       speaker: 'Our Covenant Love Ministry',
       scriptureRef: 'Kejadian 1:26-28; Yohanes 17:20-23',
       seriesTitle: 'The Glory Between Us',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder embed link
+      videoUrl: 'https://www.youtube.com/embed/7vAGf2R9Yyc', // Placeholder embed link
       coverImage: '/images/infographic.png',
       categories: { connect: [{ id: catCovenant.id }] },
       translations: {
@@ -271,7 +271,7 @@ Watch this full message to rediscover God's eternal mandate for your home.`,
       isFeatured: true,
       author: 'Boris Manurung',
       audioUrl: '/audio/good-guy.mp3',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://www.youtube.com/embed/7vAGf2R9Yyc',
       coverImage: '/images/good-guy-cover.jpg',
       categories: { connect: [{ id: catMusic.id }] },
       translations: {

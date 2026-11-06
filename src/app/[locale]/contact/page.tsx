@@ -4,13 +4,9 @@ import ContactForm from '@/components/ContactForm';
 import PhotoFrame from '@/components/PhotoFrame';
 import {
   Mail,
-  Phone,
-  MapPin,
   MessageSquare,
   Sparkles,
-  Share2,
   Heart,
-  ExternalLink,
 } from 'lucide-react';
 
 export default async function ContactPage({
@@ -46,60 +42,21 @@ export default async function ContactPage({
             </h2>
 
             <div className="space-y-5 text-sm text-slate-700">
-              {/* Address */}
+              {/* Email Address */}
               <div className="flex items-start gap-3.5">
                 <div className="p-2.5 rounded-xl bg-covenant-100 text-covenant-800 flex-shrink-0 mt-0.5">
-                  <MapPin className="w-5 h-5 text-covenant-700" />
+                  <Mail className="w-5 h-5 text-covenant-700" />
                 </div>
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-wider text-covenant-800 block">
-                    {locale === 'id' ? 'Alamat Kantor' : 'Office Address'}
+                    {dict.contact.emailLabel}
                   </span>
-                  <p className="text-slate-800 font-medium mt-0.5">
-                    {dict.contact.officeAddress}
-                  </p>
-                </div>
-              </div>
-
-              {/* Contact Person / Phone */}
-              <div className="flex items-start gap-3.5">
-                <div className="p-2.5 rounded-xl bg-covenant-100 text-covenant-800 flex-shrink-0 mt-0.5">
-                  <Phone className="w-5 h-5 text-covenant-700" />
-                </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-covenant-800 block">
-                    {locale === 'id' ? 'Kontak & WhatsApp' : 'Phone & WhatsApp'}
-                  </span>
-                  <p className="text-slate-800 font-medium mt-0.5">
-                    {dict.contact.contactPerson}
-                  </p>
                   <a
-                    href="https://api.whatsapp.com/send?phone=6281586418641"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-emerald-700 font-semibold hover:text-emerald-800 mt-1"
+                    href="mailto:ourcovenantlove@gmail.com"
+                    className="text-slate-900 font-semibold text-base hover:text-covenant-700 hover:underline mt-0.5 block"
                   >
-                    <span>{locale === 'id' ? 'Chat WhatsApp Langsung' : 'Direct WhatsApp Chat'}</span>
-                    <ExternalLink className="w-3 h-3" />
+                    ourcovenantlove@gmail.com
                   </a>
-                </div>
-              </div>
-
-              {/* Social Media */}
-              <div className="flex items-start gap-3.5">
-                <div className="p-2.5 rounded-xl bg-covenant-100 text-covenant-800 flex-shrink-0 mt-0.5">
-                  <Share2 className="w-5 h-5 text-covenant-700" />
-                </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-covenant-800 block">
-                    {locale === 'id' ? 'Media Sosial' : 'Social Channels'}
-                  </span>
-                  <p className="text-slate-800 font-medium mt-0.5">
-                    Instagram, TikTok, Facebook
-                  </p>
-                  <span className="text-xs text-covenant-700 font-semibold">
-                    @OurCovenantLove
-                  </span>
                 </div>
               </div>
             </div>

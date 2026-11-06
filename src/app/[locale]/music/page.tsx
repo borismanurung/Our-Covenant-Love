@@ -101,6 +101,19 @@ export default async function MusicPage({
                     )}
                   </div>
 
+                  {/* YouTube Video Player Embed */}
+                  {item.videoUrl && (
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-black">
+                      <iframe
+                        src={item.videoUrl}
+                        title={translation.title}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                  )}
+
                   {/* Excerpt or Story preview */}
                   {(translation.songStory || translation.excerpt) && (
                     <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed italic bg-covenant-50/60 p-4 rounded-xl border border-covenant-100">

@@ -156,10 +156,10 @@ export const en = {
     sendingButton: 'Sending...',
     successTitle: 'Thank You for Reaching Out!',
     successDesc: 'Your message has been received. Our ministry team will review it and respond shortly.',
-    officeTitle: 'Ministry Office',
-    officeAddress: 'VMM, Blok i-11 No.26, Serpong (15323), Indonesia',
-    contactPerson: 'Ita Kitting: +62 815 8641 8641',
-    socialMedia: 'Social Channels: Instagram, TikTok, Facebook (@OurCovenantLove)',
+    officeTitle: 'Contact Us',
+    emailAddress: 'ourcovenantlove@gmail.com',
+
+
   },
   couplesPreview: {
     badge: 'Future Module Preview',

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Locale } from '@/i18n/config';
 import { Dictionary } from '@/i18n/getDictionary';
-import { MapPin, Phone, Mail, Heart, Instagram } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface FooterProps {
   locale: Locale;
@@ -52,9 +52,6 @@ export default function Footer({ locale, dict }: FooterProps) {
             <p className="text-sm text-slate-400 leading-relaxed">
               {dict.footer.aboutText}
             </p>
-            <div className="text-xs text-covenant-400 font-medium">
-              Serpong, Tangerang Selatan &bull; Indonesia
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -133,23 +130,17 @@ export default function Footer({ locale, dict }: FooterProps) {
           {/* Contact Details */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-covenant-300 mb-4">
-              {dict.contact.officeTitle}
+              {dict.common.contact}
             </h3>
             <div className="space-y-3 text-sm text-slate-400">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-covenant-400 mt-1 flex-shrink-0" />
-                <span>{dict.contact.officeAddress}</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-covenant-400 flex-shrink-0" />
-                <span>{dict.contact.contactPerson}</span>
-              </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-covenant-400 flex-shrink-0" />
-                <span>contact@ourcovenantlove.org</span>
-              </div>
-              <div className="pt-2 text-xs text-slate-400">
-                {dict.contact.socialMedia}
+                <a
+                  href="mailto:ourcovenantlove@gmail.com"
+                  className="hover:text-covenant-400 transition-colors"
+                >
+                  ourcovenantlove@gmail.com
+                </a>
               </div>
             </div>
           </div>
