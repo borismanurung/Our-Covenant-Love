@@ -7,9 +7,9 @@ import PhotoFrame from '@/components/PhotoFrame';
 export default async function OurStoryPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
   const isIndo = locale === 'id';
 

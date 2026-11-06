@@ -10,9 +10,9 @@ import ShareButtons from '@/components/ShareButtons';
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locale; slug: string };
+  params: Promise<{ locale: Locale; slug: string }>;
 }) {
-  const { locale, slug } = params;
+  const { locale, slug } = await params;
   const item = await getContentBySlug(locale, slug);
   if (!item) return { title: locale === 'id' ? 'Khotbah Tidak Ditemukan | Our Covenant Love' : 'Sermon Not Found | Our Covenant Love' };
 
@@ -25,9 +25,9 @@ export async function generateMetadata({
 export default async function SermonDetailPage({
   params,
 }: {
-  params: { locale: Locale; slug: string };
+  params: Promise<{ locale: Locale; slug: string }>;
 }) {
-  const { locale, slug } = params;
+  const { locale, slug } = await params;
   const dict = getDictionary(locale);
 
   const item = await getContentBySlug(locale, slug);

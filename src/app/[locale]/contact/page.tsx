@@ -12,9 +12,9 @@ import {
 export default async function ContactPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
 
   return (

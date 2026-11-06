@@ -8,9 +8,9 @@ import PhotoFrame from '@/components/PhotoFrame';
 export default async function MusicPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
 
   const musicData = await getContentList({

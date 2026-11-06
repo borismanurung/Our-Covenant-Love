@@ -10,6 +10,14 @@ function hashPassword(password) {
 }
 
 async function main() {
+  const existingUserCount = await prisma.user.count().catch(() => 0);
+  const existingContentCount = await prisma.contentItem.count().catch(() => 0);
+
+  if (existingUserCount > 0 && existingContentCount > 0) {
+    console.log('Database already initialized and seeded. Skipping seed.');
+    return;
+  }
+
   console.log('Seeding Our Covenant Love database...');
 
   // 1. Clean existing records for idempotent seed

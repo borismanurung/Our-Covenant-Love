@@ -9,14 +9,14 @@ export default async function ArticlesPage({
   params,
   searchParams,
 }: {
-  params: { locale: Locale };
-  searchParams?: { category?: string; q?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams?: Promise<{ category?: string; q?: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
-
-  const selectedCategory = searchParams?.category;
-  const searchQuery = searchParams?.q;
+  const resolvedSearch = searchParams ? await searchParams : undefined;
+  const selectedCategory = resolvedSearch?.category;
+  const searchQuery = resolvedSearch?.q;
 
   const [articlesData, categories] = await Promise.all([
     getContentList({

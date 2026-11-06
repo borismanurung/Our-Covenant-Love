@@ -13,7 +13,7 @@ export default async function AdminContentPage({
 }) {
   const { locale } = await params;
 
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const sessionToken = cookieStore.get('ocl_session')?.value;
   const user = await getSessionUser(sessionToken);
 

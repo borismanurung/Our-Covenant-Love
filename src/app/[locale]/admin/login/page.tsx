@@ -1,17 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { Locale } from '@/i18n/config';
 import { Shield, Lock, Mail, AlertCircle, ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
-export default function AdminLoginPage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
-  const { locale } = params;
+export default function AdminLoginPage() {
+  const routeParams = useParams();
+  const locale = (routeParams?.locale as Locale) || 'id';
   const router = useRouter();
 
   const [email, setEmail] = useState('admin@ourcovenantlove.org');

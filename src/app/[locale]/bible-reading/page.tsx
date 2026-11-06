@@ -4,13 +4,13 @@ import { getDictionary } from '@/i18n/getDictionary';
 import BibleReadingView from '@/components/BibleReadingView';
 
 interface BibleReadingPageProps {
-  params: {
+  params: Promise<{
     locale: Locale;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: BibleReadingPageProps): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
   const isId = locale === 'id';
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: BibleReadingPageProps): Promi
 }
 
 export default async function BibleReadingPage({ params }: BibleReadingPageProps) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
 
   return (

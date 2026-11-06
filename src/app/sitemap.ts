@@ -31,11 +31,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Dynamic published content items
-  const items = await prisma.contentItem.findMany({
+  let items: any[] = [];
+  try {
+    items = await prisma.contentItem.findMany({
     where: { status: 'PUBLISHED' },
     include: { translations: true },
   });
 
+  } catch (err) {
+    console.warn('[sitemap] Skipping dynamic entries due to db error:', err);
+  }
   const dynamicEntries: MetadataRoute.Sitemap = [];
 
   for (const item of items) {

@@ -64,7 +64,8 @@ export async function getContentList(options: ContentListOptions) {
     };
   }
 
-  const [total, items] = await Promise.all([
+  try {
+    const [total, items] = await Promise.all([
     prisma.contentItem.count({ where }),
     prisma.contentItem.findMany({
       where,
@@ -134,9 +135,14 @@ export async function getContentList(options: ContentListOptions) {
     items: localizedItems,
     hasMore: offset + limit < total,
   };
+  } catch (error) {
+    console.warn('[content.service] Database query error in getContentList:', error);
+    return { total: 0, items: [], hasMore: false };
+  }
 }
 
 export async function getContentBySlug(locale: Locale, slug: string) {
+  try {
   // Try to find exact translation matching locale and slug
   let translation = await prisma.contentTranslation.findUnique({
     where: {
@@ -212,10 +218,15 @@ export async function getContentBySlug(locale: Locale, slug: string) {
     translation: targetTranslation,
     isExactLocale: targetTranslation.locale === locale,
   };
+  } catch (error) {
+    console.warn('[content.service] Database error in getContentBySlug:', error);
+    return null;
+  }
 }
 
 export async function getCategories() {
-  return prisma.category.findMany({
+  try {
+  return await prisma.category.findMany({
     orderBy: { nameId: 'asc' },
     include: {
       _count: {
@@ -223,4 +234,8 @@ export async function getCategories() {
       },
     },
   });
+  } catch (error) {
+    console.warn('[content.service] Database error in getCategories:', error);
+    return [];
+  }
 }

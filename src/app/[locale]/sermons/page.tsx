@@ -27,12 +27,13 @@ export default async function SermonsPage({
   params,
   searchParams,
 }: {
-  params: { locale: Locale };
-  searchParams?: { q?: string };
+  params: Promise<{ locale: Locale }>;
+  searchParams?: Promise<{ q?: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
-  const searchQuery = searchParams?.q?.trim() || '';
+  const resolvedSearch = searchParams ? await searchParams : undefined;
+  const searchQuery = resolvedSearch?.q?.trim() || '';
   const isIndo = locale === 'id';
 
   // Fetch YouTube categorized video catalog

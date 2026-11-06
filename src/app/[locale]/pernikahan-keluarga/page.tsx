@@ -13,22 +13,24 @@ interface Chapter {
 }
 
 
-export async function generateMetadata({ params }: { params: { locale: Locale } }) {
-  const dict: any = getDictionary(params.locale);
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  const dict: any = getDictionary(locale);
   return {
     title: `${dict.common.pernikahanKeluarga || 'Pernikahan & Keluarga'} | Our Covenant Love`,
     description: dict.music.storyTitle,
   };
 }
 
-export default function PernikahanKeluargaPage({ params }: { params: { locale: Locale } }) {
+export default async function PernikahanKeluargaPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   const subHeading = '2=1 Marriage For Life Ministry';
-  const dict: any = getDictionary(params.locale);
+  const dict: any = getDictionary(locale);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-8">
       <Link
-        href={`/${params.locale}`}
+        href={`/${locale}`}
         className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-covenant-700 hover:text-covenant-900 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />

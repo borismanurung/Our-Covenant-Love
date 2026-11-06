@@ -9,11 +9,11 @@ import InquiriesManager from '@/components/InquiriesManager';
 export default async function AdminInquiriesPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
 
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const sessionToken = cookieStore.get('ocl_session')?.value;
   const user = await getSessionUser(sessionToken);
 

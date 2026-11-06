@@ -23,9 +23,9 @@ import {
 export default async function HomePage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const dict = getDictionary(locale);
 
   // Compute Today's Scripture reading for the home page highlight
