@@ -4,6 +4,11 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
 
+// If PrismaClient was cached before schema update, reset it
+if (globalForPrisma.prisma && !('siteStat' in (globalForPrisma.prisma as unknown as Record<string, unknown>))) {
+  globalForPrisma.prisma = undefined;
+}
+
 export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({

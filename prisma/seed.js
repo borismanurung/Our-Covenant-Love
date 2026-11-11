@@ -21,6 +21,7 @@ async function main() {
   console.log('Seeding Our Covenant Love database...');
 
   // 1. Clean existing records for idempotent seed
+  await prisma.siteStat.deleteMany({});
   await prisma.auditLog.deleteMany({});
   await prisma.contactInquiry.deleteMany({});
   await prisma.contentTranslation.deleteMany({});
@@ -464,6 +465,15 @@ Registration is limited to 25 couples to allow personalized mentoring and meanin
         ],
       },
     },
+  });
+
+  // 9. Initialize Site Stats
+  await prisma.siteStat.createMany({
+    data: [
+      { key: 'unique_visitors', value: 0 },
+      { key: 'total_visits', value: 0 },
+      { key: 'page_views', value: 0 },
+    ],
   });
 
   console.log('Database seeded successfully with rich authentic bilingual content!');

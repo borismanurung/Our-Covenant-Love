@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Locale } from '@/i18n/config';
 import { Dictionary } from '@/i18n/getDictionary';
 import { Mail } from 'lucide-react';
+import VisitorCounter from '@/components/VisitorCounter';
 
 interface FooterProps {
   locale: Locale;
@@ -148,7 +149,10 @@ export default function Footer({ locale, dict }: FooterProps) {
 
         {/* Bottom Sub-footer */}
         <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>{dict.footer.copyright}</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <p>{dict.footer.copyright}</p>
+            <VisitorCounter locale={locale} />
+          </div>
           <div className="flex items-center space-x-6">
             <Link href={`/${locale}/contact`} className="hover:text-slate-300">
               {dict.footer.privacyPolicy}

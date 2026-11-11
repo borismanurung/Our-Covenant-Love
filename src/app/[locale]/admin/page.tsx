@@ -12,6 +12,7 @@ import {
   Music,
   Calendar,
   Mail,
+  Users,
   ArrowRight,
   PlusCircle,
   ExternalLink,
@@ -44,6 +45,8 @@ export default async function AdminDashboardPage({
     totalEvents,
     totalInquiries,
     newInquiriesCount,
+    uniqueVisitorsStat,
+    totalVisitsStat,
     recentInquiries,
     recentContent,
   ] = await Promise.all([
@@ -53,6 +56,8 @@ export default async function AdminDashboardPage({
     prisma.contentItem.count({ where: { type: 'EVENT' } }),
     prisma.contactInquiry.count(),
     prisma.contactInquiry.count({ where: { status: 'NEW' } }),
+    prisma.siteStat.findUnique({ where: { key: 'unique_visitors' } }),
+    prisma.siteStat.findUnique({ where: { key: 'total_visits' } }),
     prisma.contactInquiry.findMany({
       orderBy: { createdAt: 'desc' },
       take: 5,
@@ -101,6 +106,14 @@ export default async function AdminDashboardPage({
       href: `/${locale}/admin/inquiries`,
       color: 'bg-rose-50 text-rose-700 border-rose-200',
     },
+    {
+      title: locale === 'id' ? 'Pengunjung Web' : 'Site Visitors',
+      count: uniqueVisitorsStat?.value ?? 0,
+      subtext: `${(totalVisitsStat?.value ?? 0).toLocaleString(locale === 'id' ? 'id-ID' : 'en-US')} ${locale === 'id' ? 'kunjungan' : 'visits'}`,
+      icon: Users,
+      href: `/${locale}/admin`,
+      color: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+    },
   ];
 
   return (
@@ -109,7 +122,7 @@ export default async function AdminDashboardPage({
       <AdminNav locale={locale} user={user} />
 
       {/* Stats Cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {stats.map((stat, i) => {
           const Icon = stat.icon;
           return (
