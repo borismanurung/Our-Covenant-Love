@@ -10,11 +10,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
   const isEn = locale.startsWith('en');
   return {
     title: isEn
-      ? '2=1 Ministry - Married For Life Executive Summaries | Our Covenant Love'
-      : '2=1 Ministry - Executive Summary Married For Life | Our Covenant Love',
+      ? '2=1 Ministry™ (https://2equal1.com/) - Marriage For Life™ (https://2equal1.com/) | Our Covenant Love'
+      : '2=1 Ministry™ (https://2equal1.com/) - Marriage For Life™ (https://2equal1.com/) | Our Covenant Love',
     description: isEn
-      ? 'Executive summaries of the 13 Married For Life curriculum sessions, including key quotes, scriptures, and reflection questions for marital transformation.'
-      : 'Rangkuman eksekutif dari 13 sesi materi kelas pernikahan Married For Life (2=1 Ministry), dilengkapi quotes, firman kunci, dan pertanyaan refleksi untuk pemulihan pernikahan.',
+      ? 'Executive summaries of the 13 Marriage For Life™ (https://2equal1.com/) curriculum sessions by 2=1 Ministry™ (https://2equal1.com/), including key quotes, scriptures, and reflection questions for marital transformation.'
+      : 'Rangkuman eksekutif dari 13 sesi materi kelas pernikahan Marriage For Life™ (https://2equal1.com/) (2=1 Ministry™ (https://2equal1.com/)), dilengkapi quotes, firman kunci, dan pertanyaan refleksi untuk pemulihan pernikahan.',
   };
 }
 
@@ -43,17 +43,105 @@ export default async function PernikahanKeluargaPage({ params }: { params: Promi
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-xs font-medium text-covenant-200">
               <Sparkles className="w-3.5 h-3.5 text-covenant-300" />
-              <span>2=1 Marriage For Life Ministry</span>
+              <span>
+                2=1 Ministry™ (
+                <a
+                  href="https://2equal1.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  https://2equal1.com/
+                </a>
+                ) &middot; Marriage For Life™ (
+                <a
+                  href="https://2equal1.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  https://2equal1.com/
+                </a>
+                )
+              </span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              {isEn ? 'Married For Life Course' : 'Materi Sesi Kelas Married For Life'}
+              {isEn ? (
+                <>
+                  Marriage For Life™ (
+                  <a
+                    href="https://2equal1.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-covenant-200"
+                  >
+                    https://2equal1.com/
+                  </a>
+                  ) Course
+                </>
+              ) : (
+                <>
+                  Materi Sesi Kelas Marriage For Life™ (
+                  <a
+                    href="https://2equal1.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-covenant-200"
+                  >
+                    https://2equal1.com/
+                  </a>
+                  )
+                </>
+              )}
             </h1>
 
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl">
-              {isEn
-                ? 'Executive summaries for all 13 sessions of the Married For Life curriculum. Each session features biblical insights, key quotes, foundational scriptures, and heart-searching reflection questions designed to prompt deep discussion and marital transformation.'
-                : 'Executive summary lengkap dari 13 sesi materi kelas pernikahan Married For Life (2=1 Ministry). Setiap sesi memuat intisari pengajaran alkitabiah, kutipan kunci (quotes), landasan firman Tuhan, serta pertanyaan-pertanyaan refleksi untuk memicu pasutri merenung, bertransformasi, dan memulihkan rumah tangga.'}
+              {isEn ? (
+                <>
+                  Executive summaries for all 13 sessions of the Marriage For Life™ (
+                  <a
+                    href="https://2equal1.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                  >
+                    https://2equal1.com/
+                  </a>
+                  ) curriculum (2=1 Ministry™ (
+                  <a
+                    href="https://2equal1.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                  >
+                    https://2equal1.com/
+                  </a>
+                  )). Each session features biblical insights, key quotes, foundational scriptures, and heart-searching reflection questions designed to prompt deep discussion and marital transformation.
+                </>
+              ) : (
+                <>
+                  Executive summary lengkap dari 13 sesi materi kelas pernikahan Marriage For Life™ (
+                  <a
+                    href="https://2equal1.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                  >
+                    https://2equal1.com/
+                  </a>
+                  ) (2=1 Ministry™ (
+                  <a
+                    href="https://2equal1.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                  >
+                    https://2equal1.com/
+                  </a>
+                  )). Setiap sesi memuat intisari pengajaran alkitabiah, kutipan kunci (quotes), landasan firman Tuhan, serta pertanyaan-pertanyaan refleksi untuk memicu pasutri merenung, bertransformasi, dan memulihkan rumah tangga.
+                </>
+              )}
             </p>
 
             {/* Core Pillars */}
@@ -115,16 +203,40 @@ export default async function PernikahanKeluargaPage({ params }: { params: Promi
               : 'Rindu mengalami pemulihan dan terobosan dalam pernikahan?'}
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
-            {isEn
-              ? 'Classes are held in small, intimate groups hosted in homes, led by certified coaching couples. Discover God’s original blueprint and watch your home become an oasis for your community.'
-              : 'Kelas Married For Life diadakan dalam kelompok kecil di rumah-rumah pasutri fasilitator untuk menciptakan suasana hangat, aman, dan penuh transparansi. Temukan rancangan ilahi Allah dan jadikan rumah tanggamu oasis bagi dunia.'}
+            {isEn ? (
+              <>
+                Classes for Marriage For Life™ (
+                <a
+                  href="https://2equal1.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-covenant-600 underline hover:text-covenant-800"
+                >
+                  https://2equal1.com/
+                </a>
+                ) are held in small, intimate groups hosted in homes, led by certified coaching couples. Discover God’s original blueprint and watch your home become an oasis for your community.
+              </>
+            ) : (
+              <>
+                Kelas Marriage For Life™ (
+                <a
+                  href="https://2equal1.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-covenant-600 underline hover:text-covenant-800"
+                >
+                  https://2equal1.com/
+                </a>
+                ) diadakan dalam kelompok kecil di rumah-rumah pasutri fasilitator untuk menciptakan suasana hangat, aman, dan penuh transparansi. Temukan rancangan ilahi Allah dan jadikan rumah tanggamu oasis bagi dunia.
+              </>
+            )}
           </p>
           <div className="pt-2">
             <Link
               href={`/${locale}/contact`}
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-covenant-600 hover:bg-covenant-700 text-white font-medium text-xs sm:text-sm shadow-sm transition-colors"
             >
-              {isEn ? 'Connect with 2=1 Ministry' : 'Hubungi Kami untuk Info Kelas'}
+              {isEn ? 'Connect with 2=1 Ministry™' : 'Hubungi Kami untuk Info Kelas'}
             </Link>
           </div>
         </div>

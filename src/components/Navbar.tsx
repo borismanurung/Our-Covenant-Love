@@ -53,7 +53,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
     { href: `/${locale}/music`, label: dict.common.music, icon: Music },
     { href: `/${locale}/events`, label: dict.common.events, icon: Calendar },
     { href: `/${locale}/contact`, label: dict.common.contact, icon: MessageSquare },
-    { href: `/${locale}/pernikahan-keluarga`, label: '2=1 Ministry', icon: Sparkles },
+    { href: `/${locale}/pernikahan-keluarga`, label: '2=1 Ministry™', icon: Sparkles },
   ];
 
   const isActive = (href: string) => {
@@ -98,6 +98,14 @@ export default function Navbar({ locale, dict }: NavbarProps) {
           </Link>
         </div>
 
+        {/* Upper Language Selector Bar */}
+        <div className="px-4 py-2.5 border-b border-covenant-100/70 bg-slate-50/60 flex items-center justify-between">
+          <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+            {locale === 'id' ? 'Bahasa' : 'Language'}
+          </span>
+          <LanguageSwitcher currentLocale={locale} />
+        </div>
+
         {/* Vertical Links List (Spacious & No Truncation) */}
         <nav className="flex-1 overflow-y-auto px-3.5 py-4 space-y-1">
           <div className="px-2.5 pb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -129,26 +137,17 @@ export default function Navbar({ locale, dict }: NavbarProps) {
           })}
         </nav>
 
-        {/* Sidebar Footer: Language Switcher, Admin Portal, Tagline */}
-        <div className="p-4 border-t border-covenant-100/80 bg-slate-50/70 space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
-              {locale === 'id' ? 'Bahasa' : 'Language'}
-            </span>
-            <LanguageSwitcher currentLocale={locale} />
-          </div>
+        {/* Sidebar Footer: Admin Portal & Version */}
+        <div className="p-3.5 border-t border-covenant-100/80 bg-slate-50/70 flex items-center justify-between">
+          <Link
+            href={`/${locale}/admin`}
+            className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-covenant-800 transition-colors"
+          >
+            <Shield className="w-4 h-4 text-slate-400" />
+            <span>{dict.common.admin}</span>
+          </Link>
 
-          <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between">
-            <Link
-              href={`/${locale}/admin`}
-              className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-covenant-800 transition-colors"
-            >
-              <Shield className="w-4 h-4 text-slate-400" />
-              <span>{dict.common.admin}</span>
-            </Link>
-
-            <span className="text-[10px] text-slate-400 font-mono">v1.0</span>
-          </div>
+          <span className="text-[10px] text-slate-400 font-mono">v1.0</span>
         </div>
       </aside>
 
@@ -225,6 +224,14 @@ export default function Navbar({ locale, dict }: NavbarProps) {
                 >
                   <X className="w-5 h-5" />
                 </button>
+              </div>
+
+              {/* Language Switcher in Drawer */}
+              <div className="px-4 py-2.5 border-b border-slate-100 bg-slate-50/80 flex items-center justify-between">
+                <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                  {locale === 'id' ? 'Bahasa' : 'Language'}
+                </span>
+                <LanguageSwitcher currentLocale={locale} />
               </div>
 
               {/* Navigation list */}

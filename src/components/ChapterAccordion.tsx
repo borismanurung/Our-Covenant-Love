@@ -29,6 +29,28 @@ export interface Chapter {
   reflection_questions_en?: string[];
 }
 
+function renderWithLinks(text: string) {
+  if (!text) return null;
+  const parts = text.split(/(https:\/\/2equal1\.com\/?)/g);
+  return parts.map((part, i) => {
+    if (part === 'https://2equal1.com/' || part === 'https://2equal1.com') {
+      return (
+        <a
+          key={i}
+          href="https://2equal1.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-covenant-600 hover:text-covenant-800 underline font-medium inline-block"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function ChapterAccordion({
   chapter,
   locale,
@@ -99,7 +121,7 @@ export default function ChapterAccordion({
             <div className="space-y-3 text-slate-700 leading-relaxed text-sm sm:text-base">
               {paragraphs.map((p, idx) => (
                 <p key={idx} className="text-justify">
-                  {p}
+                  {renderWithLinks(p)}
                 </p>
               ))}
             </div>
@@ -119,11 +141,11 @@ export default function ChapterAccordion({
                     className="p-3.5 rounded-lg bg-gradient-to-br from-royalPurple-50/50 via-white to-covenant-50/30 border border-royalPurple-100/80 flex flex-col justify-between"
                   >
                     <blockquote className="text-xs sm:text-sm italic text-slate-800 leading-snug">
-                      &ldquo;{q.text}&rdquo;
+                      &ldquo;{renderWithLinks(q.text)}&rdquo;
                     </blockquote>
                     {q.source && (
                       <p className="mt-2 text-[11px] font-medium text-royalPurple-700 text-right">
-                        — {q.source}
+                        — {renderWithLinks(q.source)}
                       </p>
                     )}
                   </div>
@@ -173,7 +195,7 @@ export default function ChapterAccordion({
                       <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-200 text-amber-900 font-bold text-xs shrink-0 mt-0.5">
                         {idx + 1}
                       </span>
-                      <span>{q}</span>
+                      <span>{renderWithLinks(q)}</span>
                     </li>
                   ))}
                 </ol>
