@@ -1,74 +1,639 @@
 [
   {
     "id": 1,
-    "title": "THE POWER OF COVENANT",
-    "summary_en": "Paragraph 1: In a marriage rooted in divine covenant, the partners pledge a sacred commitment that binds their souls together, reflecting God’s steadfast love.\n\nParagraph 2: Drawing from biblical promises, couples learn to place total trust in each other, mirroring the trust believers have in the Almighty.\n\nParagraph 3: This covenant serves as a sturdy foundation during life's storms, reminding the couple of an unshakable love that endures hardships.\n\nParagraph 4: Practicing the covenant through daily joint prayer deepens the spiritual bond and nurtures mutual dependence.\n\nParagraph 5: By preserving the covenant, couples walk a path of continual growth, guided by Christ and strengthened by mutual devotion.\n\nParagraph 6: The covenant also offers a framework for forgiveness, allowing past hurts to be healed through grace.\n\nParagraph 7: Through shared worship and service, the covenant is lived out, becoming a testimony to those around them.\n\nParagraph 8: Ultimately, a covenant‑centered marriage radiates God’s love, influencing the family and community for generations.",
-    "summary_id": "Paragraf 1: Pernikahan yang berlandaskan perjanjian ilahi menegaskan komitmen suci yang mengikat jiwa pasangan, mencerminkan kasih setia Tuhan.\n\nParagraf 2: Mengambil inspirasi dari janji‑janji Alkitab, pasangan belajar menaruh kepercayaan penuh satu sama lain, seperti kepercayaan umat kepada Allah.\n\nParagraf 3: Perjanjian ini menjadi fondasi kuat saat badai kehidupan melanda, mengingatkan akan kasih yang tak tergoyahkan.\n\nParagraf 4: Menegakkan perjanjian melalui doa bersama setiap hari memperdalam ikatan rohani dan ketergantungan mutual.\n\nParagraf 5: Dengan memelihara covenant, pasangan menapaki jalan pertumbuhan berkelanjutan dalam Kristus.\n\nParagraf 6: Perjanjian juga menyediakan kerangka kerja untuk pengampunan, memungkinkan luka masa lalu disembuhkan oleh kasih karunia.\n\nParagraf 7: Melalui ibadah dan pelayanan bersama, perjanjian dijalankan, menjadi kesaksian bagi sekitar.\n\nParagraf 8: Pada akhirnya, pernikahan berlandaskan covenant memancarkan kasih Tuhan, mempengaruhi keluarga dan komunitas untuk generasi mendatang."
+    "sessionNumber": "Orientasi",
+    "title": "Orientasi & Pengenalan 2=1 Ministry",
+    "title_id": "Orientasi & Pengenalan 2=1 Ministry: Menemukan Rancangan Allah bagi Pernikahan & Keluarga",
+    "title_en": "Orientation & Overview of 2=1 Ministry: Discovering God's Plan for Marriage and Family",
+    "theme_id": "Mengenali Realitas Pernikahan, Memulihkan Generasi, dan Menjadi Oasis bagi Dunia",
+    "theme_en": "Recognizing Marriage Realities, Restoring Generations, and Becoming an Oasis for the World",
+    "summary_id": "Sesi orientasi ini membuka mata pasangan terhadap realitas dan badai yang dihadapi pernikahan modern. Perselisihan berkepanjangan, tekanan ekonomi, perselingkuhan, hingga kekerasan kerap mengikis ikatan pernikahan dan berujung pada perceraian. Namun, kebenaran yang paling menusuk hati adalah bahwa korban terbesar dari setiap konflik pasutri adalah anak-anak dan kehancuran generasi penerus. Di tengah krisis keluarga yang melanda dunia, 2=1 Ministry membawa pesan pengharapan ilahi: selalu ada jalan pemulihan dan pengharapan bagi setiap pernikahan dan keluarga yang bersedia kembali kepada Tuhan.\n\nDidirikan oleh Mike & Marilyn Philips dan kini melayani di lebih dari 90 negara dalam 45 bahasa, pelayanan 2=1 berawal dari sebuah penglihatan ilahi: terbentuknya jutaan bintang berkelip di waktu malam yang tersebar di seluruh dunia, di mana setiap bintang tersebut melambangkan sebuah keluarga yang diubahkan menjadi oasis sejuk bagi lingkungan yang haus di sekitarnya. Melalui kelas Married For Life (MFL), pasangan dilatih melalui pembinaan (coaching), pengajaran alkitabiah (teaching), dan pemuridan (discipleship) untuk bertumbuh menjadi 'Powerhouse' (rumah penuh kuasa Roh Kudus) dan 'Lighthouse' (mercusuar terang) bagi kemuliaan Kristus.",
+    "summary_en": "This orientation session addresses the pressing realities and battles confronting modern marriages. Unresolved conflicts, financial strains, infidelity, and emotional distance frequently erode marital bonds and result in tragic divorces. However, the most sobering truth emphasized is that the greatest casualties of marital discord are the children and future generations. In the midst of global family breakdown, 2=1 Ministry proclaims a steadfast message of divine hope: there is always hope and redemption for every marriage and family willing to return to God's blueprint.\n\nFounded by Mike & Marilyn Philips and active in over 90 nations across 45 languages, 2=1 was birthed from a heavenly vision: millions of twinkling stars shining in the darkness across the globe, each representing a restored Christian home functioning as a refreshing oasis for a thirsty, broken world. Through the Married For Life (MFL) course, couples are equipped via coaching, sound biblical teaching, and intentional discipleship to become a 'Powerhouse' empowered by the Holy Spirit and a 'Lighthouse' radiating God's love to their community.",
+    "quotes": [
+      {
+        "text": "Korban terbesar dari konflik pasutri adalah anak-anak dan kehancuran generasi penerus.",
+        "source": "Perkenalan Materi 2=1 Ministry"
+      },
+      {
+        "text": "Ini saatnya untuk BERHENTI berlari... Selalu ada PENGHARAPAN bagi setiap pernikahan dan keluarga.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Visi yang Tuhan berikan adalah terbentuknya jutaan bintang-bintang berkelip di waktu malam yang tersebar di seluruh dunia. Dan setiap bintang tersebut adalah sebuah rumah tangga dan merupakan oasis untuk dunia yang haus di sekitarnya.",
+        "source": "Mike & Marilyn Philips (Pendiri 2=1 Ministry)"
+      },
+      {
+        "text": "The light that shines the farthest shines the brightest at home.",
+        "source": "Prinsip Dasar 2=1"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Maleakhi 2:15",
+        "text": "Bukankah Allah yang Esa menjadikan mereka daging dan roh? Dan apakah yang dicari kesatuan itu? Keturunan ilahi! Maka jagalah dirimu dan janganlah orang tidak setia terhadap isteri masa mudanya."
+      },
+      {
+        "ref": "Matius 5:14, 16",
+        "text": "Kamu adalah terang dunia. Kota yang terletak di atas gunung tidak mungkin tersembunyi... Demikianlah hendaknya terangmu bercahaya di depan orang, supaya mereka melihat perbuatanmu yang baik dan memuliakan Bapamu yang di sorga."
+      }
+    ],
+    "reflection_questions_id": [
+      "Bagaimana kondisi kesehatan rohani dan emosional pernikahan kita saat ini: apakah kita sedang sekadar bertahan hidup (surviving), saling menjaga jarak, atau sungguh-sungguh berkembang (thriving) sebagai oasis kasih Allah?",
+      "Apakah anak-anak kita merasakan atmosfer kedamaian, sukacita, dan rasa aman saat berada di rumah, ataukah mereka menanggung beban luka tersembunyi akibat perselisihan kita yang tak kunjung tuntas?",
+      "Bersediakah kita berdua berhenti melarikan diri, menanggalkan rasa gengsi, dan merendahkan hati untuk bersama-sama belajar dan dipulihkan menurut rancangan asli Sang Pencipta?"
+    ],
+    "reflection_questions_en": [
+      "What is the current spiritual and emotional health of our marriage: are we merely surviving, drifting apart, or truly thriving as an oasis of God's love?",
+      "Do our children experience an atmosphere of peace, joy, and emotional security at home, or are they silently carrying hidden wounds from our unresolved conflicts?",
+      "Are both of us willing to stop running, lay aside our pride, and humbly commit to learning and aligning with God's original blueprint for our marriage?"
+    ]
   },
   {
     "id": 2,
-    "title": "THE POWER OF 2=1",
-    "summary_en": "Paragraph 1: The 2=1 principle emphasizes the unity of heart, mind, and purpose, where two become one in Christ.\n\nParagraph 2: When two individuals merge their lives, they reflect God’s comprehensive love to the world.\n\nParagraph 3: This unity reduces conflict and enhances household peace, fostering collaborative decision‑making.\n\nParagraph 4: Implementation appears in joint prayer, shared ministry, and a harmonious family vision.\n\nParagraph 5: Living as 2=1 projects a beacon of faith that impacts future generations.\n\nParagraph 6: The principle also calls for sacrificial love, where each partner places the other’s needs above their own.\n\nParagraph 7: Communication becomes a conduit for alignment, ensuring both partners are moving toward the same divine goal.\n\nParagraph 8: Ultimately, the 2=1 dynamic creates a powerful testimony that the gospel transforms marital relationships.",
-    "summary_id": "Paragraf 1: Konsep 2=1 menekankan penyatuan hati, pikiran, dan tujuan pasangan menjadi satu dalam Kristus.\n\nParagraf 2: Ketika dua pribadi bersatu, mereka mencerminkan kasih Allah yang menyeluruh bagi dunia.\n\nParagraf 3: Kesatuan ini memperkuat keputusan bersama, mengurangi konflik dan meningkatkan kedamaian rumah tangga.\n\nParagraf 4: Implementasinya terlihat dalam doa bersama, pelayanan bersama, dan visi keluarga yang selaras.\n\nParagraf 5: Dengan hidup sebagai 2=1, pasangan memancarkan cahaya iman yang mempengaruhi generasi selanjutnya.\n\nParagraf 6: Prinsip ini juga menuntut kasih yang mengorbankan, di mana setiap pasangan menempatkan kebutuhan pasangan di atas diri sendiri.\n\nParagraf 7: Komunikasi menjadi saluran penyelarasan, memastikan kedua pasangan bergerak menuju tujuan ilahi yang sama.\n\nParagraf 8: Pada akhirnya, dinamika 2=1 menciptakan kesaksian kuat bahwa Injil mengubah hubungan pernikahan."
+    "sessionNumber": "Sesi 1",
+    "title": "Sesi 1: Kuasa Perjanjian (The Power of Covenant)",
+    "title_id": "Sesi 1: Kuasa Perjanjian (The Power of Covenant)",
+    "title_en": "Session 1: The Power of Covenant",
+    "theme_id": "Fondasi Tak Tergoyahkan: Membedakan Perjanjian Ilahi dari Sekadar Kontrak Manusiawi",
+    "theme_en": "An Unshakeable Foundation: Distinguishing Covenant from Contract",
+    "summary_id": "Sesi pertama meletakkan batu penjuru bagi seluruh fondasi pernikahan: memahami perbedaan radikal antara 'Perjanjian' (Covenant) dan 'Kontrak' (Contract). Dalam budaya sekuler, pernikahan dipahami sebagai sebuah kontrak bersyarat yang berpijak pada performa pasangan ('Aku mengasihimu selama engkau memenuhi ekspektasiku; jika engkau gagal, kontrak dapat dibatalkan'). Sebaliknya, Perjanjian Alkitabiah adalah ikrar suci tanpa syarat di hadapan Allah yang kekuatannya ditentukan oleh kesetiaan perkataan yang kita ucapkan sendiri, bukan oleh performa pasangan kita.\n\nBelajar dari perjanjian Allah dengan Abraham (Kejadian 17), ketidaksetiaan manusia tidak membatalkan kesetiaan janji Allah. Dalam konteks pernikahan, memasuki perjanjian berarti kematian mutlak bagi kehidupan mandiri ('death to independent living'). Pintu belakang perceraian ditutup rapat-rapat ('No Divorce' - Maleakhi 2:16), bukan sebagai beban, melainkan sebagai benteng perlindungan yang memberi rasa aman sempurna bagi kedua pasangan untuk saling mengasihi, mengampuni, dan berjuang bersama melewati lembah kekelaman apa pun.",
+    "summary_en": "The first session lays the cornerstone of all marital healing and growth: understanding the radical distinction between a 'Covenant' and a 'Contract'. In worldly thinking, marriage is treated as a conditional contract based on mutual performance ('I will love you as long as you fulfill my needs; if you fail, the contract is void'). Conversely, a Biblical Covenant is an unconditional, sacred pledge made before Almighty God whose strength is determined by the fidelity of our own spoken vows, not our spouse's performance.\n\nDrawing from God's covenant with Abraham (Genesis 17), human shortcomings do not alter God's steadfast faithfulness. In marriage, entering into covenant means absolute 'death to independent living'. The back door of divorce is permanently sealed shut ('No Divorce' - Malachi 2:16), serving not as an imprisonment, but as a fortress of safety that provides complete emotional security for both spouses to love, forgive, and weather life's fiercest storms together.",
+    "quotes": [
+      {
+        "text": "Contracts are based on performance. In a covenant, the deciding factor is what was promised when the covenant was made.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "A covenant partner does not look to the other partner to determine the strength of the covenant; his or her own words are what determine the strength of the bond.",
+        "source": "Mike & Marilyn Philips"
+      },
+      {
+        "text": "Sebab Aku membenci perceraian, firman TUHAN, Allah Israel.",
+        "source": "Maleakhi 2:16"
+      },
+      {
+        "text": "Entering into covenant relationship means death to independent living.",
+        "source": "The Power of Covenant"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Maleakhi 2:14",
+        "text": "TUHAN telah menjadi saksi antara engkau dan isteri masa mudamu yang kepadanya engkau telah tidak setia, padahal dialah teman sekutumu dan isteri seperjanjianmu."
+      },
+      {
+        "ref": "Kejadian 17:4, 7",
+        "text": "Dari pihak-Ku, inilah perjanjian-Ku dengan engkau: Aku akan mengadakan perjanjian antara Aku dan engkau serta keturunanmu turun-temurun menjadi perjanjian yang kekal."
+      }
+    ],
+    "reflection_questions_id": [
+      "Apakah selama ini kita menjalani pernikahan dengan pola pikir 'kontrak' (menuntut timbal balik dan performa pasangan) atau dengan roh 'perjanjian' (setia pada komitmen janji kita sendiri di hadapan Tuhan)?",
+      "Apakah opsi 'berpisah' atau kata 'cerai' masih pernah terlintas dalam pikiran atau terucap saat kita marah besar? Bersediakah kita mengubur opsi tersebut selamanya dari relasi kita?",
+      "Dalam aspek hidup apa kita masih mempertahankan 'kehidupan mandiri' (keuangan tersembunyi, keputusan sepihak, rencana pribadi rahasia) yang menghalangi kita melebur sepenuhnya ke dalam kesatuan perjanjian?"
+    ],
+    "reflection_questions_en": [
+      "Have we been operating our marriage on a 'contract' mindset (demanding reciprocal performance) or in the spirit of a 'covenant' (standing faithful on our own pledged vows before God)?",
+      "Does the option of divorce or separation still linger in our thoughts or vocabulary during intense arguments? Are we ready to eliminate that word permanently?",
+      "In what areas are we still clinging to 'independent living' (secret finances, unilateral decisions, hidden personal plans) that hinder full covenant oneness?"
+    ]
   },
   {
     "id": 3,
-    "title": "THE POWER OF SYNERGISM",
-    "summary_en": "Paragraph 1: Synergy arises when two individuals complement each other's strengths, fostering spiritual growth.\n\nParagraph 2: It goes beyond cooperation; it creates outcomes greater than the sum of individual efforts.\n\nParagraph 3: In marriage, synergy manifests through joint ministry, biblical study, and emotional support.\n\nParagraph 4: Cultivating synergy requires honest communication, sacrifice, and deep mutual respect.\n\nParagraph 5: With synergy, the family becomes an effective team, overcoming worldly challenges with united faith.\n\nParagraph 6: Synergy also encourages creativity, allowing the couple to discover new ways to serve God together.\n\nParagraph 7: It strengthens resilience, as each partner leans on the other's gifts during trials.\n\nParagraph 8: Ultimately, synergy transforms the marriage into a dynamic force that glorifies God.",
-    "summary_id": "Paragraf 1: Sinergi hadir ketika dua individu melengkapi kekuatan masing‑masing untuk pertumbuhan rohani.\n\nParagraf 2: Bukan sekadar kerja sama, melainkan kolaborasi yang mengubah hasil menjadi lebih besar daripada jumlah bagian.\n\nParagraf 3: Dalam pernikahan, sinergi muncul lewat pelayanan gereja, pembelajaran Alkitab, dan dukungan emosional.\n\nParagraf 4: Memupuk sinergi memerlukan komunikasi terbuka, pengorbanan, dan rasa hormat yang mendalam.\n\nParagraf 5: Dengan sinergi, keluarga menjadi tim yang efektif, menaklukkan tantangan dunia dengan iman yang bersatu.\n\nParagraf 6: Sinergi juga mendorong kreativitas, memungkinkan pasangan menemukan cara baru melayani Tuhan bersama.\n\nParagraf 7: Ini memperkuat ketahanan, karena masing‑masing dapat bersandar pada karunia pasangannya saat menghadapi cobaan.\n\nParagraf 8: Pada akhirnya, sinergi mengubah pernikahan menjadi kekuatan dinamis yang memuliakan Allah."
+    "sessionNumber": "Sesi 2",
+    "title": "Sesi 2: Kuasa Dua Menjadi Satu (The Power of 2=1)",
+    "title_id": "Sesi 2: Kuasa Dua Menjadi Satu (The Power of 2=1 / One Flesh)",
+    "title_en": "Session 2: The Power of 2=1",
+    "theme_id": "Rancangan Awal Satu Daging, Pemulihan dari Kejatuhan, dan Keintiman Tanpa Malu",
+    "theme_en": "God's Original One-Flesh Blueprint, Redemption from the Fall, and Unashamed Intimacy",
+    "summary_id": "Sesi kedua menyelami misteri ilahi di mana dua pribadi yang berbeda dijadikan satu daging (2=1) oleh karya penciptaan Allah (Kejadian 1-2). Hubungan satu daging diawali dengan prinsip ilahi: 'meninggalkan' (leave) keterikatan masa lalu dan keluarga asal, serta 'melekat' (cleave) seumur hidup kepada pasangan. Dalam rancangan awal di Taman Eden, Adam dan Hawa hidup dalam kesatuan roh, jiwa, dan tubuh yang murni: 'keduanya telanjang dan tidak merasa malu'—sebuah gambaran transparansi total tanpa ketakutan, rasa tertuduh, atau kepura-puraan.\n\nNamun, kejatuhan manusia dalam dosa merusak rancangan agung ini. Masuklah rasa takut, rasa bersalah, naluri bersembunyi di balik topeng, saling menyalahkan ('perempuan yang Kautempatkan di sisiku inilah yang memberi buah itu'), serta perebutan dominasi. Kabar baiknya, melalui karya penebusan Kristus di kayu salib, pasangan suami-istri ditebus dan dipulihkan kembali ke rancangan awal Allah: hidup dalam kesatuan satu daging yang penuh kuasa, saling mempercayai, dan mencerminkan kemuliaan gambar Allah.",
+    "summary_en": "The second session delves into the divine mystery wherein two distinct individuals are joined by God into one flesh (2=1) according to Genesis 1-2. This one-flesh bond begins with the biblical mandate to 'leave' past attachments and family-of-origin dependence, and 'cleave' faithfully to one's spouse for life. In the Garden of Eden, Adam and Eve walked in pure harmony of spirit, soul, and body: 'they were both naked and were not ashamed'—an emblem of total vulnerability and open communion without guilt, fear, or protective masks.\n\nHowever, the Fall shattered this innocence, introducing fear, shame, hiddenness, blame-shifting ('the woman whom You gave to be with me, she gave me fruit'), and power struggles. The triumphant news is that through Jesus Christ's redemptive sacrifice on the cross, husband and wife are redeemed back to God's original blueprint: walking in powerful one-flesh unity, authentic transparency, and reflecting the divine image.",
+    "quotes": [
+      {
+        "text": "Sebab itu seorang laki-laki akan meninggalkan ayahnya dan ibunya dan bersatu dengan isterinya, sehingga keduanya menjadi satu daging.",
+        "source": "Kejadian 2:24"
+      },
+      {
+        "text": "Ketika dua menjadi satu menurut rancangan Allah, hasilnya bukan penjumlahan angka (1+1=2), melainkan kesinergian supranatural (2=1) yang memanifestasikan kemuliaan Kristus di bumi.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "They were both naked, the man and his wife, and were not ashamed. Total openness without fear is God's blueprint.",
+        "source": "Married for Life Manual"
+      },
+      {
+        "text": "Iblis sangat gentar terhadap kesatuan satu daging, karena dalam kesatuan pasutri terdapat otoritas Kerajaan Allah yang menghancurkan benteng kegelapan.",
+        "source": "Married for Life Teaching"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Kejadian 2:23-25",
+        "text": "Lalu berkatalah manusia itu: 'Inilah dia, tulang dari tulangku dan daging dari dagingku... Mereka keduanya telanjang, manusia dan isterinya itu, tetapi mereka tidak merasa malu.'"
+      },
+      {
+        "ref": "Matius 19:6",
+        "text": "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."
+      }
+    ],
+    "reflection_questions_id": [
+      "Apakah kita masih belum sepenuhnya 'meninggalkan' keterikatan emosional atau ketergantungan keputusan pada orang tua/keluarga asal kita, sehingga sering memicu gesekan di antara kita berdua?",
+      "Seberapa terbuka dan jujur (tanpa topeng, tanpa rasa takut dihakimi) kita di hadapan pasangan mengenai perasaan terdalam, luka batin, kekhawatiran, dan kelemahan kita?",
+      "Ketika terjadi masalah dalam rumah tangga, apakah kita masih tergelincir pada pola lama manusia berdosa: mencari pembenaran diri dan menyalahkan pasangan?"
+    ],
+    "reflection_questions_en": [
+      "Have we truly 'left' emotional dependence or decision-making control with our parents or family of origin, or does it still trigger friction in our marriage?",
+      "How transparent and unashamed are we with each other regarding our deepest fears, wounds, vulnerabilities, and insecurities without wearing masks?",
+      "When problems arise, do we slip back into the fallen pattern of self-justification and blaming our spouse instead of standing united?"
+    ]
   },
   {
     "id": 4,
-    "title": "THE POWER OF SOWING AND REAPING",
-    "summary_en": "Paragraph 1: The sow‑and‑reap analogy teaches the importance of spiritual investment in marriage.\n\nParagraph 2: Every act of love, prayer, and sacrifice plants a seed in the partner’s heart.\n\nParagraph 3: Waiting for the harvest cultivates patience, trusting in God’s unseen growth.\n\nParagraph 4: When the season of reaping arrives, the result is deeper love, wisdom, and abundant peace.\n\nParagraph 5: Maintaining this cycle ensures the relationship remains vibrant, fresh, and fruitful.\n\nParagraph 6: The process also reminds couples that not every effort bears immediate fruit, encouraging perseverance.\n\nParagraph 7: Spiritual harvest often manifests as stronger family bonds and a shared testimony to God’s faithfulness.\n\nParagraph 8: By continually sowing, couples experience ongoing renewal and blessings throughout their walk.",
-    "summary_id": "Paragraf 1: Analogi menabur dan menuai mengajarkan pentingnya investasi spiritual dalam pernikahan.\n\nParagraf 2: Setiap tindakan kasih, doa, dan pengorbanan adalah benih yang ditanam dalam hati pasangan.\n\nParagraf 3: Menunggu panen mengajarkan kesabaran, mengandalkan pertumbuhan Allah yang tak terlihat.\n\nParagraf 4: Saat musim menuai datang, hasilnya berupa kedalaman kasih, kebijaksanaan, dan damai yang melimpah.\n\nParagraf 5: Menjaga siklus ini terus berulang memastikan hubungan tetap hidup, segar, dan berbuah berkelanjutan.\n\nParagraf 6: Proses ini juga mengingatkan pasangan bahwa tidak setiap usaha menghasilkan buah segera, mendorong ketekunan.\n\nParagraf 7: Hasil panen rohani sering terlihat dalam ikatan keluarga yang lebih kuat dan kesaksian akan kesetiaan Tuhan.\n\nParagraf 8: Dengan terus menabur, pasangan mengalami pembaruan dan berkat berkelanjutan sepanjang perjalanan mereka."
+    "sessionNumber": "Sesi 3",
+    "title": "Sesi 3: Kuasa Kesinergian (The Power of Synergism)",
+    "title_id": "Sesi 3: Kuasa Kesinergian & Peranan Alkitabiah (The Power of Synergism)",
+    "title_en": "Session 3: The Power of Synergism",
+    "theme_id": "Melengkapi Bukan Bersaing: Meneladani Hubungan Kristus dan Jemaat",
+    "theme_en": "Completing, Not Competing: Modeling the Relationship Between Christ and the Church",
+    "summary_id": "Sesi ketiga mengupas prinsip 'Sinergi' (Synergism)—hukum di mana perpaduan dua kekuatan yang berbeda menghasilkan dampak yang jauh melampaui jumlah usaha individual (1+1 >> 2). Dalam pernikahan Kristen, perbedaan kepribadian, talenta, dan temperamen suami dan isteri bukan diciptakan untuk menjadi sumber perpecahan atau ajang kompetisi, melainkan dirancang dengan sengaja oleh Allah agar saling melengkapi (complementary) dan menyempurnakan kekurangan masing-masing.\n\nSesi ini menata ulang pemahaman alkitabiah mengenai peranan suami dan isteri yang berakar pada keteladanan hubungan Kristus dan Jemaat (Efesus 5). Suami dipanggil menjadi kepala bukan sebagai penguasa otoriter, melainkan pemimpin pelayan yang mengasihi, melindungi, dan rela berkorban bagi isterinya sebagaimana Kristus berkorban bagi gereja-Nya. Sementara isteri diciptakan sebagai 'penolong yang sepadan' (Ezer Kenegdo)—sebuah istilah Ibrani yang menunjukkan mitra yang kuat, penolong dalam pertempuran hidup, yang menghormati dan mendukung suaminya. Ketika kedua peranan ini berfungsi selaras, lahirlah sinergi ilahi yang membawa dampak berkat tak terhingga bagi anak-anak dan masyarakat.",
+    "summary_en": "The third session unlocks the divine dynamic of 'Synergism'—the principle where the combination of two different entities produces an effect vastly greater than the sum of their individual efforts. In Christian marriage, the differences in personality, gifts, and temperament between husband and wife were never designed to foster competition or grievance, but were divinely orchestrated so that spouses complement and complete one another.\n\nThis session aligns marital roles with the biblical model of Christ and His Church (Ephesians 5). The husband's calling to servant headship is not autocratic domination, but sacrificial leadership that cherishes, nourishes, and lays down his life for his wife as Christ did for the Church. The wife is created as a 'suitable helper' (Ezer Kenegdo)—a rich Hebrew term signifying a strong, valiant partner standing face to face in life's battles, honoring and strengthening her husband. When both biblical roles harmonize, divine synergism is released to bless the home and impact the world.",
+    "quotes": [
+      {
+        "text": "Sinergi hadir ketika dua insan melengkapi kekuatan dan menutupi kelemahan masing-masing; bukan saling menuntut atau bersaing, melainkan berpadu menjadi kekuatan yang tak terkalahkan.",
+        "source": "Married for Life Manual"
+      },
+      {
+        "text": "Hai suami, kasihilah isterimu sebagaimana Kristus telah mengasihi jemaat dan telah menyerahkan diri-Nya baginya.",
+        "source": "Efesus 5:25"
+      },
+      {
+        "text": "God created woman as an 'Ezer Kenegdo' — a strong, competent partner standing alongside man, not an inferior subject, but a vital rescuer and co-worker.",
+        "source": "2=1 Biblical Teaching"
+      },
+      {
+        "text": "Perbedaan di antara suami dan isteri bukan kesalahan cetak dari Allah, melainkan instrumen ilahi untuk mengikis keegoisan dan melahirkan sinergi.",
+        "source": "2=1 Ministry"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Efesus 5:21, 25, 33",
+        "text": "Dan rendahkanlah dirimu seorang kepada yang lain di dalam takut akan Kristus... Bagaimanapun juga, bagi kamu masing-masing berlaku: kasihilah isterimu seperti dirimu sendiri dan isteri hendaklah menghormati suaminya."
+      },
+      {
+        "ref": "Kejadian 2:18",
+        "text": "TUHAN Allah berfirman: 'Tidak baik, kalau manusia itu seorang diri saja. Aku akan menjadikan penolong baginya, yang sepadan dengan dia.'"
+      }
+    ],
+    "reflection_questions_id": [
+      "Apakah selama ini kita melihat perbedaan kepribadian atau cara pandang pasangan sebagai pemicu frustrasi dan pertengkaran, ataukah sebagai anugerah ilahi yang melengkapi kekurangan kita?",
+      "Bagi Suami: Apakah gaya kepemimpinanmu di rumah sudah mencerminkan teladan Kristus yang melayani, mengayomi, dan mendengar dengan sabar, ataukah masih condong pasif atau menuntut dilayani?",
+      "Bagi Isteri: Apakah perkataan dan sikapmu sehari-hari membangun wibawa dan rasa percaya diri suamimu, ataukah sering diwarnai keluhan, kritik tajam, dan ketidakhormatan?"
+    ],
+    "reflection_questions_en": [
+      "Have we viewed our spouse's distinct personality and perspective as an annoying source of friction, or as a God-given gift designed to complement our deficiencies?",
+      "For Husbands: Does your leadership at home reflect Christ's sacrificial servant love, attentive listening, and gentle protection, or is it characterized by passivity or demands?",
+      "For Wives: Do your daily words and demeanor build up your husband's confidence and honor, or are they marked by critical remarks, disrespect, and nagging?"
+    ]
   },
   {
     "id": 5,
-    "title": "THE POWER OF FORGIVENESS",
-    "summary_en": "Paragraph 1: Forgiveness unlocks the door to healing in a wounded marriage.\n\nParagraph 2: Without forgiveness, bitterness accumulates, eroding respect and love built over time.\n\nParagraph 3: God’s limitless forgiveness calls the couple to emulate this divine grace.\n\nParagraph 4: Practicing forgiveness involves prayer, honest communication, and a genuine desire to restore.\n\nParagraph 5: Through forgiveness, hearts become light, enabling shared growth toward spiritual maturity.\n\nParagraph 6: Forgiveness also re‑frames past hurts as opportunities for deeper reliance on God.\n\nParagraph 7: It strengthens trust, allowing vulnerability and openness within the relationship.\n\nParagraph 8: Ultimately, a forgiving marriage reflects Christ’s love, influencing all who witness it.",
-    "summary_id": "Paragraf 1: Pengampunan adalah kunci membuka pintu penyembuhan dalam pernikahan yang terluka.\n\nParagraf 2: Tanpa memaafkan, kepahitan menumpuk, mengikis rasa hormat dan kasih yang telah dibangun.\n\nParagraf 3: Allah mengasihi kita dengan pengampunan yang tak terbatas; pasangan dipanggil meneladani hal itu.\n\nParagraf 4: Praktik pengampunan melibatkan doa, komunikasi jujur, dan keinginan tulus untuk memulihkan.\n\nParagraf 5: Dengan memaafkan, kedua hati menjadi ringan, memungkinkan pertumbuhan bersama menuju kematangan rohani.\n\nParagraf 6: Pengampunan juga mengubah luka masa lalu menjadi kesempatan mengandalkan Allah lebih dalam.\n\nParagraf 7: Ini memperkuat kepercayaan, memungkinkan kerentanan dan keterbukaan dalam hubungan.\n\nParagraf 8: Pada akhirnya, pernikahan yang mengampuni mencerminkan kasih Kristus, memengaruhi semua yang menyaksikannya."
+    "sessionNumber": "Sesi 4",
+    "title": "Sesi 4: Kuasa Menabur & Menuai (The Power of Sowing and Reaping)",
+    "title_id": "Sesi 4: Kuasa Menabur & Menuai (The Power of Sowing and Reaping)",
+    "title_en": "Session 4: The Power of Sowing and Reaping",
+    "theme_id": "Hukum Multiplikasi Benih: Mengubah Panen Masa Depan dengan Mengubah Benih Hari Ini",
+    "theme_en": "The Law of Seed Multiplication: Transforming Tomorrow's Harvest by Changing Today's Seeds",
+    "summary_id": "Sesi keempat menguraikan hukum rohani universal yang tidak pernah gagal: Hukum Menabur dan Menuai (Galatia 6:7-9). Sadar atau tidak, setiap hari suami dan isteri sedang menabur benih ke dalam tanah hati pasangannya melalui perkataan, intonasi suara, tatapan mata, tindakan, pengabaian, atau perhatian. Terdapat tiga hukum dasar dalam proses ini: pertama, jenis benih menentukan jenis panen (benih amarah menuai kepahitan, benih afirmasi menuai kelembutan); kedua, musim menabur berbeda dengan musim menuai (butuh waktu dan ketekunan sebelum tunas bertumbuh); ketiga, hukum multiplikasi—kita selalu menuai jauh lebih banyak daripada apa yang kita tabur.\n\nSeringkali pasangan frustrasi dengan 'tanaman buruk' yang mereka temui dalam diri pasangan (seperti sikap dingin, tertutup, atau mudah tersinggung), tanpa menyadari bahwa tanaman itu adalah hasil tuaian dari benih kritik, penolakan, dan sindiran yang telah mereka tabur berbulan-bulan atau bertahun-tahun sebelumnya. Kunci terobosan pernikahan adalah berani memeriksa panen saat ini, mencabut ilalang yang beracun, dan dengan sengaja mulai menabur benih-benih firman, pujian tulus, kesabaran, dan kasih tanpa syarat.",
+    "summary_en": "The fourth session unfolds an immutable spiritual law governing all relationships: The Law of Sowing and Reaping (Galatians 6:7-9). Consciously or unconsciously, spouses sow seeds every day into the soil of each other's hearts through spoken words, tone of voice, body language, acts of kindness, or neglect. Three foundational principles govern this process: first, we reap according to the kind of seed sown; second, sowing and reaping occur in different seasons (requiring patience and endurance); third, the multiplication factor—we always reap significantly more than what we sowed.\n\nOften, spouses become resentful of the bitter crop they face in their marriage (emotional distance, hostility, defensive reactions), blind to the fact that this harvest grew from the seeds of harsh criticism, sarcasm, and neglect they planted over previous months or years. The turning point occurs when couples honestly inspect their current harvest, uproot poisonous weeds, and intentionally choose to plant seeds from God's Word: sincere affirmation, tender affection, patience, and honoring words.",
+    "quotes": [
+      {
+        "text": "Jangan sesat! Allah tidak membiarkan diri-Nya dipermainkan. Karena apa yang ditabur orang, itu juga yang akan dituainya.",
+        "source": "Galatia 6:7"
+      },
+      {
+        "text": "You cannot sow neglect, harsh words, and cutting criticism, and then expect to reap a harvest of romance, tenderness, and mutual respect.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Tanah hati pasanganmu hari ini adalah cerminan dari benih yang telah engkau tabur kemarin. Jika engkau tidak menyukai panen yang engkau tuai, gantilah benih yang engkau tabur!",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Waktu terbaik untuk menabur benih kebaikan dan kelembutan adalah ketika pasanganmu justru terlihat paling tidak layak menerimanya.",
+        "source": "The Power of Sowing and Reaping"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Galatia 6:7, 9",
+        "text": "Jangan sesat! Allah tidak membiarkan diri-Nya dipermainkan. Karena apa yang ditabur orang, itu juga yang akan dituainya... Janganlah kita jemu-jemu berbuat baik, karena apabila sudah datang waktunya, kita akan menuai, jika kita tidak menjadi lemah."
+      },
+      {
+        "ref": "Amsal 18:21",
+        "text": "Hidup dan mati dikuasai lidah, siapa suka menggemakannya, akan memakan buahnya."
+      }
+    ],
+    "reflection_questions_id": [
+      "Buah atau panen seperti apa yang saat ini paling dominan kita rasakan dalam atmosfer rumah tangga kita: kehangatan dan rasa aman, ataukah kecanggungan, ketegangan, dan kecurigaan?",
+      "Jika kita memeriksa benih yang keluar dari mulut kita dalam seminggu terakhir, apakah lebih banyak berisi kata-kata penghargaan dan dorongan, ataukah keluhan, sindiran, dan kritik?",
+      "Benih kebaikan dan kasih apa yang perlu kita mulai tabur hari ini kepada pasangan dengan setia dan sabar, meskipun belum langsung melihat respon positif darinya?"
+    ],
+    "reflection_questions_en": [
+      "What kind of crop is currently most evident in our home atmosphere: warmth, mutual honor, and security, or tension, sarcasm, and emotional withdrawal?",
+      "Looking back at the seeds that left our lips over the past week, did they consist mostly of life-giving encouragement or destructive complaints and criticisms?",
+      "What specific seeds of grace, patience, and tender words do we need to start sowing today into our spouse's life, even before seeing an immediate change?"
+    ]
   },
   {
     "id": 6,
-    "title": "THE POWER OF FAITH",
-    "summary_en": "Paragraph 1: Faith becomes the primary foundation for couples facing life’s challenges.\n\nParagraph 2: When one leans on God, the partnership discovers strength beyond human capability.\n\nParagraph 3: Faith guides wise decisions, relying on the Holy Spirit’s counsel at every step.\n\nParagraph 4: Strengthening faith through joint worship, Scripture reading, and devoted prayer fortifies the marriage.\n\nParagraph 5: With steadfast faith, couples conquer storms and tread a victorious path in Christ.\n\nParagraph 6: Faith also fosters hope, giving perspective during seasons of doubt or difficulty.\n\nParagraph 7: It nurtures gratitude, recognizing every blessing as divine provision.\n\nParagraph 8: Ultimately, a faith‑filled marriage becomes a testimony of God’s power at work.",
-    "summary_id": "Paragraf 1: Iman menjadi landasan utama bagi pasangan untuk menghadapi tantangan hidup.\n\nParagraf 2: Ketika satu mengandalkan Tuhan, pasangan menemukan kekuatan yang melampaui kemampuan manusia.\n\nParagraf 3: Iman menuntun pada keputusan bijak, mengandalkan petunjuk Roh Kudus dalam setiap langkah.\n\nParagraf 4: Menguatkan imannya lewat penyembahan bersama, membaca Firman, dan persembahan doa.\n\nParagraf 5: Dengan iman yang teguh, pasangan mampu menaklukkan badai, menapaki jalan kemenangan dalam Kristus.\n\nParagraf 6: Iman juga menumbuhkan harapan, memberi perspektif di masa keraguan atau kesulitan.\n\nParagraf 7: Ia memupuk rasa syukur, menyadari setiap berkah sebagai penyediaan ilahi.\n\nParagraf 8: Pada akhirnya, pernikahan berlandaskan iman menjadi kesaksian kuasa Allah yang bekerja."
+    "sessionNumber": "Sesi 5",
+    "title": "Sesi 5: Kuasa Pengampunan (The Power of Forgiveness)",
+    "title_id": "Sesi 5: Kuasa Pengampunan (The Power of Forgiveness)",
+    "title_en": "Session 5: The Power of Forgiveness",
+    "theme_id": "Melepaskan Hak Membalas: Menghancurkan Akar Kepahitan demi Pemulihan Hati",
+    "theme_en": "Releasing the Right to Retaliate: Eradicating Bitterness for Wholeness",
+    "summary_id": "Sesi kelima merupakan stasiun pemulihan batin yang sangat menentukan: menyelami kuasa pengampunan sejati. Di dalam pernikahan, dua manusia berdosa yang tinggal di bawah satu atap pasti akan saling melukai, baik secara sengaja maupun tidak. Tanpa adanya mekanisme pengampunan yang berjalan terus-menerus, luka yang tidak diselesaikan akan membusuk menjadi penghakiman (judgment), dan penghakiman akan menumbuhkan 'akar pahit' (root of bitterness) yang meracuni jiwa, mematikan rasa cinta, dan menghancurkan generasi (Ibrani 12:15).\n\nMateri ini menegaskan bahwa pengampunan alkitabiah bukanlah sebuah perasaan emosional ('menunggu sampai rasa sakit hilang'), melainkan sebuah keputusan kehendak yang sadar (an act of the will). Mengampuni berarti secara sukarela membatalkan surat hutang pasangan, melepaskan hak pribadi untuk menuntut balas atau menghukum, serta menyerahkan keadilan ke dalam tangan Tuhan. Sebagaimana Kristus telah mengampuni seluruh dosa dan kegagalan kita yang tak terhitung besarnya, kita dimampukan untuk mengalirkan pengampunan yang sama tanpa batas kepada pasangan kita.",
+    "summary_en": "The fifth session provides an indispensable turning point of emotional and spiritual healing: discovering the power of genuine forgiveness. In marriage, two imperfect people sharing close quarters will inevitably wound each other. Without continuous, deep forgiveness, unhealed offenses fester into righteous judgment, and persistent judgment sprouts a destructive 'root of bitterness' that contaminates the soul, kills romantic intimacy, and defiles the whole family (Hebrews 12:15).\n\nThis teaching establishes that biblical forgiveness is not an emotional feeling ('waiting until the hurt evaporates'), but a deliberate, conscious act of the will. To forgive is to voluntarily tear up the spouse's debt ledger, releasing all perceived rights to punish, retaliate, or hold a grudge, and entrusting justice entirely to God. Just as Christ forgave our insurmountable debt on the cross, we are empowered by His grace to extend that same boundless forgiveness to our covenant partner.",
+    "quotes": [
+      {
+        "text": "Forgiveness is not an emotion; it is a decisive act of the will to cancel the debt and release all claims to retaliation.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Jagalah supaya jangan ada seorang pun menjauhkan diri dari kasih karunia Allah, agar jangan tumbuh akar yang pahit yang menimbulkan kerusuhan dan yang mencemarkan banyak orang.",
+        "source": "Ibrani 12:15"
+      },
+      {
+        "text": "Menyimpan kepahitan dan dendam itu ibarat meminum racun dan mengharapkan orang lain yang mati keracunan.",
+        "source": "2=1 Pastoral Wisdom"
+      },
+      {
+        "text": "Pernikahan yang langgeng dan berbahagia bukanlah pernikahan dua orang sempurna, melainkan persekutuan dua orang pengampun yang luar biasa.",
+        "source": "The Power of Forgiveness"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Kolose 3:13",
+        "text": "Sabarlah kamu seorang terhadap yang lain, dan ampunilah seorang akan yang lain apabila yang seorang menaruh dendam terhadap yang lain; sama seperti Tuhan telah mengampuni kamu, kamu perbuat jugalah demikian."
+      },
+      {
+        "ref": "Efesus 4:31-32",
+        "text": "Segala kepahitan, kegeraman, kemarahan, pertikaian dan fitnah hendaklah dibuang dari antara kamu, demikian pula segala kejahatan. Tetapi hendaklah kamu ramah seorang terhadap yang lain, penuh kasih mesra dan saling mengampuni."
+      }
+    ],
+    "reflection_questions_id": [
+      "Apakah ada peristiwa luka masa lalu, perkataan menyakitkan, atau kekecewaan mendalam terhadap pasangan yang diam-diam masih kita simpan dan sering kita ungkit kembali saat bertengkar?",
+      "Apakah kita masih menahan pengampunan karena ingin 'menghukum' pasangan dengan sikap dingin, penolakan, atau aksi bungkam?",
+      "Bersediakah kita mengambil langkah iman hari ini di hadapan Tuhan: merobek 'surat tuntutan hutang' pasangan kita dan melepaskan pengampunan seutuhnya dari lubuk hati terdalam?"
+    ],
+    "reflection_questions_en": [
+      "Are there lingering offenses, bitter words, or deep disappointments from the past that we still harbor secretly and dredge up during arguments?",
+      "Are we withholding forgiveness in an attempt to 'punish' our spouse through coldness, silent treatment, or emotional withdrawal?",
+      "Are we ready today to make a radical decision before God: cancel our spouse's emotional debt and release total forgiveness from the heart?"
+    ]
   },
   {
     "id": 7,
-    "title": "THE POWER OF SPIRITUAL INTIMACY",
-    "summary_en": "Paragraph 1: Spiritual intimacy forms through shared prayer, worship, and Bible study.\n\nParagraph 2: As two souls unite in worship, God’s love flows into the relationship.\n\nParagraph 3: Spiritual intimacy deepens trust, reducing fear and fostering security.\n\nParagraph 4: Discussing life’s calling enriches a shared vision and purpose.\n\nParagraph 5: The result is a family rooted firmly in Christ, radiating faith to the world.\n\nParagraph 6: Such intimacy also equips the couple to discern God’s direction in daily decisions.\n\nParagraph 7: It cultivates a habit of mutual encouragement, uplifting each other spiritually.\n\nParagraph 8: Ultimately, spiritual intimacy creates a marriage that reflects the very heart of God.",
-    "summary_id": "Paragraf 1: Kedekatan rohani terbentuk lewat doa, pujian, dan pembelajaran Alkitab bersama.\n\nParagraf 2: Saat dua jiwa bersatu dalam penyembahan, kasih Allah mengalir ke dalam hubungan.\n\nParagraf 3: Spiritual intimacy memperdalam kepercayaan, mengurangi rasa takut, dan menumbuhkan rasa aman.\n\nParagraf 4: Kebiasaan berdiskusi tentang panggilan hidup memperkaya visi bersama.\n\nParagraf 5: Hasilnya adalah keluarga yang berakar kuat pada Kristus, memancarkan cahaya iman ke dunia.\n\nParagraf 6: Kedekatan rohani juga membekali pasangan untuk memahami arah Tuhan dalam keputusan sehari‑hari.\n\nParagraf 7: Ini menumbuhkan kebiasaan saling memberi dorongan, mengangkat satu sama lain secara rohani.\n\nParagraf 8: Pada akhirnya, spiritual intimacy menciptakan pernikahan yang mencerminkan hati Allah."
+    "sessionNumber": "Sesi 6",
+    "title": "Sesi 6: Kuasa Visi Iman (The Power of Faith)",
+    "title_id": "Sesi 6: Kuasa Visi Iman & Kepercayaan (The Power of Faith)",
+    "title_en": "Session 6: The Power of Faith",
+    "theme_id": "Memandang Pasangan Melalui Mata Allah: Mengaktifkan Potensi Ilahi di Tengah Kelemahan",
+    "theme_en": "Seeing Your Spouse Through God's Eyes: Activating Divine Potential Amid Weakness",
+    "summary_id": "Sesi keenam menantang pasangan untuk mengubah cara pandang mereka: beralih dari penglihatan jasmani menuju 'Visi Iman' (Faith Vision). Mata jasmani manusia cenderung terpaku pada kelemahan, kegagalan masa lalu, dan keterbatasan pasangan, yang pada akhirnya memicu sikap sinis dan keputusasaan. Namun iman adalah dasar dari segala sesuatu yang kita harapkan dan bukti dari segala sesuatu yang tidak kita lihat (Ibrani 11:1). Visi iman adalah kemampuan rohani untuk melihat pasangan sebagaimana Allah memandangnya—sebagai ciptaan baru yang indah, berharga, dan memiliki takdir ilahi (Mazmur 139:13-18).\n\nMusuh selalu berusaha menempelkan label-label kutuk dan dusta pada diri pasangan ('kamu tidak akan pernah berubah', 'kamu pemalas', 'kamu egois'). Tugas kita sebagai rekan perjanjian satu daging adalah mematahkan label-label dusta tersebut dan mulai memperkatakan ayat-ayat firman Tuhan atas hidup pasangan. Ketika kita mulai mempercayai pekerjaan Roh Kudus di dalam dirinya dan memandangnya melalui lensa anugerah, kita menciptakan atmosfer kasih yang memampukan pasangan bertumbuh menjadi pribadi sebagaimana yang Allah rancangkan sejak semula.",
+    "summary_en": "The sixth session challenges couples to make a profound paradigm shift: transitioning from natural sight to a spiritual 'Faith Vision'. Human eyes naturally fixate on flaws, past failures, and behavioral weaknesses, eventually fostering cynicism and hopeless resignation. Yet faith is the substance of things hoped for, the evidence of things not seen (Hebrews 11:1). A Faith Vision is the spiritual capacity to perceive one's spouse as God sees them—as a cherished, redeemed masterpiece with an extraordinary destiny (Psalm 139:13-18).\n\nThe adversary constantly attempts to pin lies and condemning labels on spouses ('you will never change', 'you are selfish', 'you always fail'). Our sacred responsibility as covenant partners is to dismantle those lies and declare God's promises over our mate's life. When we believe in the Holy Spirit's ongoing work within them and behold them through the lens of grace, we cultivate an empowering atmosphere where they can flourish into God's full design.",
+    "quotes": [
+      {
+        "text": "Faith sees people not as they currently are in their brokenness, but as who God created and redeemed them to become.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Iman adalah dasar dari segala sesuatu yang kita harapkan dan bukti dari segala sesuatu yang tidak kita lihat.",
+        "source": "Ibrani 11:1"
+      },
+      {
+        "text": "Jika engkau terus memandang pasanganmu melalui kacamata kegagalannya, engkau menghalangi pekerjaan anugerah Allah mengubahkan hidupnya.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Visi iman adalah melihat mahakarya Allah di dalam diri pasanganmu saat ia sendiri bahkan belum sanggup melihatnya.",
+        "source": "The Power of Faith"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Ibrani 11:1",
+        "text": "Iman adalah dasar dari segala sesuatu yang kita harapkan dan bukti dari segala sesuatu yang tidak kita lihat."
+      },
+      {
+        "ref": "Mazmur 139:14, 17",
+        "text": "Aku bersyukur kepada-Mu oleh karena kejadianku dahsyat dan ajaib; ajaib apa yang Kaubuat, dan jiwaku benar-benar menyadarinya... Dan bagiku, betapa mahalnya pikiran-Mu, ya Allah! Betapa besar jumlahnya!"
+      }
+    ],
+    "reflection_questions_id": [
+      "Selama ini, lensa apa yang paling dominan kita gunakan saat memandang pasangan: lensa kesalahan dan kelemahannya, ataukah lensa potensi ilahi dan anugerah Tuhan?",
+      "Pernahkah kita secara khusus bertanya kepada Tuhan dalam doa: 'Tuhan, bagaimanakah Engkau memandang suami/istriku?' dan meminta Tuhan mencurahkan kasih-Nya ke dalam hati kita untuknya?",
+      "Deklarasi firman Tuhan dan kata-kata berkat apa yang ingin kita mulai perkatakan setiap hari untuk meneguhkan masa depan pasangan kita?"
+    ],
+    "reflection_questions_en": [
+      "Which lens have we primarily used when looking at our spouse: the magnifying glass of their flaws, or the telescope of God's redemptive grace and potential?",
+      "Have we ever asked God in prayer: 'Lord, how do You see my spouse?' and asked Him to fill our hearts with His loving vision for them?",
+      "What biblical promises and life-giving blessings will we intentionally declare over our spouse every day starting now?"
+    ]
   },
   {
     "id": 8,
-    "title": "THE POWER OF AGREEMENT",
-    "summary_en": "Paragraph 1: Shared vision and values solidify the family’s direction in life’s journey.\n\nParagraph 2: Without agreement, decisions become sources of conflict; unity makes execution smoother.\n\nParagraph 3: Forming family covenants on priorities, discipline, and service strengthens commitment.\n\nParagraph 4: Open, transparent discussions build trust and avoid misunderstandings.\n\nParagraph 5: Agreements grounded in Scripture ensure each step aligns with God’s will.\n\nParagraph 6: Such alignment fosters a cohesive identity that influences children positively.\n\nParagraph 7: It also creates a platform for collaborative problem‑solving during crises.\n\nParagraph 8: Ultimately, agreement rooted in the Word propels the family toward divine purpose.",
-    "summary_id": "Paragraf 1: Kesepakatan visi dan nilai bersama meneguhkan arah keluarga dalam perjalanan hidup.\n\nParagraf 2: Tanpa persetujuan, keputusan menjadi sumber konflik; dengan satu hati, keputusan lebih mudah dijalankan.\n\nParagraf 3: Membuat perjanjian keluarga tentang prioritas, disiplin, dan pelayanan memperkuat komitmen.\n\nParagraf 4: Diskusi terbuka dan transparan membangun kepercayaan, menghindari kesalahpahaman.\n\nParagraf 5: Kesepakatan yang berlandaskan firman memastikan setiap langkah selaras dengan kehendak Tuhan.\n\nParagraf 6: Penjajaran ini menumbuhkan identitas kohesif yang memberi dampak positif pada anak‑anak.\n\nParagraf 7: Ini juga menciptakan platform untuk pemecahan masalah secara kolaboratif saat krisis.\n\nParagraf 8: Pada akhirnya, kesepakatan yang berakar pada Firman memandu keluarga menuju tujuan ilahi."
+    "sessionNumber": "Sesi 7",
+    "title": "Sesi 7: Kuasa Keintiman Rohani (The Power of Spiritual Intimacy)",
+    "title_id": "Sesi 7: Kuasa Keintiman Rohani & Berdoa Bersama (The Power of Spiritual Intimacy)",
+    "title_en": "Session 7: The Power of Spiritual Intimacy",
+    "theme_id": "Perekat Suci Pernikahan: Pasangan Hidup sebagai Mitra Doa Paling Intim",
+    "theme_en": "The Sacred Superglue of Marriage: Your Spouse as Your Ultimate Prayer Partner",
+    "summary_id": "Sesi ketujuh merupakan jantung dan pelajaran paling krusial dari seluruh kurikulum Married for Life: membangun keintiman rohani melalui doa bersama. Seringkali suami dan isteri memiliki kehidupan doa pribadi yang aktif di kamar masing-masing atau aktif melayani di gereja, namun merasa canggung, enggan, atau malu saat diminta memegang tangan pasangan dan berdoa bersuara berdua saja. Padahal, pasangan hidup dirancang oleh Allah untuk menjadi mitra doa paling intim dan terpercaya di muka bumi (Matius 18:19-20).\n\nDoa bersama adalah 'superglue' (perekat rohani) yang mengikat jiwa suami isteri menjadi satu di hadapan takhta Allah. Ketika suami dan isteri merendahkan hati, berlutut bersama, dan saling mendoakan, benteng keangkuhan runtuh dan Roh Kudus mengalirkan kelegaan serta kepekaan rohani. Sesi ini tidak hanya mengajarkan teori doa, melainkan memberikan dorongan praktis: jangan hanya mendiskusikan tentang doa, mulailah melakukannya sekarang juga (Don't just talk about it, just DO IT!).",
+    "summary_en": "The seventh session stands as the very heartbeat and most transformative lesson of the Married for Life journey: cultivating deep spiritual intimacy through praying together. Very often, husbands and wives maintain active personal prayer lives or ministry involvement, yet feel awkward, hesitant, or vulnerable when taking each other's hand to pray aloud together. Yet God designed one's spouse to be their most intimate, trusted prayer partner on earth (Matthew 18:19-20).\n\nJoint prayer serves as the spiritual 'superglue' uniting the souls of husband and wife before the throne of God. As spouses kneel together in humility and intercede for one another, walls of defense crumble and the Holy Spirit releases supernatural healing, peace, and spiritual discernment. This session moves beyond theology into active practice: stop merely talking about prayer and start doing it together consistently (Don't just talk about it, just DO IT!).",
+    "quotes": [
+      {
+        "text": "A couple that prays together, stays together. Spiritual intimacy is the true glue that holds marriage in unshakable unity.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Pasangan hidupmu adalah mitra doa paling intim yang Tuhan anugerahkan bagimu di muka bumi ini.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Jika dua orang dari padamu di dunia ini sepakat meminta apapun juga, permintaan mereka itu akan dikabulkan oleh Bapa-Ku yang di sorga.",
+        "source": "Matius 18:19"
+      },
+      {
+        "text": "Jangan habiskan waktu hanya berdebat tentang doa; pegang tangan pasanganmu sekarang juga dan mulailah berdoa!",
+        "source": "The Power of Spiritual Intimacy"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Matius 18:19-20",
+        "text": "Dan lagi Aku berkata kepadamu: Jika dua orang dari padamu di dunia ini sepakat meminta apapun juga, permintaan mereka itu akan dikabulkan oleh Bapa-Ku yang di sorga. Sebab di mana dua atau tiga orang berkumpul dalam Nama-Ku, di situ Aku ada di tengah-tengah mereka."
+      },
+      {
+        "ref": "Pengkhotbah 4:12",
+        "text": "Dan bilamana seorang dapat dialahkan, dua orang akan dapat bertahan, tali tiga lembar tak mudah diputuskan."
+      }
+    ],
+    "reflection_questions_id": [
+      "Apakah kita berdua memiliki waktu rutin setiap hari untuk bergandengan tangan dan berdoa bersama secara intim, ataukah doa bersama hanya terjadi saat makan dan di gereja?",
+      "Penghalang terbesar apa yang selama ini membuat kita ragu atau canggung untuk berdoa bersama: kesibukan jadwal, rasa gengsi, atau konflik yang belum terselesaikan?",
+      "Maukah kita berdua membuat komitmen kudus malam ini untuk meluangkan 5 hingga 10 menit setiap hari, saling memegang tangan dan menaikkan permohonan bersama kepada Bapa?"
+    ],
+    "reflection_questions_en": [
+      "Do we have a dedicated daily routine of holding hands and praying intimately together, or does prayer happen only at meals and Sunday services?",
+      "What has been the greatest obstacle preventing consistent prayer together: busy schedules, personal pride, or lingering emotional friction?",
+      "Will both of us make a sacred covenant tonight to invest 5 to 10 minutes every single day holding hands and bringing our hearts before God?"
+    ]
   },
   {
     "id": 9,
-    "title": "THE POWER OF PHYSICAL INTIMACY",
-    "summary_en": "Paragraph 1: Physical intimacy is a blessed expression of love within marriage.\n\nParagraph 2: Touch, embraces, and warmth create a strong emotional bond.\n\nParagraph 3: A healthy physical relationship supports happiness, reduces stress, and deepens spiritual intimacy.\n\nParagraph 4: Open communication about needs and boundaries is essential for mutual respect.\n\nParagraph 5: Guarding physical intimacy honors God through the bodies He has given.\n\nParagraph 6: It also nurtures trust, allowing both partners to be vulnerable without fear.\n\nParagraph 7: Consistent affection strengthens the marriage’s resilience against external pressures.\n\nParagraph 8: Ultimately, honoring physical intimacy glorifies God and enriches the family’s witness.",
-    "summary_id": "Paragraf 1: Keintiman fisik merupakan wujud kasih yang diberkati Tuhan dalam pernikahan.\n\nParagraf 2: Sentuhan, pelukan, dan kehangatan menciptakan ikatan emosional yang kuat.\n\nParagraf 3: Hubungan fisik yang sehat mendukung kebahagiaan, menurunkan stres, dan meningkatkan keintiman rohani.\n\nParagraf 4: Komunikasi terbuka tentang kebutuhan dan batasan penting untuk saling menghormati.\n\nParagraf 5: Menjaga keintiman fisik memuliakan Allah melalui tubuh yang diberikan.\n\nParagraf 6: Ini juga menumbuhkan kepercayaan, memungkinkan kedua pasangan menjadi rentan tanpa rasa takut.\n\nParagraf 7: Kasih sayang yang konsisten memperkuat ketahanan pernikahan terhadap tekanan eksternal.\n\nParagraf 8: Pada akhirnya, menghormati keintiman fisik memuliakan Allah dan memperkaya kesaksian keluarga."
+    "sessionNumber": "Sesi 8",
+    "title": "Sesi 8: Kuasa Kesepakatan (The Power of Agreement)",
+    "title_id": "Sesi 8: Kuasa Kesepakatan (The Power of Agreement)",
+    "title_en": "Session 8: The Power of Agreement",
+    "theme_id": "Harmoni Simfoni Ilahi: Mencapai Kesepakatan Cara Allah Melampaui Kompromi Dunia",
+    "theme_en": "Divine Symphonic Harmony: Reaching God's Agreement Beyond Worldly Compromise",
+    "summary_id": "Sesi kedelapan membongkar rahasia kuasa kesepakatan dalam kehidupan sehari-hari: 'Dapatkah dua orang berjalan bersama-sama jikalau mereka belum bersepakat?' (Amos 3:3). Di dunia ini, pasangan umumnya menggunakan cara-cara yang salah untuk menyelesaikan perbedaan: dominasi (satu pihak menekan dan mendikte), manipulasi (menggunakan tangisan, merajuk, atau uang), kepasifan (mengalah dengan memendam dongkol), atau kompromi duniawi di mana kedua pihak sama-sama menelan kekecewaan.\n\nSebaliknya, kesepakatan cara Allah berakar pada kata Yunani 'Sumphoneo' (dari mana kata 'simfoni' berasal)—sebuah keselarasan nada di mana dua instrumen yang berbeda dimainkan di bawah pimpinan satu Dirigen Agung, yaitu Roh Kudus. Kesepakatan ilahi bukanlah 'siapa yang menang dan siapa yang kalah', melainkan kedua pasangan bersama-sama menundukkan kehendak pribadi untuk mencari apa yang menjadi kehendak Bapa Surgawi. Ketika suami dan isteri mencapai kesepakatan ilahi dalam hal keuangan, pengasuhan anak, dan prioritas hidup, pintu surga terbuka lebar mencurahkan berkat dan perlindungan.",
+    "summary_en": "The eighth session unlocks the immense power of walking in divine agreement: 'Can two walk together, unless they are agreed?' (Amos 3:3). In worldly marriages, couples often resort to destructive methods to resolve disputes: intimidation and domination, emotional manipulation, passive withdrawal, or bitter compromise where both parties walk away unsatisfied.\n\nIn contrast, God's way of agreement is derived from the Greek word 'Sumphoneo' (the root of 'symphony')—a musical harmony where different instruments produce a glorious sound under the baton of one Conductor, the Holy Spirit. Divine agreement is never about 'who wins and who loses', but both spouses surrendering personal agendas to discern and obey the Father's will together. When husband and wife achieve true spiritual alignment concerning finances, parenting, and life direction, heaven's power is released and enemy divisions are neutralized.",
+    "quotes": [
+      {
+        "text": "Berjalanlah dua orang bersama-sama, jikalau mereka belum berjanji dan bersepakat?",
+        "source": "Amos 3:3"
+      },
+      {
+        "text": "True agreement is not one spouse winning and the other losing; it is both spouses coming together in symphony to discern and fulfill the will of God.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Kesepakatan cara Allah bukan sekadar kompromi abu-abu yang mengecewakan kedua pihak, melainkan penemuan kehendak Tuhan yang membawa damai sejahtera sempurna.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Ketika suami dan isteri bersepakat di dalam Roh, musuh kehilangan seluruh celah untuk memecah belah rumah tangga.",
+        "source": "The Power of Agreement"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Amos 3:3",
+        "text": "Berjalanlah dua orang bersama-sama, jikalau mereka belum berjanji / bersepakat?"
+      },
+      {
+        "ref": "Matius 18:19",
+        "text": "Jika dua orang dari padamu di dunia ini sepakat (sumphoneo) meminta apapun juga, permintaan mereka itu akan dikabulkan oleh Bapa-Ku yang di sorga."
+      }
+    ],
+    "reflection_questions_id": [
+      "Pola apa yang selama ini paling sering kita pakai saat terjadi perbedaan pendapat: adu argumen keras, aksi mendiamkan, memaksakan kehendak, atau berdoa mencari petunjuk Tuhan?",
+      "Keputusan penting apa saat ini (misalnya pengelolaan keuangan, pendidikan anak, karier, atau waktu pelayanan) yang masih menimbulkan perdebatan karena belum disepakati bersama?",
+      "Bersediakah kita duduk bersama, menurunkan ego dan keinginan pribadi, lalu berdoa bersama sampai Tuhan memberikan kesatuan hati yang jernih?"
+    ],
+    "reflection_questions_en": [
+      "What has been our default reaction when disagreements flare up: aggressive argumentation, silent treatment, emotional manipulation, or praying together for God's wisdom?",
+      "What significant issue (finances, children's education, career choices, or schedule) currently lacks peaceful agreement in our home?",
+      "Are we willing to lay aside our individual preferences and seek God in prayer until He grants us genuine, shared unity of heart?"
+    ]
   },
   {
     "id": 10,
-    "title": "THE POWER OF SPIRITUAL WARFARE",
-    "summary_en": "Paragraph 1: Every couple faces spiritual attacks that aim to fracture their bond.\n\nParagraph 2: Being warriors in spiritual warfare means praying together and rejecting worldly temptations.\n\nParagraph 3: Mastering spiritual weapons—Scripture, worship, and the Holy Spirit’s power—provides unmatched defense.\n\nParagraph 4: Joint prayer sessions fuel a fighting spirit, strengthening confidence in God’s victory.\n\nParagraph 5: United in battle, couples overcome obstacles and preserve family peace.\n\nParagraph 6: Spiritual warfare also refines character, shaping perseverance and humility.\n\nParagraph 7: It encourages a proactive stance, seeking God’s guidance before conflict arises.\n\nParagraph 8: Ultimately, a couple that fights together reflects Christ’s triumph over darkness.",
-    "summary_id": "Paragraf 1: Setiap pasangan dihadapkan pada serangan rohani yang mencoba memecah belah ikatan.\n\nParagraf 2: Menjadi prajurit dalam perang rohani berarti berdoa secara bersatu, menolak godaan duniawi.\n\nParagraf 3: Menguasai senjata rohani—Firman, pujian, dan kuasa Roh—menjadi pertahanan yang tak tertandingi.\n\nParagraf 4: Sesi doa bersama menumbuhkan semangat juang, memperkuat kepercayaan pada kemenangan Allah.\n\nParagraf 5: Dengan berperang bersama, pasangan menaklukkan rintangan, memelihara kedamaian keluarga.\n\nParagraf 6: Perang rohani juga mematangkan karakter, membentuk ketekunan dan kerendahan hati.\n\nParagraf 7: Ini mendorong sikap proaktif, mencari bimbingan Allah sebelum konflik muncul.\n\nParagraf 8: Pada akhirnya, pasangan yang berjuang bersama mencerminkan kemenangan Kristus atas kegelapan."
+    "sessionNumber": "Sesi 9",
+    "title": "Sesi 9: Kuasa Keintiman Jasmani (The Power of Physical Intimacy)",
+    "title_id": "Sesi 9: Kuasa Keintiman Jasmani (The Power of Physical Intimacy)",
+    "title_en": "Session 9: The Power of Physical Intimacy",
+    "theme_id": "Berkat Kudus Persatuan Tubuh: Memulihkan Kemurnian dan Sukacita di Bawah Naungan Perjanjian",
+    "theme_en": "The Sacred Gift of Physical Union: Restoring Purity and Joy Under Covenant Covering",
+    "summary_id": "Sesi kesembilan mengangkat topik yang kudus, penting, namun kerap diselimuti tabu atau kesalahpahaman: keintiman jasmani dan hubungan seksual suami-istri. Alkitab dengan tegas menyatakan bahwa seks bukanlah hal yang kotor atau sekadar insting biologis, melainkan anugerah suci yang diciptakan dan dirancang Allah secara indah untuk dinikmati dan dirayakan di bawah naungan perjanjian pernikahan (covenant covering).\n\nSesi ini menelanjangi kepalsuan dunia dan jerat musuh (seperti pornografi, nafsu liar, dan perselingkuhan) yang merusak nilai luhur keintiman dengan memisahkannya dari kasih dan komitmen. Keintiman jasmani yang sehat memerlukan kemurnian spiritual, keterbukaan komunikasi tanpa rasa takut, pemulihan dari trauma luka masa lalu, serta pemutusan ikatan jiwa (soul ties) yang tidak kudus dari masa lalu. Keintiman di kamar tidur tidak berdiri sendiri; ia adalah cerminan dari kelembutan, rasa aman, penghargaan, dan komunikasi yang dibangun suami-istri sepanjang hari di luar kamar tidur.",
+    "summary_en": "The ninth session addresses a sacred and vital yet frequently misunderstood dimension of marriage: physical intimacy and sexual union. Scripture makes it abundantly clear that sexuality is not dirty or merely biological, but a holy gift created and ordained by God to be celebrated within the safety of covenant marriage.\n\nThis teaching exposes the enemy's counterfeits (pornography, lust, and infidelity) that distort intimacy by stripping away love and commitment. Fulfilling physical intimacy requires spiritual purity, mutual communication without shame, deep emotional safety, and healing from past sexual wounds or ungodly soul ties. Intimacy inside the bedroom is profoundly connected to the tenderness, honor, attentiveness, and affirmation cultivated between husband and wife outside the bedroom.",
+    "quotes": [
+      {
+        "text": "Sex within covenant marriage is not merely biological; it is a sacred, holy, and beautiful gift ordained by God to seal the oneness of husband and wife.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Hendaklah suami memenuhi kewajibannya terhadap isterinya, demikian pula isteri terhadap suaminya.",
+        "source": "1 Korintus 7:3"
+      },
+      {
+        "text": "Pornografi dan nafsu duniawi adalah tiruan palsu iblis yang merampas kedalaman dan kekudusan keintiman sejati yang dirancang Allah.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Keintiman fisik yang membahagiakan di tempat tidur dimulai dari kelembutan hati, penghargaan, dan rasa aman yang dibangun sepanjang hari di luar kamar tidur.",
+        "source": "The Power of Physical Intimacy"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "1 Korintus 7:3-5",
+        "text": "Hendaklah suami memenuhi kewajibannya terhadap isterinya, demikian pula isteri terhadap suaminya... Janganlah kamu saling menjauhi, kecuali dengan persetujuan bersama untuk sementara waktu, supaya kamu mendapat kesempatan untuk berdoa."
+      },
+      {
+        "ref": "Ibrani 13:4",
+        "text": "Hendaklah kamu semua penuh hormat terhadap perkawinan dan janganlah kamu mencemarkan tempat tidur, sebab orang-orang sundal dan pezinah akan dihakimi Allah."
+      }
+    ],
+    "reflection_questions_id": [
+      "Apakah kehidupan keintiman fisik kita berdua membawa pembaruan kasih, sukacita, dan rasa terhubung, ataukah terasa hambar, membebani, atau bahkan menjadi ajang tawar-menawar emosi?",
+      "Apakah ada rasa bersalah, pengalaman luka/trauma masa lalu, atau pengaruh buruk pornografi yang masih membelenggu kebebasan kita menikmati keintiman yang kudus?",
+      "Bagaimana suami dapat lebih memahami kebutuhan emosional dan rasa aman istri, dan bagaimana istri dapat lebih memahami kebutuhan fisik serta afirmasi suaminya?"
+    ],
+    "reflection_questions_en": [
+      "Does our physical relationship foster joy, deep connection, and renewal, or has it become routine, stressful, or a bargaining chip?",
+      "Are there past wounds, guilt, or the destructive residue of pornography that still hinder unashamed vulnerability and pure intimacy?",
+      "How can husbands better provide emotional security and tenderness, and how can wives better provide physical affection and honor?"
+    ]
   },
   {
     "id": 11,
-    "title": "THE POWER OF TRANSFORMATION",
-    "summary_en": "Paragraph 1: Personal and mutual transformation occurs when Christ deepens hearts with love.\n\nParagraph 2: The process involves repentance, growth, and daily mind renewal.\n\nParagraph 3: Together, spouses motivate each other to become more like Christ.\n\nParagraph 4: Witnessing transformation becomes a living testimony of God’s power to others.\n\nParagraph 5: Ongoing transformation yields a mature family that bears fruit in service and love.\n\nParagraph 6: It also enables the couple to navigate change gracefully, trusting God’s plan.\n\nParagraph 7: Transformation fosters generosity, as both partners share blessings freely.\n\nParagraph 8: Ultimately, a transformed marriage shines as a beacon of Christ’s redeeming work.",
-    "summary_id": "Paragraf 1: Transformasi pribadi dan pasangan terjadi ketika Kristus meneguhkan hati dalam kasih.\n\nParagraf 2: Proses ini melibatkan pertobatan, pertumbuhan, dan pembaruan pikiran setiap hari.\n\nParagraf 3: Bersama, pasangan saling memotivasi untuk menjadi lebih serupa dengan karakter Kristus.\n\nParagraf 4: Pengalaman perubahan menjadi saksi hidup bagi orang lain, menunjukkan kuasa Allah.\n\nParagraf 5: Transformasi berkelanjutan menghasilkan keluarga yang matang, berbuah dalam pelayanan dan kasih.\n\nParagraf 6: Ini juga memungkinkan pasangan menavigasi perubahan dengan anggun, mempercayai rencana Tuhan.\n\nParagraf 7: Transformasi menumbuhkan kemurahan hati, karena kedua pasangan berbagi berkat secara bebas.\n\nParagraf 8: Pada akhirnya, pernikahan yang bertransformasi menjadi mercusuar karya penebusan Kristus."
+    "sessionNumber": "Sesi 10",
+    "title": "Sesi 10: Kuasa Peperangan Rohani (The Power of Spiritual Warfare)",
+    "title_id": "Sesi 10: Kuasa Peperangan Rohani sebagai Tim Satu Daging (The Power of Spiritual Warfare)",
+    "title_en": "Session 10: The Power of Spiritual Warfare",
+    "theme_id": "Pasangan Bukan Musuh: Berdiri Bersama Mematahkan Serangan Iblis atas Rumah Tangga",
+    "theme_en": "Your Spouse is Not the Enemy: Standing Together to Defeat Darkness",
+    "summary_id": "Sesi kesepuluh membukakan mata rohani pasangan terhadap medan pertempuran tak kasat mata: pernikahan Kristen adalah target utama serangan iblis karena pernikahan mencerminkan hubungan Kristus dan jemaat. Prinsip terpenting yang harus ditanamkan dalam sanubari adalah: 'Pasanganmu BUKAN musuhmu!' (Efesus 6:12). Saat suami dan isteri saling menyerang, mereka telah tertipu oleh strategi licik si jahat yang bertujuan memecah belah dan menaklukkan.\n\nSesi ini melatih pasutri untuk berperang sebagai satu tim satu daging (one-flesh warfare team). Suami berfungsi sebagai penjaga gerbang benteng yang berani dan bertanggung jawab, sementara isteri berfungsi sebagai rekan pejuang yang peka terhadap bahaya rohani. Bersama-sama, mereka diajar mengenali dan menutup 'pintu-pintu masuk' musuh ke dalam rumah tangga—seperti kemarahan yang dipelihara, tontonan yang najis, serta kepahitan. Pasutri diperlengkapi dengan senjata-senjata rohani yang berkuasa: Darah Anak Domba, Firman Kebenaran, Doa Kesepakatan, serta Pujian dan Penyembahan yang menghancurkan kuasa kegelapan.",
+    "summary_en": "The tenth session unveils the spiritual battleground surrounding Christian marriage: every godly marriage is a prime target for demonic assault because it mirrors Christ and His Church. The fundamental truth emblazoned across this lesson is: 'Your spouse is NEVER the enemy!' (Ephesians 6:12). The moment husband and wife turn against each other, they have fallen directly into the enemy's divide-and-conquer strategy.\n\nThis lesson trains couples to stand and fight as a united one-flesh warfare team. The husband stands as a vigilant gatekeeper of the home, while the wife stands as a discerning, courageous partner in battle. Together, they learn to identify and shut open doorways the enemy exploits—lingering anger, ungodly entertainment, and unconfessed bitterness. They are equipped with God's mighty spiritual weapons: the Blood of the Lamb, the Sword of the Spirit, the power of prayerful agreement, and the sacrifice of praise.",
+    "quotes": [
+      {
+        "text": "Your spouse is NEVER your enemy. The moment you fight against your spouse, you have already fallen into the enemy’s trap.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Sebab perjuangan kita bukanlah melawan darah dan daging, tetapi melawan pemerintah-pemerintah, melawan penguasa-penguasa, melawan penghulu-penghulu dunia yang gelap ini.",
+        "source": "Efesus 6:12"
+      },
+      {
+        "text": "Rumah tangga pasutri yang bersatu di dalam Kristus adalah benteng perkasa yang kebal terhadap segala panah api si jahat.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Pujian dan penyembahan di dalam rumah adalah frekuensi surga yang membuyarkan kekacauan dan tipu muslihat si jahat.",
+        "source": "The Power of Spiritual Warfare"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Efesus 6:11-12",
+        "text": "Kenakanlah seluruh perlengkapan senjata Allah, supaya kamu dapat bertahan melawan tipu muslihat Iblis; karena perjuangan kita bukanlah melawan darah dan daging, tetapi melawan penguasa-penguasa dunia yang gelap ini."
+      },
+      {
+        "ref": "Yakobus 4:7",
+        "text": "Karena itu tunduklah kepada Allah, dan lawanlah Iblis, maka ia akan lari dari padamu!"
+      }
+    ],
+    "reflection_questions_id": [
+      "Ketika perselisihan memanas, apakah kita kerap menganggap pasangan sebagai musuh yang harus dikalahkan atau diserang balik dengan kata-kata tajam?",
+      "Pintu masuk apa yang mungkin tanpa sadar masih terbuka di rumah kita bagi si jahat: kebiasaan berkata kasar, tontonan media yang kotor, atau perselisihan yang dibiarkan larut malam?",
+      "Bagaimana kita berdua bisa mulai mengambil sikap proaktif: bergandengan tangan, menengking roh pemecah belah dalam nama Yesus, dan menegakkan pagar doa atas keluarga kita?"
+    ],
+    "reflection_questions_en": [
+      "When heated disagreements erupt, do we instinctively treat our spouse as an adversary to defeat with cutting words?",
+      "What open doorways might the enemy be exploiting in our household: ungodly media, critical speech, or anger left unresolved before sunset?",
+      "How can we proactively hold hands as a warfare team, rebuke dividing spirits in Jesus' name, and build a hedge of prayer around our family?"
+    ]
   },
   {
     "id": 12,
-    "title": "THE POWER OF ONE",
-    "summary_en": "Paragraph 1: Unity in Christ declares that two become one body, one soul.\n\nParagraph 2: Shared identity as one in faith unifies purpose, hope, and prayer.\n\nParagraph 3: This bond rejects individualism, prioritizing family and God’s interests.\n\nParagraph 4: Living as one involves joint decisions, service, and inseparable love.\n\nParagraph 5: Unity creates a powerful example that radiates God’s power to the world.\n\nParagraph 6: It also provides emotional stability, as each partner finds their complement.\n\nParagraph 7: The partnership models Christ’s relationship with the church, inspiring others.\n\nParagraph 8: Ultimately, becoming one reflects the ultimate divine design for marriage.",
-    "summary_id": "Paragraf 1: Kesatuan satu dalam Kristus menegaskan bahwa dua menjadi satu tubuh, satu jiwa.\n\nParagraf 2: Identitas bersama sebagai satu dalam iman menyatukan tujuan, harapan, dan doa.\n\nParagraf 3: Keterikatan ini menolak individualisme, memprioritaskan kepentingan keluarga dan Tuhan.\n\nParagraf 4: Praktik hidup sebagai satu meliputi keputusan bersama, pelayanan bersama, dan kasih yang tak terpisahkan.\n\nParagraf 5: Dengan menjadi satu, pasangan menjadi contoh hidup yang memancarkan kuasa Allah kepada dunia.\n\nParagraf 6: Ini juga memberikan stabilitas emosional, karena masing‑masing menemukan pelengkapnya.\n\nParagraf 7: Kemitraan ini mencontohkan hubungan Kristus dengan gereja, menginspirasi orang lain.\n\nParagraf 8: Pada akhirnya, menjadi satu mencerminkan rancangan ilahi tertinggi untuk pernikahan."
+    "sessionNumber": "Sesi 11",
+    "title": "Sesi 11: Kuasa Transformasi (The Power of Transformation)",
+    "title_id": "Sesi 11: Kuasa Transformasi & Pemulihan Generasional (The Power of Transformation)",
+    "title_en": "Session 11: The Power of Transformation",
+    "theme_id": "Memutus Rantai Masa Lalu: Membangun Pola Hidup Ilahi Menjadi Mercusuar Terang",
+    "theme_en": "Breaking Generational Patterns: Building Godly Life Blueprints into a Lighthouse",
+    "summary_id": "Sesi kesebelas menuntun pasangan menuju proses metamorfosis karakter dan pembaruan gaya hidup yang radikal: 'Berubahlah oleh pembaharuan budimu' (Roma 12:2). Seringkali tanpa disadari, suami dan isteri membawa 'pola-pola kehidupan' (life patterns) yang rusak dari generasi sebelumnya—seperti pola emosional yang meledak-ledak, kecanduan, manipulasi, perceraian, atau ketidakmampuan mengungkapkan kasih. Transformasi sejati terjadi ketika pola-pola lama tersebut dibongkar dan digantikan oleh cetak biru Firman Allah.\n\nSesi ini menuntut kejujuran dan keberanian untuk membereskan segala dosa tersembunyi (hidden sin). Dosa yang dirahasiakan ibarat rayap yang menggerogoti tiang rumah tangga dari dalam; pengakuan dosa dan transparansi di hadapan Tuhan dan pasangan mendatangkan kelegaan dan kemerdekaan sejati. Ketika hidup pasutri dibersihkan, rumah tangga mereka memancarkan terang Kristus yang gilang-gemilang: 'The light that shines the farthest shines the brightest at home'—menjadikan rumah mereka bukti nyata kuasa Injil yang mengubah hidup.",
+    "summary_en": "The eleventh session guides couples into a profound character metamorphosis and lifestyle alignment: 'Be transformed by the renewing of your mind' (Romans 12:2). Unconsciously, spouses often import generational dysfunction from their family of origin—explosive anger, addiction, passive manipulation, marital coldness, or divorce patterns. Lasting transformation occurs when these ungodly patterns are broken and replaced by the divine blueprint of God's Word.\n\nThis lesson demands holy courage to eradicate hidden sins. Hidden sin is like termites silently hollowing out the foundation of a home; honest confession and repentance before God and spouse bring lasting liberation. When a couple's home is purified and consecrated, it becomes a radiant testimony of Christ's power: 'The light that shines the farthest shines the brightest at home'—a lighthouse impacting neighbors and future generations.",
+    "quotes": [
+      {
+        "text": "The light that shines the farthest shines the brightest at home.",
+        "source": "2=1 Ministry Core Motto"
+      },
+      {
+        "text": "Janganlah kamu menjadi serupa dengan dunia ini, tetapi berubahlah oleh pembaharuan budimu, sehingga kamu dapat membedakan manakah kehendak Allah.",
+        "source": "Roma 12:2"
+      },
+      {
+        "text": "Pola luka dan kegagalan dari keluarga asalmu tidak harus menjadi masa depan anak-cucumu; rantai kutuk itu diputuskan hari ini di dalam Kristus Yesus.",
+        "source": "Married for Life Teaching"
+      },
+      {
+        "text": "Dosa tersembunyi yang ditutup-tutupi menghancurkan fondasi; transparansi dan pertobatan di hadapan Tuhan membuka jalan bagi kemerdekaan sejati.",
+        "source": "The Power of Transformation"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Roma 12:2",
+        "text": "Janganlah kamu menjadi serupa dengan dunia ini, tetapi berubahlah oleh pembaharuan budimu, sehingga kamu dapat membedakan manakah kehendak Allah: apa yang baik, yang berkenan kepada Allah dan yang sempurna."
+      },
+      {
+        "ref": "1 Yohanes 1:7",
+        "text": "Tetapi jika kita hidup di dalam terang sama seperti Dia ada di dalam terang, maka kita beroleh persekutuan seorang dengan yang lain, dan darah Yesus, Anak-Nya itu, menyucikan kita dari pada segala dosa."
+      }
+    ],
+    "reflection_questions_id": [
+      "Pola perilaku negatif apa dari orang tua atau keluarga masa lalu kita (misal: sikap cepat marah, suka mengabaikan, atau kata-kata kasar) yang tanpa sadar mulai kita tiru dalam rumah tangga kita?",
+      "Apakah masih ada hal-hal atau dosa tersembunyi yang kita tutupi dari pasangan karena takut ditolak, yang perlu kita bawa ke dalam terang pengampunan Kristus?",
+      "Warisan rohani, nilai moral, dan keteladanan seperti apa yang rindu kita tanamkan ke dalam kehidupan anak-cucu kita untuk generasi masa depan?"
+    ],
+    "reflection_questions_en": [
+      "What negative behavior patterns from our upbringing (anger, cold withdrawal, criticism) have we unconsciously duplicated in our marriage?",
+      "Is there any hidden sin or secrecy lingering in darkness that needs to be brought into the healing light of Christ and shared in transparency?",
+      "What spiritual legacy, godly values, and generational blessing do we want our children and grandchildren to inherit from our lives?"
+    ]
+  },
+  {
+    "id": 13,
+    "sessionNumber": "Sesi 12",
+    "title": "Sesi 12: Kuasa Kesatuan (The Power of One / One-Flesh Ministry)",
+    "title_id": "Sesi 12: Kuasa Kesatuan & Pelayanan Satu Daging (The Power of One)",
+    "title_en": "Session 12: The Power of One",
+    "theme_id": "Dari Pemulihan ke Pengutusan: Menjadi Oasis dan Saluran Berkat bagi Keluarga Lain",
+    "theme_en": "From Healing to Calling: Becoming an Oasis and Channel of Blessing for Others",
+    "summary_id": "Sesi penutup merupakan klimaks dan puncak dari seluruh rangkaian kelas Married for Life: melangkah dari pemulihan pribadi menuju penugasan ilahi (divine assignment). Pernikahan melewati tiga musim pertumbuhan: Musim Pertama adalah penyembuhan luka dan pemulihan fondasi; Musim Kedua adalah penguatan akar dan penyesuaian karakter; Musim Ketiga adalah berbuah lebat dan memberi keluar (bearing fruit and multiplying). Allah tidak pernah memulihkan pernikahan semata-mata agar dinikmati oleh pasangan itu sendiri, melainkan agar pasutri tersebut menjadi saluran kesaksian dan alat keselamatan bagi keluarga-keluarga lain yang sedang hancur.\n\nPasangan dipanggil untuk melayani bersama sebagai tim pelayanan satu daging (one-flesh ministry team). Ketika dua orang berjalan dalam kesatuan total dengan Kristus, mereka menjadi duta Kerajaan Allah yang memancarkan pengharapan bagi dunia. Rumah tangga mereka berubah menjadi oasis yang menyegarkan jiwa-jiwa yang haus dan mercusuar yang menuntun mereka yang tersesat kembali kepada Sang Juruselamat. Kesatuan satu daging bukan akhir dari perjalanan, melainkan awal dari petualangan iman yang penuh kuasa bersama Tuhan.",
+    "summary_en": "The final session marks the glorious culmination of the Married for Life journey: transitioning from personal healing into God's divine assignment. Every marriage traverses three developmental seasons: the First Season of healing wounds and establishing foundations; the Second Season of deepening roots and character alignment; the Third Season of bearing abundant fruit and giving out to others. God never redeems a marriage solely for the couple's private enjoyment, but so that together they become a beacon of hope and an instrument of redemption for broken families.\n\nHusbands and wives are commissioned to minister as a united one-flesh team. When two walk in undivided oneness with Christ, they become Kingdom ambassadors radiating living testimony to their community. Their home is consecrated as a refreshing oasis for parched souls and a lighthouse guiding lost ships safely home. One-flesh unity is not the destination; it is the launchpad for a lifetime of supernatural ministry and eternal impact.",
+    "quotes": [
+      {
+        "text": "God did not heal and unite your marriage merely for your own comfort; He redeemed you so that together you can become an oasis of healing for other broken families.",
+        "source": "Married for Life Leader Manual"
+      },
+      {
+        "text": "Bukan kamu yang memilih Aku, tetapi Akulah yang memilih kamu. Dan Aku telah menetapkan kamu, supaya kamu pergi dan menghasilkan buah dan buahmu itu tetap.",
+        "source": "Yohanes 15:16"
+      },
+      {
+        "text": "Satu orang mengejar seribu, tetapi dua orang memukul lari sepuluh ribu musuh. Kuasa multiplikasi terjadi saat pasutri melayani dalam kesatuan satu daging.",
+        "source": "2=1 Ministry"
+      },
+      {
+        "text": "Pernikahanmu yang telah dipulihkan adalah khotbah paling kuat dan nyata yang pernah disaksikan oleh dunia di sekitarmu.",
+        "source": "The Power of One"
+      }
+    ],
+    "key_scriptures": [
+      {
+        "ref": "Yohanes 15:16",
+        "text": "Bukan kamu yang memilih Aku, tetapi Akulah yang memilih kamu. Dan Aku telah menetapkan kamu, supaya kamu pergi dan menghasilkan buah dan buahmu itu tetap, supaya apa yang kamu minta kepada Bapa dalam nama-Ku, diberikan-Nya kepadamu."
+      },
+      {
+        "ref": "Yosua 24:15",
+        "text": "Tetapi jika kamu anggap tidak baik untuk beribadah kepada TUHAN, pilihlah pada hari ini kepada siapa kamu akan beribadah... Tetapi aku dan seisi rumahku, kami akan beribadah kepada TUHAN!"
+      }
+    ],
+    "reflection_questions_id": [
+      "Melihat perjalanan hidup kita bersama, di musim manakah pernikahan kita saat ini: Musim Pemulihan Fondasi, Musim Penguatan Akar, ataukah Musim Berbuah Lebat untuk Memberi?",
+      "Siapakah pasangan atau keluarga di sekitar kita (sahabat, tetangga, saudara) yang saat ini sedang mengalami kesulitan dan membutuhkan teladan kasih, doa, dan pendampingan dari kita berdua?",
+      "Langkah iman konkret apa yang siap kita ambil bersama sebagai satu tim untuk mulai melayani Tuhan dan menjadi terang berkat bagi lingkungan kita?"
+    ],
+    "reflection_questions_en": [
+      "Reflecting on our journey, what season is our marriage in today: the Season of Healing, the Season of Growth, or the Season of Fruitfulness and Outreach?",
+      "Who are the hurting couples or families in our circle of influence who desperately need our encouragement, prayer, and authentic testimony?",
+      "What concrete step of faith are we ready to take together as a one-flesh ministry team to serve the Lord and be a blessing in our community?"
+    ]
   }
 ]
