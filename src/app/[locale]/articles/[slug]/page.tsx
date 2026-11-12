@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, Clock, Calendar, User, Sparkles } from 'lucide-react';
 import ShareButtons from '@/components/ShareButtons';
+import ComicReader from '@/components/ComicReader';
 
 export async function generateMetadata({
   params,
@@ -50,6 +51,24 @@ export default async function ArticleDetailPage({
   });
   const filteredRelated = related.items.filter((r) => r.id !== item.id).slice(0, 2);
 
+  // Check if this article contains a comic strip sequence
+  let comicImages: string[] | null = null;
+  if (
+    item.seriesTitle === 'KARTUN_DIALOG' ||
+    item.categories.some((c) => c.slug === 'komik-dialog')
+  ) {
+    if (item.chordSheet) {
+      try {
+        const parsed = JSON.parse(item.chordSheet);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          comicImages = parsed;
+        }
+      } catch {
+        // ignore
+      }
+    }
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
       {/* Back Link */}
@@ -69,6 +88,12 @@ export default async function ArticleDetailPage({
               {catName}
             </span>
           )}
+          {comicImages && (
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <span>{locale === 'id' ? 'Komik Dialog' : 'Comic Dialogue'}</span>
+            </span>
+          )}
           {item.isFeatured && (
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
               <Sparkles className="w-3 h-3 text-amber-600" />
@@ -80,6 +105,13 @@ export default async function ArticleDetailPage({
         <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
           {translation.title}
         </h1>
+
+        {/* Excerpt if present */}
+        {translation.excerpt && (
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed italic border-l-2 border-covenant-300 pl-4">
+            {translation.excerpt}
+          </p>
+        )}
 
         {/* Metadata bar */}
         <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-600 py-3 border-y border-slate-200">
@@ -103,7 +135,9 @@ export default async function ArticleDetailPage({
           <div className="flex items-center gap-1.5">
             <Clock className="w-4 h-4 text-slate-400" />
             <span>
-              {translation.readingTimeMinutes || 3} {dict.common.readingTime}
+              {comicImages
+                ? `${comicImages.length} ${locale === 'id' ? 'Halaman Komik' : 'Comic Pages'}`
+                : `${translation.readingTimeMinutes || 3} ${dict.common.readingTime}`}
             </span>
           </div>
         </div>
@@ -121,12 +155,36 @@ export default async function ArticleDetailPage({
         )}
       </header>
 
+      {/* Embedded Comic Strip Reader (if cartoon dialog article) */}
+      {comicImages && comicImages.length > 0 && (
+        <ComicReader
+          title={translation.title}
+          excerpt={translation.excerpt}
+          scriptureRef={item.scriptureRef}
+          images={comicImages}
+          articleSlug={slug}
+          locale={locale}
+        />
+      )}
+
       {/* Main Content Body */}
-      <article className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-p:leading-relaxed prose-a:text-covenant-700">
-        <div className="whitespace-pre-line text-slate-700 leading-relaxed text-base sm:text-lg space-y-4">
-          {translation.body}
-        </div>
-      </article>
+      <section className="space-y-6 pt-4">
+        {comicImages && (
+          <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+            <BookOpen className="w-5 h-5 text-covenant-700" />
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-slate-900">
+              {dict.articles.reflectionTranscript ||
+                (locale === 'id' ? 'Naskah & Refleksi Dialog' : 'Script & Dialogue Reflection')}
+            </h2>
+          </div>
+        )}
+
+        <article className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-p:leading-relaxed prose-a:text-covenant-700">
+          <div className="whitespace-pre-line text-slate-700 leading-relaxed text-base sm:text-lg space-y-4">
+            {translation.body}
+          </div>
+        </article>
+      </section>
 
       {/* Social Sharing & Actions */}
       <div className="pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
