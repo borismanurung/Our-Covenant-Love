@@ -47,24 +47,32 @@ export default function VisitorCounter({ locale }: VisitorCounterProps) {
     return null;
   }
 
-  const countDisplay = (stats.uniqueVisitors || stats.totalVisits || 1).toLocaleString(
-    locale === 'id' ? 'id-ID' : 'en-US'
-  );
+  const numberLocale = locale === 'id' ? 'id-ID' : 'en-US';
+  const totalVisitsCount = Math.max(stats.totalVisits, stats.uniqueVisitors);
+  const formattedTotal = totalVisitsCount.toLocaleString(numberLocale);
+  const formattedUnique = (stats.uniqueVisitors || 1).toLocaleString(numberLocale);
+  const formattedViews = (stats.pageViews || totalVisitsCount).toLocaleString(numberLocale);
 
   const tooltipText =
     locale === 'id'
-      ? `Pengunjung Unik: ${stats.uniqueVisitors.toLocaleString('id-ID')} • Total Kunjungan: ${stats.totalVisits.toLocaleString('id-ID')}`
-      : `Unique Visitors: ${stats.uniqueVisitors.toLocaleString('en-US')} • Total Visits: ${stats.totalVisits.toLocaleString('en-US')}`;
+      ? `Statistik Akumulatif: ${formattedTotal} total kunjungan • ${formattedUnique} pengunjung unik • ${formattedViews} tayangan halaman`
+      : `Cumulative Statistics: ${formattedTotal} total visits • ${formattedUnique} unique visitors • ${formattedViews} page views`;
 
   return (
     <div
-      className="inline-flex items-center gap-1.5 text-slate-500 hover:text-slate-400 text-[11px] tracking-tight transition-colors cursor-default select-none"
+      className="inline-flex items-center gap-1.5 text-slate-400 hover:text-slate-300 text-xs tracking-tight transition-colors cursor-default select-none"
       title={tooltipText}
     >
       <span className="hidden sm:inline text-slate-700">•</span>
-      <Users className="w-3 h-3 text-slate-500 opacity-60" />
+      <Users className="w-3.5 h-3.5 text-covenant-400 opacity-90 shrink-0" />
       <span>
-        {countDisplay} {locale === 'id' ? 'pengunjung' : 'visitors'}
+        <span className="text-slate-400">
+          {locale === 'id' ? 'Total Kunjungan:' : 'Total Visits:'}{' '}
+        </span>
+        <strong className="font-semibold text-slate-200">{formattedTotal}</strong>
+        <span className="hidden md:inline text-slate-500 ml-1">
+          ({formattedUnique} {locale === 'id' ? 'pengunjung unik' : 'unique'})
+        </span>
       </span>
     </div>
   );

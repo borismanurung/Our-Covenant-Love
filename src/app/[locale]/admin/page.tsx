@@ -47,6 +47,7 @@ export default async function AdminDashboardPage({
     newInquiriesCount,
     uniqueVisitorsStat,
     totalVisitsStat,
+    pageViewStat,
     recentInquiries,
     recentContent,
   ] = await Promise.all([
@@ -58,6 +59,7 @@ export default async function AdminDashboardPage({
     prisma.contactInquiry.count({ where: { status: 'NEW' } }),
     prisma.siteStat.findUnique({ where: { key: 'unique_visitors' } }),
     prisma.siteStat.findUnique({ where: { key: 'total_visits' } }),
+    prisma.siteStat.findUnique({ where: { key: 'page_views' } }),
     prisma.contactInquiry.findMany({
       orderBy: { createdAt: 'desc' },
       take: 5,
@@ -107,9 +109,10 @@ export default async function AdminDashboardPage({
       color: 'bg-rose-50 text-rose-700 border-rose-200',
     },
     {
-      title: locale === 'id' ? 'Pengunjung Web' : 'Site Visitors',
-      count: uniqueVisitorsStat?.value ?? 0,
-      subtext: `${(totalVisitsStat?.value ?? 0).toLocaleString(locale === 'id' ? 'id-ID' : 'en-US')} ${locale === 'id' ? 'kunjungan' : 'visits'}`,
+      title: locale === 'id' ? 'Total Kunjungan' : 'Total Visits',
+      count: Math.max(totalVisitsStat?.value ?? 0, uniqueVisitorsStat?.value ?? 0),
+      subtext: `${(uniqueVisitorsStat?.value ?? 0).toLocaleString(locale === 'id' ? 'id-ID' : 'en-US')} ${locale === 'id' ? 'pengunjung unik' : 'unique'} • ${(pageViewStat?.value ?? 0).toLocaleString(locale === 'id' ? 'id-ID' : 'en-US')} ${locale === 'id' ? 'tayangan' : 'views'}`,
+      subtextColor: 'bg-indigo-100/90 text-indigo-800',
       icon: Users,
       href: `/${locale}/admin`,
       color: 'bg-indigo-50 text-indigo-700 border-indigo-200',
@@ -140,7 +143,11 @@ export default async function AdminDashboardPage({
               <div className="mt-4">
                 <div className="font-serif font-bold text-3xl">{stat.count}</div>
                 {stat.subtext && (
-                  <div className="text-[11px] font-semibold text-rose-800 bg-rose-100/80 px-2 py-0.5 rounded-md inline-block mt-1">
+                  <div
+                    className={`text-[11px] font-semibold px-2 py-0.5 rounded-md inline-block mt-1 ${
+                      stat.subtextColor || 'text-rose-800 bg-rose-100/80'
+                    }`}
+                  >
                     {stat.subtext}
                   </div>
                 )}

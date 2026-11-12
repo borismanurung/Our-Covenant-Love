@@ -91,11 +91,11 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // If new session, set session cookie (valid for 12 hours)
+    // If new session, set session cookie (standard 30 minutes session timeout)
     if (isNewSession) {
       const sid = crypto.randomUUID();
       res.cookies.set('ocl_sid', sid, {
-        maxAge: 60 * 60 * 12, // 12 hours
+        maxAge: 60 * 30, // 30 minutes
         httpOnly: true,
         sameSite: 'lax',
         path: '/',
